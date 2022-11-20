@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[serveone] 관리자</title>
+    
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="#" class="main_logo">
+                    <img src="../assets/images/main_logo.png" alt="PACKER ONE" />
+                </a>
+            </h1>
+
+            <!-- gnb -->
+            <nav class="gnb">
+                <button class="product">상품관리</button>
+                <ul>
+                    <li><a href="#">상품 조회/관리</a></li>
+                    <li><a href="#">상품 등록</a></li>
+                </ul>
+                <button class="order">주문 관리</button>
+                <ul>
+                    <li><a href="#">전체주문목록</a></li>
+                    <li><a href="#">배송 관리</a></li>
+                    <li><a href="#">취소/교환/반품/환불관리</a></li>
+                </ul>
+                <button class="member">회원 관리</button>
+                <ul>
+                    <li><a href="#">회원관리</a></li>
+                    <li><a href="#">적립포인트 관리</a></li>
+                </ul>
+                <button class="board active">게시판 관리</button>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">포장재솔루션 문의</a></li>
+                    <li><a class="active" href="#">주문제작 문의</a></li>
+                </ul>
+                <button class="stats">통계 관리</button>
+                <ul>
+                    <li><a href="#">매출분석</a></li>
+                    <li><a href="#">상품분석</a></li>
+                    <li><a href="#">주문제작 분석</a></li>
+                </ul>
+                <!-- 220622 수정 -->
+                <button class="banner">배너 관리</button>
+                <ul>
+                    <li><a href="#">배너 조회/관리</a></li>
+                    <li><a href="#">배너 등록</a></li>
+                </ul>
+                <button class="portfolio">포트폴리오 관리</button>
+                <ul>
+                    <li><a href="#">포트폴리오 조회/관리</a></li>
+                    <li><a href="#">포트폴리오 등록</a></li>
+                </ul>
+                <!-- // 220622 수정 -->
+            </nav>
+            <!-- // gnb -->
+
+        </header>
+        <!-- // header -->
+    
+        <!-- main -->
+        <main>
+            <nav>
+                <ul class="clear">
+                    <li><a href="#" class="rank">최고관리자(serveone)</a></li>
+                    <li><a href="#" class="white_btn w_100 marleft_20">로그아웃</a></li>
+                    <li><a href="#" class="red_btn w_120 marleft_10">쇼핑몰 관리</a></li>
+                </ul>
+            </nav>
+
+            <div class="con_wrap">
+                <button type="button" class="red_btn case01">&nbsp;&nbsp;주문제작문의-상세팝업 / 상품등록팝업(개인결제 요청 전 화면)&nbsp;&nbsp;</button><br/><br/>
+                <button type="button" class="red_btn case02">&nbsp;&nbsp;주문제작문의-상세팝업(답변등록CASE) / 상품등록팝업 (개인결제 요청 후 화면)&nbsp;&nbsp;</button><br/><br/>
+                <button type="button" class="red_btn case03">&nbsp;&nbsp;주문제작문의-상세팝업(대량구매CASE) / 상품등록팝업 (개인결제 요청 후 화면)&nbsp;&nbsp;</button><br/><br/>
+                <button type="button" class="red_btn case04">&nbsp;&nbsp;주문제작문의-상세팝업(제작완료 시 진입화면) / 상품등록팝업 (제작완료 시 진입화면)&nbsp;&nbsp;</button><br/><br/>
+            </div>
+
+            <!-- custom_modal - custom01 -->
+            <div class="modal_wrap custom_modal custom01">
+                <div class="modal_section w_1300">
+                    <ul class="tab_menu_type1 clear">
+                        <li class="active"><button data-target="type1_01">주문제작문의 상세 및 답변</button></li>
+                        <li><button data-target="type1_02">상품등록</button></li>
+                    </ul>
+                    
+                    <div class="tab_con_type1">
+                        <div class="type1_01">
+                            <div class="modal_header">
+                                <strong class="modal_title">주문제작문의 상세 및 답변</strong>
+                            </div>
+                            <!-- 주문제작문의-상세팝업 -->
+                            <div class="modal_contents">
+                                <table class="type2 txt_left layout_fixed">
+                                    <colgroup>
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>번호</th>
+                                            <td>153</td>
+                                            <th>작성자</th>
+                                            <td>서부원</td>
+                                            <th>작성 일자</th>
+                                            <td>2022.07.25 15:25</td>
+                                        </tr>
+                                        <tr>
+                                            <th>제목</th>
+                                            <td colspan="5">골판지 박스 70x70x120 700장 제작문의</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 유형</th>
+                                            <td>박스</td>
+                                            <th>문의 유형</th>
+                                            <td>별도 Size 제작+인쇄추가</td>
+                                            <th>제품 번호</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="3">박스 타입 선택</th>
+                                            <td colspan="2" rowspan="3">
+                                                <img src="../assets/images/img_box_shape01.png" class="w_154" alt="박스 타입">
+                                            </td>
+                                            <th>골(두께) 선택</th>
+                                            <td colspan="2">A골 (5mm)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 사이즈</th>
+                                            <!-- <th>상품 사이즈</th> -->
+                                            <td colspan="2">
+                                                <ul class="division clear">
+                                                    <li>내측 사이즈</li>
+                                                    <li>70 X 70 X 60</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 이미지</th>
+                                            <td colspan="2">
+                                                <span class="ver_mid dis_inblock martop_10">상품이미지.zip</span>
+                                                <!-- <a href="" class="red_btn w_120 right fs_14 disabled" download>파일 다운로드</a> -->
+                                                <a href="" class="red_btn w_120 right fs_14" download>파일 다운로드</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 무게</th>
+                                            <td colspan="2">1 kg</td>
+                                            <th>박스 인쇄</th>
+                                            <td colspan="2">인쇄안함</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 제작 수량</th>
+                                            <td colspan="2">2,000 장</td>
+                                            <th>디자인 파일 ·<br/>참조 박스 사진</th>
+                                            <td colspan="2">
+                                                <span class="ver_mid dis_inblock martop_10">박스참조이미지.zip</span>
+                                                <a href="" class="red_btn w_120 right fs_14" download>파일 다운로드</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>비밀번호</th>
+                                            <td colspan="5">1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th>견적 요청 내용</th>
+                                            <td colspan="5">
+<pre>
+
+안녕하세요.
+
+골판지 박스 70x70x120 700장 제작문의드립니다.
+
+오늘 주문시 언제까지 주문제작 상품을 받아볼 수 있을까요~? 
+또 예상 견적은 얼마나 될까요~?
+안녕하세요.
+
+골판지 박스 70x70x120 700장 제작문의드립니다.
+
+오늘 주문시 언제까지 주문제작 상품을 받아볼 수 있을까요~? 
+또 예상 견적은 얼마나 될까요~?
+
+</pre>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="table_con">
+                                    <div class="answer_box type2">
+                                        <div class="answer_con clear">
+                                            <textarea class="w_full h_180 re_none scroll"></textarea>
+                                            
+                                            <p class="right fs_12 martop_10">0<span class="col_lightgrey">/3000자</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // 주문제작문의-상세팝업 -->
+                        </div>
+                        
+                        <div class="type1_02 dis_none">
+                            <div class="modal_header">
+                                <strong class="modal_title">주문제작문의 상품등록</strong>
+                            </div>
+
+                            <!-- 개인결제 요청 전 화면 -->
+                            <div class="modal_contents">
+                                <table class="type2 txt_left layout_fixed">
+                                    <colgroup>
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>번호</th>
+                                            <td>122</td>
+                                            <th>작성자</th>
+                                            <td>서부원</td>
+                                            <th>작성 일자</th>
+                                            <td>2022.07.25 15:25</td>
+                                        </tr>
+                                        <tr>
+                                            <th>제목</th>
+                                            <td colspan="5">골판지박스 주문제작 문의 드립니다</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품유형</th>
+                                            <td>박스</td>
+                                            <th>문의유형</th>
+                                            <td>별도 Size제작+인쇄추가</td>
+                                            <th>제품번호</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 타입 선택</th>
+                                            <td colspan="5">
+                                                <ul class="type_list clear">
+                                                    <li class="active">
+                                                        <img src="../assets/images/img_box_shape01.png" alt="박스 타입">
+                                                    </li>
+                                                    <li>
+                                                        <img src="../assets/images/img_box_shape02.png" alt="박스 타입">
+                                                    </li>
+                                                    <li>
+                                                        <img src="../assets/images/img_box_shape03.png" alt="박스 타입">
+                                                    </li>
+                                                    <li>
+                                                        <img src="../assets/images/img_box_shape04.png" alt="박스 타입">
+                                                    </li>
+                                                    <li>
+                                                        <img src="../assets/images/img_box_shape05.png" alt="박스 타입">
+                                                    </li>
+                                                    <li>
+                                                        <img src="../assets/images/img_box_shape06.png" alt="박스 타입">
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>골(두께) 선택</th>
+                                            <td colspan="5">
+                                                <input type="radio" name="inquiry" class="ch_radio hide" data-val="a" id="inquiryRadio1" checked />
+                                                <label for="inquiryRadio1" class="label">A골 (5mm)</label>
+                                                
+                                                <input type="radio" name="inquiry" class="ch_radio hide" data-val="b" id="inquiryRadio2" />
+                                                <label for="inquiryRadio2" class="label marleft_40">B골 (3mm)</label>
+                
+                                                <input type="radio" name="inquiry" class="ch_radio hide" data-val="c" id="inquiryRadio3" />
+                                                <label for="inquiryRadio3" class="label marleft_40">E골 (1.8mm)</label>
+                
+                                                <input type="radio" name="inquiry" class="ch_radio hide" data-val="d" id="inquiryRadio4" />
+                                                <label for="inquiryRadio4" class="label marleft_40">BA골 (8mm)</label>
+                
+                                                <input type="radio" name="inquiry" class="ch_radio hide" data-val="e" id="inquiryRadio5" />
+                                                <label for="inquiryRadio5" class="label marleft_40">전문가 재질 추천</label>
+
+                                                <input type="text" class="recommend_inp marleft_10 w_251 dis_none" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 사이즈</th>
+                                            <td colspan="3">
+                                                내측 사이즈
+                                                <input type="text" class="w_100 marleft_10" value="70">
+                                                <span class="hyphen">X</span>
+                                                <input type="text" class="w_100" value="70">
+                                                <span class="hyphen">X</span>
+                                                <input type="text" class="w_100" value="60">
+                                            </td>
+                                            <th>상품 무게</th>
+                                            <td>1 KG</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 이미지</th>
+                                            <td colspan="5">상품이미지.zip</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 인쇄</th>
+                                            <td colspan="5">
+                                                <select class="select w_183">
+                                                    <option value="0">인쇄 안함</option>
+                                                    <option value="1">인쇄 Color 1도</option>
+                                                    <option value="2">인쇄 Color 2도</option>
+                                                    <option value="3">인쇄 Color 3도</option>
+                                                    <option value="4">CMYK (Full Color)</option>
+                                                    <option value="5">인쇄 안함</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>디자인 파일 ·<br/>참조 박스 사진</th>
+                                            <td colspan="5">박스참조이미지.zip</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 제작 수량</th>
+                                            <td colspan="5">
+                                                <input type="number" class="w_156" value="100">
+                                                <span class="at">장</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>비밀번호</th>
+                                            <td colspan="5">1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품분류 설정</th>
+                                            <td colspan="5">
+                                                <select class="select w_156">
+                                                    <option value="0">대분류</option>
+                                                </select>
+
+                                                <select class="select w_156 marleft_8">
+                                                    <option value="0">중분류</option>
+                                                </select>
+
+                                                <select class="select w_156 marleft_8">
+                                                    <option value="0">소분류</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품ID 등록</th>
+                                            <td colspan="5">
+                                                <input type="text" class="w_full" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- 220715 추가 -->
+                                <table class="type1 martop_16">
+                                    <colgroup>
+                                        <col width="*">
+                                        <col width="160px">
+                                        <col width="160px">
+                                        <col width="160px">
+                                        <col width="160px">
+                                        <col width="160px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>상품명/옵션명</th>
+                                            <th>포장 단위</th>
+                                            <th>장당 단가</th>
+                                            <th>판매가</th>
+                                            <th>부가세</th>
+                                            <th>합계</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="text" class="w_full" value="골판지 박스 / 70x70x60 / 0201 톰슨">
+                                            </td>
+                                            <td>
+                                                <input type="text" class="w_108 txt_right" value="40">
+                                                <span class="at">장</span>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="w_108 txt_right" value="280">
+                                                <span class="at">원</span>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="w_108 txt_right" value="39200">
+                                                <span class="at">원</span>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="w_108 txt_right" value="3920">
+                                                <span class="at">원</span>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="w_108 txt_right" value="43120">
+                                                <span class="at">원</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- // 220715 추가 -->
+                            </div>
+                            <!-- // 개인결제 요청 전 화면 -->
+
+                            <div class="btn_right martop_16 marbtm_16">
+                                <button class="grey_btn w_160 payment_btn">개인결제 요청</button>
+                                <!-- <button class="grey_btn w_160 payment_btn">개인결제 요청 해제</button> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn_center border">
+                        <button type="button" class="black_btn w_120 cancel_btn">닫기</button>
+                        <button type="button" class="red_btn w_120 register_btn">등록</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // custom_modal -->
+
+            <!-- custom_modal - custom02 -->
+            <div class="modal_wrap custom_modal custom02">
+                <div class="modal_section w_1300">
+                    <ul class="tab_menu_type1 clear">
+                        <li class="active"><button data-target="type1_01">주문제작문의 상세 및 답변</button></li>
+                        <li><button data-target="type1_02">상품등록</button></li>
+                    </ul>
+                    
+                    <div class="tab_con_type1">
+                        <div class="type1_01">
+                            <div class="modal_header">
+                                <strong class="modal_title">주문제작문의 상세 및 답변</strong>
+                            </div>
+                            <!-- 주문제작문의-상세팝업(답변등록CASE) -->
+                            <div class="modal_contents">
+                                <table class="type2 txt_left layout_fixed">
+                                    <colgroup>
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>번호</th>
+                                            <td>153</td>
+                                            <th>작성자</th>
+                                            <td>서부원</td>
+                                            <th>작성 일자</th>
+                                            <td>2022.07.25 15:25</td>
+                                        </tr>
+                                        <tr>
+                                            <th>제목</th>
+                                            <td colspan="5">골판지 박스 70x70x120 700장 제작문의</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 유형</th>
+                                            <td>박스</td>
+                                            <th>문의 유형</th>
+                                            <td>별도 Size 제작+인쇄추가</td>
+                                            <th>제품 번호</th>
+                                            <td>A001</td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="3">박스 타입 선택</th>
+                                            <td colspan="2" rowspan="3">
+                                                <img src="../assets/images/img_box_shape01.png" class="w_154" alt="박스 타입">
+                                            </td>
+                                            <th>골(두께) 선택</th>
+                                            <td colspan="2">A골 (5mm)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 사이즈</th>
+                                            <td colspan="2">
+                                                <ul class="division clear">
+                                                    <li>내측 사이즈</li>
+                                                    <li>70 X 70 X 60</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 이미지</th>
+                                            <td colspan="2">
+                                                <span class="ver_mid dis_inblock martop_10">상품이미지.zip</span>
+                                                <!-- <a href="" class="red_btn w_120 right fs_14 disabled" download>파일 다운로드</a> -->
+                                                <a href="" class="red_btn w_120 right fs_14" download>파일 다운로드</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 무게</th>
+                                            <td colspan="2">1 kg</td>
+                                            <th>박스 인쇄</th>
+                                            <td colspan="2">인쇄안함</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 제작 수량</th>
+                                            <td colspan="2">2,000 장</td>
+                                            <th>디자인 파일 ·<br/>참조 박스 사진</th>
+                                            <td colspan="2">
+                                                <span class="ver_mid dis_inblock martop_10">박스참조이미지.zip</span>
+                                                <a href="" class="red_btn w_120 right fs_14" download>파일 다운로드</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>비밀번호</th>
+                                            <td colspan="5">1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th>견적 요청 내용</th>
+                                            <td colspan="5">
+<pre>
+
+안녕하세요.
+
+골판지 박스 70x70x120 700장 제작문의드립니다.
+
+오늘 주문시 언제까지 주문제작 상품을 받아볼 수 있을까요~? 
+또 예상 견적은 얼마나 될까요~?
+
+</pre>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="table_con">
+                                    <div class="answer_box type5 answer_wrap">
+                                        <div class="clear">
+                                            <p class="answer_title left"><서부원님의 문의 내용에 대한 답변 드립니다></p>
+                                            <ul class="right">
+                                                <li>관리자</li>
+                                                <li>2022.07.25 17:25</li>
+                                            </ul>
+                                        </div>
+                                        <div class="answer_con">
+<pre>답변드립니다. 
+답변드립니다. 
+답변드립니다. 
+</pre>
+                                        </div>
+                                    </div>
+        
+                                    <div class="answer_box answer_modify_box type5 dis_none">
+                                        <div class="clear">
+                                            <p class="answer_title left">&lt;서부원님의 문의 내용에 대한 답변 드립니다&gt;</p>
+                                        </div>
+                                        <div class="answer_con">
+                                            <textarea class="w_full h_180 re_none scroll">답변드립니다. 
+답변드립니다. 
+답변드립니다.
+                                            </textarea>
+                                            
+                                            <p class="right fs_12 martop_10">0<span class="col_lightgrey">/3000자</span></p>
+                    
+                                            <div class="btn_center clear marleft_minus_40">
+                                                <button class="black_btn w_120 write_cancel_btn">취소</button>
+                                                <button class="red_btn w_120 write_enroll_btn">등록</button>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <ul class="table_con_btn clear">
+                                        <li>
+                                            <button type="button" class="modify_btn">수정</button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="remove_btn">삭제</button>
+                                        </li>
+                                        <li>
+                                            <button type="button">답글쓰기</button>
+                                        </li>
+                                    </ul>
+        
+                                    <!-- 답글 완료시 사용하시면 됩니다. <ul class="table_con_btn end clear">
+                                        <li>
+                                            <button type="button">답글 완료</button>
+                                        </li>
+                                    </ul> -->
+                                </div>
+        
+                                <div class="table_con">
+                                    <div class="answer_box answer_wrap type4">
+                                        <div class="clear">
+                                            <p class="answer_title left"><관리자님의 답변 내용에 대한 답글문의 드립니다></p>
+                                            <ul class="right">
+                                                <li>관리자</li>
+                                                <li>2022.07.25 17:25</li>
+                                            </ul>
+                                        </div>
+                                        <div class="answer_con">
+<pre>답변드립니다. 
+답변드립니다. 
+답변드립니다. 
+</pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="table_con">
+                                    <div class="answer_box type5 answer_wrap">
+                                        <div class="clear">
+                                            <p class="answer_title left"><서부원님의 문의 내용에 대한 답변 드립니다></p>
+                                            <ul class="right">
+                                                <li>관리자</li>
+                                                <li>2022.07.25 17:25</li>
+                                            </ul>
+                                        </div>
+                                        <div class="answer_con">
+<pre>답변드립니다. 
+답변드립니다. 
+답변드립니다. 
+</pre>
+                                        </div>
+                                    </div>
+        
+                                    <div class="answer_box answer_modify_box type5 dis_none">
+                                        <div class="clear">
+                                            <p class="answer_title left">&lt;서부원님의 문의 내용에 대한 답변 드립니다&gt;</p>
+                                        </div>
+                                        <div class="answer_con">
+                                            <textarea class="w_full h_180 re_none scroll">답변드립니다. 
+답변드립니다. 
+답변드립니다.
+                                            </textarea>
+                                            
+                                            <p class="right fs_12 martop_10">0<span class="col_lightgrey">/3000자</span></p>
+                    
+                                            <div class="btn_center clear marleft_minus_40">
+                                                <button class="black_btn w_120 write_cancel_btn">취소</button>
+                                                <button class="red_btn w_120 write_enroll_btn">등록</button>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <ul class="table_con_btn clear">
+                                        <li>
+                                            <button type="button" class="modify_btn">수정</button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="remove_btn">삭제</button>
+                                        </li>
+                                        <li>
+                                            <button type="button">답글쓰기</button>
+                                        </li>
+                                    </ul>
+        
+                                    <!-- 답글 완료시 사용하시면 됩니다. <ul class="table_con_btn end clear">
+                                        <li>
+                                            <button type="button">답글 완료</button>
+                                        </li>
+                                    </ul> -->
+                                </div>
+        
+                                <div class="table_con">
+                                    <div class="answer_box answer_wrap type4">
+                                        <div class="clear">
+                                            <p class="answer_title left"><관리자님의 답변 내용에 대한 답글문의 드립니다></p>
+                                            <ul class="right">
+                                                <li>관리자</li>
+                                                <li>2022.07.25 17:25</li>
+                                            </ul>
+                                        </div>
+                                        <div class="answer_con">
+<pre>답변드립니다. 
+답변드립니다. 
+답변드립니다. 
+</pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="table_con">
+                                    <div class="answer_box type2">
+                                        <div class="answer_con clear">
+                                            <textarea class="w_full h_180 re_none scroll"></textarea>
+                                            
+                                            <p class="right fs_12 martop_10">0<span class="col_lightgrey">/3000자</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // 주문제작문의-상세팝업(답변등록CASE) -->
+                        </div>
+                        
+                        <div class="type1_02 dis_none">
+                            <div class="modal_header">
+                                <strong class="modal_title">주문제작문의 상품등록</strong>
+                            </div>
+
+                            <!-- 개인결제 요청 후 화면 -->
+                            <div class="modal_contents">
+                                <table class="type2 txt_left layout_fixed">
+                                    <colgroup>
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>번호</th>
+                                            <td>153</td>
+                                            <th>작성자</th>
+                                            <td>서부원</td>
+                                            <th>작성 일자</th>
+                                            <td>2022.07.25 15:25</td>
+                                        </tr>
+                                        <tr>
+                                            <th>제목</th>
+                                            <td colspan="5">골판지박스 주문제작 문의 드립니다</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 유형</th>
+                                            <td>박스</td>
+                                            <th>문의 유형</th>
+                                            <td>별도 Size 제작+인쇄추가</td>
+                                            <th>제품 번호</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="3">박스 타입 선택</th>
+                                            <td colspan="2" rowspan="3">
+                                                <img src="../assets/images/img_box_shape01.png" class="w_154" alt="박스 타입">
+                                            </td>
+                                            <th>골(두께) 선택</th>
+                                            <td colspan="2">A골 (5mm)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 사이즈</th>
+                                            <td colspan="2">
+                                                <ul class="division clear">
+                                                    <li>내측 사이즈</li>
+                                                    <li>70 X 70 X 60</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 이미지</th>
+                                            <td colspan="2">상품이미지.zip</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 무게</th>
+                                            <td colspan="2">1 kg</td>
+                                            <th>박스 인쇄</th>
+                                            <td colspan="2">인쇄안함</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 제작 수량</th>
+                                            <td colspan="2">2,000 장</td>
+                                            <th>디자인 파일 ·<br/>참조 박스 사진</th>
+                                            <td colspan="2">박스참조이미지.zip</td>
+                                        </tr>
+                                        <tr>
+                                            <th>비밀번호</th>
+                                            <td colspan="5">1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품분류 설정</th>
+                                            <td colspan="5">
+                                                <select class="select w_156" disabled>
+                                                    <option value="0">박스</option>
+                                                </select>
+
+                                                <select class="select w_156 marleft_8" disabled>
+                                                    <option value="0">골판지박스</option>
+                                                </select>
+
+                                                <select class="select w_156 marleft_8" disabled>
+                                                    <option value="0">소분류</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품ID 등록</th>
+                                            <td colspan="5">22082516001A</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- 220715 추가 -->
+                                <table class="type1 martop_16">
+                                    <colgroup>
+                                        <col width="*">
+                                        <col width="160px">
+                                        <col width="160px">
+                                        <col width="160px">
+                                        <col width="160px">
+                                        <col width="160px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>상품명/옵션명</th>
+                                            <th>포장 단위</th>
+                                            <th>장당 단가</th>
+                                            <th>판매가</th>
+                                            <th>부가세</th>
+                                            <th>합계</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                골판지 박스 / 70x70x60 / 0201 톰슨
+                                            </td>
+                                            <td>
+                                                40장
+                                            </td>
+                                            <td>
+                                                280원
+                                            </td>
+                                            <td>
+                                                39200원
+                                            </td>
+                                            <td>
+                                                3920원
+                                            </td>
+                                            <td>
+                                                43120원
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- // 220715 추가 -->
+                            </div>
+                            <!-- // 개인결제 요청 후 화면 -->
+
+                            <div class="btn_right martop_16 marbtm_16">
+                                <!-- <button class="grey_btn w_160 payment_btn">개인결제 요청</button> -->
+                                <button class="grey_btn w_160 payment_btn">개인결제 요청 해제</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn_center border">
+                        <button type="button" class="black_btn w_120 cancel_btn">닫기</button>
+                        <button type="button" class="red_btn w_120 register_btn">등록</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // custom_modal -->
+
+            <!-- custom_modal - custom03 -->
+            <div class="modal_wrap custom_modal custom03">
+                <div class="modal_section w_1300">
+                    <ul class="tab_menu_type1 clear">
+                        <li class="active"><button data-target="type1_01">주문제작문의 상세 및 답변</button></li>
+                        <li><button data-target="type1_02">상품등록</button></li>
+                    </ul>
+                    
+                    <div class="tab_con_type1">
+                        <div class="type1_01">
+                            <div class="modal_header">
+                                <strong class="modal_title">주문제작문의 상세 및 답변</strong>
+                            </div>
+                            <!-- 주문제작문의-상세팝업(대량구매CASE) -->
+                            <div class="modal_contents">
+                                <table class="type2 txt_left layout_fixed">
+                                    <colgroup>
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>번호</th>
+                                            <td>153</td>
+                                            <th>작성자</th>
+                                            <td>서부원</td>
+                                            <th>작성 일자</th>
+                                            <td>2022.07.25 15:25</td>
+                                        </tr>
+                                        <tr>
+                                            <th>제목</th>
+                                            <td colspan="5">골판지 박스 70x70x120 700장 제작문의</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 유형</th>
+                                            <td>박스</td>
+                                            <th>문의 유형</th>
+                                            <td>별도 Size 제작+인쇄추가</td>
+                                            <th>제품 번호</th>
+                                            <td>A001</td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="3">박스 타입 선택</th>
+                                            <td colspan="2" rowspan="3">
+                                                <!-- <img src="../assets/images/img_box_shape01.png" class="w_154" alt="박스 타입"> -->
+                                            </td>
+                                            <th>골(두께) 선택</th>
+                                            <td colspan="2"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 사이즈</th>
+                                            <td colspan="2">
+                                                <!-- <ul class="division clear">
+                                                    <li>내측 사이즈</li>
+                                                    <li>70 X 70 X 60</li>
+                                                </ul> -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 이미지</th>
+                                            <td colspan="2">
+                                                <!-- <span class="ver_mid dis_inblock martop_10">상품이미지.zip</span> -->
+                                                <a href="" class="red_btn w_120 right fs_14 disabled" download>파일 다운로드</a>
+                                                <!-- <a href="" class="red_btn w_120 right fs_14" download>파일 다운로드</a> -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 무게</th>
+                                            <td colspan="2"></td>
+                                            <th>박스 인쇄</th>
+                                            <td colspan="2">인쇄 Color 1도</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 제작 수량</th>
+                                            <td colspan="2">2,000 장</td>
+                                            <th>디자인 파일 ·<br/>참조 박스 사진</th>
+                                            <td colspan="2">
+                                                <span class="ver_mid dis_inblock martop_10">박스참조이미지.zip</span>
+                                                <a href="" class="red_btn w_120 right fs_14" download>파일 다운로드</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>비밀번호</th>
+                                            <td colspan="5">1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th>견적 요청 내용</th>
+                                            <td colspan="5">
+<pre>
+
+안녕하세요.
+
+골판지 박스 70x70x120 700장 제작문의드립니다.
+
+오늘 주문시 언제까지 주문제작 상품을 받아볼 수 있을까요~? 
+또 예상 견적은 얼마나 될까요~?
+
+</pre>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="table_con">
+                                    <div class="answer_box type2">
+                                        <div class="answer_con clear">
+                                            <textarea class="w_full h_180 re_none scroll"></textarea>
+                                            
+                                            <p class="right fs_12 martop_10">0<span class="col_lightgrey">/3000자</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // 주문제작문의-상세팝업(대량구매CASE) -->
+                        </div>
+                        
+                        <div class="type1_02 dis_none">
+                            <div class="modal_header">
+                                <strong class="modal_title">주문제작문의 상품등록</strong>
+                            </div>
+
+                            <!-- 개인결제 요청 후 화면 -->
+                            <div class="modal_contents">
+                                <table class="type2 txt_left layout_fixed">
+                                    <colgroup>
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>번호</th>
+                                            <td>153</td>
+                                            <th>작성자</th>
+                                            <td>서부원</td>
+                                            <th>작성 일자</th>
+                                            <td>2022.07.25 15:25</td>
+                                        </tr>
+                                        <tr>
+                                            <th>제목</th>
+                                            <td colspan="5">골판지박스 주문제작 문의 드립니다</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 유형</th>
+                                            <td>박스</td>
+                                            <th>문의 유형</th>
+                                            <td>별도 Size 제작+인쇄추가</td>
+                                            <th>제품 번호</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="3">박스 타입 선택</th>
+                                            <td colspan="2" rowspan="3">
+                                                <img src="../assets/images/img_box_shape01.png" class="w_154" alt="박스 타입">
+                                            </td>
+                                            <th>골(두께) 선택</th>
+                                            <td colspan="2">A골 (5mm)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 사이즈</th>
+                                            <td colspan="2">
+                                                <ul class="division clear">
+                                                    <li>내측 사이즈</li>
+                                                    <li>70 X 70 X 60</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 이미지</th>
+                                            <td colspan="2">상품이미지.zip</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 무게</th>
+                                            <td colspan="2">1 kg</td>
+                                            <th>박스 인쇄</th>
+                                            <td colspan="2">인쇄안함</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 제작 수량</th>
+                                            <td colspan="2">2,000 장</td>
+                                            <th>디자인 파일 ·<br/>참조 박스 사진</th>
+                                            <td colspan="2">박스참조이미지.zip</td>
+                                        </tr>
+                                        <tr>
+                                            <th>비밀번호</th>
+                                            <td colspan="5">1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품분류 설정</th>
+                                            <td colspan="5">
+                                                <select class="select w_156" disabled>
+                                                    <option value="0">박스</option>
+                                                </select>
+
+                                                <select class="select w_156 marleft_8" disabled>
+                                                    <option value="0">골판지박스</option>
+                                                </select>
+
+                                                <select class="select w_156 marleft_8" disabled>
+                                                    <option value="0">소분류</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품ID 등록</th>
+                                            <td colspan="5">22082516001A</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- // 개인결제 요청 후 화면 -->
+
+                            <div class="btn_right martop_16 marbtm_16">
+                                <!-- <button class="grey_btn w_160 payment_btn">개인결제 요청</button> -->
+                                <button class="grey_btn w_160 payment_btn">개인결제 요청 해제</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn_center border">
+                        <button type="button" class="black_btn w_120 cancel_btn">닫기</button>
+                        <button type="button" class="red_btn w_120 register_btn">등록</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // custom_modal -->
+
+            <!-- custom_modal - custom04 -->
+            <div class="modal_wrap custom_modal custom04">
+                <div class="modal_section w_1300">
+                    <ul class="tab_menu_type1 clear">
+                        <li class="active"><button data-target="type1_01">주문제작문의 상세 및 답변</button></li>
+                        <li><button data-target="type1_02">상품등록</button></li>
+                    </ul>
+                    
+                    <div class="tab_con_type1">
+                        <div class="type1_01">
+                            <div class="modal_header">
+                                <strong class="modal_title">주문제작문의 상세 및 답변</strong>
+                            </div>
+                            <!-- 주문제작문의-상세팝업(대량구매CASE) -->
+                            <div class="modal_contents">
+                                <table class="type2 txt_left layout_fixed">
+                                    <colgroup>
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>번호</th>
+                                            <td>153</td>
+                                            <th>작성자</th>
+                                            <td>서부원</td>
+                                            <th>작성 일자</th>
+                                            <td>2022.07.25 15:25</td>
+                                        </tr>
+                                        <tr>
+                                            <th>제목</th>
+                                            <td colspan="5">골판지 박스 70x70x120 700장 제작문의</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 유형</th>
+                                            <td>박스</td>
+                                            <th>문의 유형</th>
+                                            <td>별도 Size 제작+인쇄추가</td>
+                                            <th>제품 번호</th>
+                                            <td>A001</td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="3">박스 타입 선택</th>
+                                            <td colspan="2" rowspan="3">
+                                                <img src="../assets/images/img_box_shape01.png" class="w_154" alt="박스 타입">
+                                            </td>
+                                            <th>골(두께) 선택</th>
+                                            <td colspan="2">A골 (5mm)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 사이즈</th>
+                                            <td colspan="2">
+                                                <ul class="division clear">
+                                                    <li>내측 사이즈</li>
+                                                    <li>70 X 70 X 60</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 이미지</th>
+                                            <td colspan="2">
+                                                <span class="ver_mid dis_inblock martop_10">상품이미지.zip</span>
+                                                <!-- <a href="" class="red_btn w_120 right fs_14 disabled" download>파일 다운로드</a> -->
+                                                <a href="" class="red_btn w_120 right fs_14" download>파일 다운로드</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 무게</th>
+                                            <td colspan="2">1 kg</td>
+                                            <th>박스 인쇄</th>
+                                            <td colspan="2">인쇄 안함</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 제작 수량</th>
+                                            <td colspan="2">2,000 장</td>
+                                            <th>디자인 파일 ·<br/>참조 박스 사진</th>
+                                            <td colspan="2">
+                                                <span class="ver_mid dis_inblock martop_10">박스참조이미지.zip</span>
+                                                <a href="" class="red_btn w_120 right fs_14" download>파일 다운로드</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>비밀번호</th>
+                                            <td colspan="5">1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th>견적 요청 내용</th>
+                                            <td colspan="5">
+<pre>
+
+안녕하세요.
+
+골판지 박스 70x70x120 700장 제작문의드립니다.
+
+오늘 주문시 언제까지 주문제작 상품을 받아볼 수 있을까요~? 
+또 예상 견적은 얼마나 될까요~?
+
+</pre>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="table_con">
+                                    <div class="answer_box type5 answer_wrap">
+                                        <div class="clear">
+                                            <p class="answer_title left"><서부원님의 문의 내용에 대한 답변 드립니다></p>
+                                            <ul class="right">
+                                                <li>관리자</li>
+                                                <li>2022.07.25 17:25</li>
+                                            </ul>
+                                        </div>
+                                        <div class="answer_con">
+<pre>답변드립니다. 
+답변드립니다. 
+답변드립니다. 
+</pre>
+                                        </div>
+                                    </div>
+        
+                                    <ul class="table_con_btn end clear">
+                                        <li>
+                                            <button type="button">답글 완료</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- // 주문제작문의-상세팝업(대량구매CASE) -->
+                        </div>
+                        
+                        <div class="type1_02 dis_none">
+                            <div class="modal_header">
+                                <strong class="modal_title">주문제작문의 상품등록</strong>
+                            </div>
+
+                            <!-- 제작완료 시 진입화면 -->
+                            <div class="modal_contents">
+                                <table class="type2 txt_left layout_fixed">
+                                    <colgroup>
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                        <col width="200px">
+                                        <col width="199px">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>번호</th>
+                                            <td>153</td>
+                                            <th>작성자</th>
+                                            <td>서부원</td>
+                                            <th>작성 일자</th>
+                                            <td>2022.07.25 15:25</td>
+                                        </tr>
+                                        <tr>
+                                            <th>제목</th>
+                                            <td colspan="5">골판지박스 주문제작 문의 드립니다</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 유형</th>
+                                            <td>박스</td>
+                                            <th>문의 유형</th>
+                                            <td>별도 Size 제작+인쇄추가</td>
+                                            <th>제품 번호</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="3">박스 타입 선택</th>
+                                            <td colspan="2" rowspan="3">
+                                                <img src="../assets/images/img_box_shape01.png" class="w_154" alt="박스 타입">
+                                            </td>
+                                            <th>골(두께) 선택</th>
+                                            <td colspan="2">A골 (5mm)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 사이즈</th>
+                                            <td colspan="2">
+                                                <ul class="division clear">
+                                                    <li>내측 사이즈</li>
+                                                    <li>70 X 70 X 60</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 이미지</th>
+                                            <td colspan="2">상품이미지.zip</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품 무게</th>
+                                            <td colspan="2">1 kg</td>
+                                            <th>박스 인쇄</th>
+                                            <td colspan="2">인쇄안함</td>
+                                        </tr>
+                                        <tr>
+                                            <th>박스 제작 수량</th>
+                                            <td colspan="2">2,000 장</td>
+                                            <th>디자인 파일 ·<br/>참조 박스 사진</th>
+                                            <td colspan="2">박스참조이미지.zip</td>
+                                        </tr>
+                                        <tr>
+                                            <th>비밀번호</th>
+                                            <td colspan="5">1234</td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품분류 설정</th>
+                                            <td colspan="5">
+                                                <select class="select w_156" disabled>
+                                                    <option value="0">박스</option>
+                                                </select>
+
+                                                <select class="select w_156 marleft_8" disabled>
+                                                    <option value="0">골판지박스</option>
+                                                </select>
+
+                                                <select class="select w_156 marleft_8" disabled>
+                                                    <option value="0">소분류</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상품ID 등록</th>
+                                            <td colspan="5">22082516001A</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- 220715 추가 -->
+                                <table class="type1 martop_16">
+                                    <colgroup>
+                                        <col width="*">
+                                        <col width="160px">
+                                        <col width="160px">
+                                        <col width="160px">
+                                        <col width="160px">
+                                        <col width="160px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>상품명/옵션명</th>
+                                            <th>포장 단위</th>
+                                            <th>장당 단가</th>
+                                            <th>판매가</th>
+                                            <th>부가세</th>
+                                            <th>합계</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                골판지 박스 / 70x70x60 / 0201 톰슨
+                                            </td>
+                                            <td>
+                                                40장
+                                            </td>
+                                            <td>
+                                                280원
+                                            </td>
+                                            <td>
+                                                39200원
+                                            </td>
+                                            <td>
+                                                3920원
+                                            </td>
+                                            <td>
+                                                43120원
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- // 220715 추가 -->
+                            </div>
+                            <!-- // 제작완료 시 진입화면 -->
+                        </div>
+                    </div>
+
+                    <div class="btn_center">
+                        <button type="button" class="red_btn w_120 close_modal">확인</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // custom_modal -->
+
+            <!-- confirm -->
+            <div class="modal_wrap confirm">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="black_btn w_120 delete_modal">아니오</button>
+                        <button class="red_btn w_120 btn_ok">네</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // confirm -->
+
+            <!-- confirm -->
+            <div class="modal_wrap mini payment">
+                <div class="modal_header clear">
+                    <strong>개인결제 요청 확인</strong>
+                    <!-- <strong>개인결제 요청 해제 확인</strong> -->
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">개인결제 요청 버튼을 노출 하시겠습니까?</p>
+                    <!-- <p class="modal_text">개인결제 요청 버튼을 미노출 하시겠습니까?</p> -->
+                    <div class="btn_center">
+                        <button class="black_btn w_120 delete_modal">아니오</button>
+                        <button class="red_btn w_120 delete_modal">네</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // confirm -->
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+
+    <script src="../assets/js/common.js"></script>
+    <script>
+        $(function () {
+            // 주문제작문의-상세팝업 / 상품등록팝업(개인결제 요청 전 화면)
+            $(".case01").on("click", function(){
+                $(".custom_modal.custom01").addClass("active");
+                addnDimLayer();
+            });
+
+            // 주문제작문의-상세팝업(답변등록CASE) / 상품등록팝업 (개인결제 요청 후 화면)
+            $(".case02").on("click", function(){
+                $(".custom_modal.custom02").addClass("active");
+                addnDimLayer();
+            });
+
+            // 주문제작문의-상세팝업(대량구매CASE) / 상품등록팝업 (개인결제 요청 후 화면)
+            $(".case03").on("click", function(){
+                $(".custom_modal.custom03").addClass("active");
+                addnDimLayer();
+            });
+
+            // 주문제작문의-상세팝업(제작완료 시 진입화면) / 상품등록팝업 (제작완료 시 진입화면)
+            $(".case04").on("click", function(){
+                $(".custom_modal.custom04").addClass("active");
+                addnDimLayer();
+            });
+
+            //-----------------------------------------------------------------------------
+
+            // tab type1
+            $(".tab_menu_type1 button").on("click", function () {
+                $(this).parents().addClass("active").siblings().removeClass("active");
+
+                var _target = $(this).data("target");
+                $("." + _target).removeClass("dis_none").siblings().addClass("dis_none");
+            });
+
+            // 답변 수정
+            $(document).on("click", ".modify_btn", function () {
+                $(this).closest(".table_con_btn").addClass("dis_none");
+                $(this).closest(".table_con_btn").siblings(".answer_wrap").addClass("dis_none");
+                $(this).closest(".table_con_btn").siblings(".answer_modify_box").removeClass("dis_none");
+            });
+
+            // 답변 등록,취소
+            $(document).on("click", ".write_cancel_btn, .write_enroll_btn", function () {
+                $(this).closest(".answer_modify_box").addClass("dis_none");
+                $(this).closest(".answer_modify_box").siblings(".answer_wrap").removeClass("dis_none");
+                $(this).closest(".answer_modify_box").siblings(".table_con_btn").removeClass("dis_none");
+            });
+
+            // 박스타입 선택
+            $(".type_list li").on("click", function () {
+                $(this).siblings().removeClass("active")
+                $(this).addClass("active");
+            });
+
+            // 골(두께) 선택 radio change event
+            $("[type=radio][name=inquiry]").on("change", function(){
+                var data = $(this).attr("data-val");
+                if(data == "e"){ // 전문가 재질 추천
+                    $(".recommend_inp").removeClass("dis_none");
+                } else {
+                    $(".recommend_inp").addClass("dis_none");
+                }
+            });
+
+            // 개인결제 요청 / 개인결제 요청 해제 확인 confirm
+            $(".payment_btn").on("click", function () {
+                $(".modal_wrap.payment").addClass("active");
+                addnSubDimLayer();
+            });
+
+            // 취소 확인 confirm
+            $(".cancel_btn").on("click", function () {
+                action_popup.confirm("입력하신 정보가 저장되지 않고 페이지로 이동합니다.<br/>이동 하시겠습니까?", function(){}, "취소 확인");
+            });
+
+            // 등록 확인 confirm
+            $(".register_btn").on("click", function () {
+                action_popup.confirm("입력하신 정보를 등록 하시겠습니까?", function(){}, "등록 확인");
+            });
+        });
+    </script>
+</body>
+</html>

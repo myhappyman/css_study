@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[serveone] 사용자</title>
+
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <script src="../assets/js/swiper.min.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+    <div class="window_section credit">
+        <table class="top layout_fixed">
+            <colgroup>
+                <col width="548px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th colspan="2" class="fs_20">신용카드 매출전표</th>
+                </tr>
+            </thead>
+        </table>
+
+        <strong class="w_title">결제 정보</strong>
+        <table class="layout_fixed">
+            <colgroup>
+                <col width="112px">
+                <col width="*">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>카드번호</th>
+                    <td>940-49**-****-2890</td>
+                </tr>
+                <tr>
+                    <th>카드종류</th>
+                    <td>KB국민카드</td>
+                </tr>
+                <tr>
+                    <th>거래종류</th>
+                    <td>신용승인</td>
+                </tr>
+                <tr>
+                    <th>할부개월</th>
+                    <td>일시불</td>
+                </tr>
+                <tr>
+                    <th>거래일시</th>
+                    <td>2022/10/15 11:05:01</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <strong class="w_title">구매 정보</strong>
+        <table class="layout_fixed">
+            <colgroup>
+                <col width="112px">
+                <col width="*">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>주문자명</th>
+                    <td>홍길동</td>
+                </tr>
+                <tr>
+                    <th>승인번호</th>
+                    <td>30064227</td>
+                </tr>
+                <tr>
+                    <th>주문번호</th>
+                    <td>12345678</td>
+                </tr>
+                <tr>
+                    <th>상  품  명</th>
+                    <td>골판지 박스 | A001 | 70x70x600 | 0201 톰슨</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <strong class="w_title">판매자 정보</strong>
+        <table class="layout_fixed">
+            <colgroup>
+                <col width="112px">
+                <col width="*">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>
+                        판  매  자<br/>
+                        상&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;호
+                    </th>
+                    <td>패커원(㈜서브원)</td> <!-- 220824 수정 -->
+                </tr>
+                <tr>
+                    <th>대표자명</th>
+                    <td>김동철</td>
+                </tr>
+                <tr>
+                    <th>
+                        사  업  자<br/>
+                        번&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;호
+                    </th>
+                    <td>852-86-01272</td>
+                </tr>
+                <tr>
+                    <th>대표번호</th>
+                    <td>080-850-0463</td> <!-- 220824 수정 -->
+                </tr>
+                <tr>
+                    <th>주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</th>
+                    <td>서울특별시 종로구 새문안로76 콘코디언 빌딩6-10층</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <strong class="w_title">결제 서비스 업체 정보</strong>
+        <table class="layout_fixed">
+            <colgroup>
+                <col width="112px">
+                <col width="*">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>
+                        카  드  사<br/>
+                        가맹점명
+                    </th>
+                    <td>NHN한국사이버결제(주)</td>
+                </tr>
+                <tr>
+                    <th>대표자명</th>
+                    <td>박준석</td>
+                </tr>
+                <tr>
+                    <th>
+                        사  업  자<br/>
+                        번&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;호
+                    </th>
+                    <td>128-86-50781</td>
+                </tr>
+                <tr>
+                    <th>
+                        가  맹  점<br/>
+                        번&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;호
+                    </th>
+                    <td>0001*****</td>
+                </tr>
+                <tr>
+                    <th>주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</th>
+                    <td>서울특별시 구로구 디지털로26길 72(구로동, NHN한국사이버결제(주))</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <strong class="w_title">결제 금액 정보</strong>
+        <table class="layout_fixed">
+            <colgroup>
+                <col width="112px">
+                <col width="*">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>과세금액</th>
+                    <td>35,300</td>
+                </tr>
+                <tr>
+                    <th>부  가  세</th>
+                    <td>3,530</td>
+                </tr>
+                <tr>
+                    <th>주문금액</th>
+                    <td>38,830</td>
+                </tr>
+                <!-- 220824 삭제 <tr>
+                    <th>
+                        사&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;용<br/>
+                        포  인  트
+                    </th>
+                    <td>0</td>
+                </tr> -->
+                <tr>
+                    <th>
+                        총<br/>
+                        결제금액
+                    </th>
+                    <td>38,830</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="credit_txt martop_20">
+            <p>신용카드 청구서에는 NHN한국사이버결제(NHN KCP)로 표기됩니다.</p>
+            부가가치세법 제46조에 따라 신용카드 매출전표 등을 발급받으면 매입세액 공제가 가능합니다.<br/>
+            (같은 법 제33조 제2항에 근거하여 신용 카드 매출 전표 등을 발급하면 세금계산서를 발급하지<br/>
+            아니합니다.)
+        </div>
+
+        <div class="btn_center martop_32">
+            <button type="button" class="black_btn big w_270">확인</button>
+            <button type="button" class="green_btn big w_270">인쇄하기</button>
+        </div>
+    </div>
+
+    <script src="../assets/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[serveone] 사용자</title>
+
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <script src="../assets/js/swiper.min.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+    <div class="window_section">
+        <table class="layout_fixed">
+            <colgroup>
+                <col width="56px">
+                <col width="112px">
+                <col width="160px">
+                <col width="112px">
+                <col width="160px">
+                <col width="56px">
+                <col width="112px">
+                <col width="160px">
+                <col width="112px">
+                <col width="160px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <td colspan="2">거래일자</td>
+                    <th rowspan="2" colspan="8"><strong class="fs_20">거래명세서</strong> <span class="marleft_4">(공급받는자용)</span></th>
+                </tr>
+                <tr>
+                    <td colspan="2">2022-06-16</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="vertical" rowspan="6">공&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;급&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자</th>
+                    <td class="bg">등록번호</td>
+                    <td>852-86-01272</td> <!-- 220824 수정 -->
+                    <td class="bg">종 사업장</td>
+                    <td></td>
+                    <th class="vertical" rowspan="6">공&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;급&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;받&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;는&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자</th>
+                    <td class="bg">등록번호</td>
+                    <td>123-45-67890</td>
+                    <td class="bg">종 사업장</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="bg">상&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;호<br/>(법인명)</td>
+                    <td>패커원(㈜서브원)</td> <!-- 220824 수정 -->
+                    <td class="bg">성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명</td>
+                    <td>김동철</td>
+                    <td class="bg">상&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;호<br/>(법인명)</td>
+                    <td>OO기업</td>
+                    <td class="bg">성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명</td>
+                    <td>서부원</td>
+                </tr>
+                <tr>
+                    <td class="bg">사&nbsp;업&nbsp;장<br/>
+                        주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</td>
+                    <td colspan="3">서울특별시 종로구 새문안로76 콘코디언 빌딩6-10층</td>
+                    <td class="bg">사&nbsp;업&nbsp;장<br/>
+                        주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</td>
+                    <td colspan="3">서울특별시 강남구 역삼동</td>
+                </tr>
+                <tr>
+                    <td class="bg">업&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;태<br/></td>
+                    <td>도소매</td> <!-- 220824 수정 -->
+                    <td class="bg">종&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;목</td>
+                    <td>물류 및 잡화 전자상거래</td> <!-- 220824 수정 -->
+                    <td class="bg">업&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;태<br/></td>
+                    <td>도소매</td>
+                    <td class="bg">종&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;목</td>
+                    <td>전자상거래</td>
+                </tr>
+                <tr>
+                    <td class="bg">담&nbsp;당&nbsp;자</td>
+                    <td>정현진</td> <!-- 220824 수정 -->
+                    <td class="bg">연&nbsp;락&nbsp;처</td>
+                    <td>080-850-0463</td> <!-- 220824 수정 -->
+                    <td class="bg">담&nbsp;당&nbsp;자</td>
+                    <td>서부원</td>
+                    <td class="bg">연&nbsp;락&nbsp;처</td>
+                    <td>010-4321-1234</td>
+                </tr>
+                <tr>
+                    <td class="bg">이&nbsp;메&nbsp;일</td>
+                    <td colspan="3">packerone@serveone.co.kr</td>
+                    <td class="bg">이&nbsp;메&nbsp;일</td>
+                    <td colspan="3">serveone@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="middle">
+            <colgroup>
+                <col width="56px">
+                <col width="56px">
+                <col width="200px">
+                <col width="140px">
+                <col width="100px">
+                <col width="100px">
+                <col width="*">
+                <col width="160px">
+                <col width="140px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>월</th>
+                    <th>일</th>
+                    <th>품&nbsp;&nbsp;&nbsp;&nbsp;목</th>
+                    <th>규&nbsp;&nbsp;&nbsp;&nbsp;격(mm)</th>
+                    <th>수&nbsp;&nbsp;&nbsp;&nbsp;량</th>
+                    <th>단&nbsp;&nbsp;&nbsp;&nbsp;가(원)</th>
+                    <th>공 급 가 액(원)</th>
+                    <th>세&nbsp;&nbsp;&nbsp;&nbsp;액(원)</th>
+                    <th>비&nbsp;&nbsp;&nbsp;&nbsp;고</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>6</td>
+                    <td>16</td>
+                    <td>골판지 박스 0201 톰슨</td>
+                    <td>70x70x600</td>
+                    <td>7,000</td>
+                    <td>152</td>
+                    <td>1,064,000</td>
+                    <td>106,400</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>16</td>
+                    <td>골판지 박스 0201 톰슨</td>
+                    <td>70x70x600</td>
+                    <td>7,000</td>
+                    <td>152</td>
+                    <td>1,064,000</td>
+                    <td>106,400</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>16</td>
+                    <td>골판지 박스 0201 톰슨</td>
+                    <td>70x70x600</td>
+                    <td>7,000</td>
+                    <td>152</td>
+                    <td>1,064,000</td>
+                    <td>106,400</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="bottom layout_fixed">
+            <colgroup>
+                <col width="89px">
+                <col width="*">
+                <col width="89px">
+                <col width="*">
+                <col width="89px">
+                <col width="*">
+                <col width="89px">
+                <col width="*">
+                <col width="89px">
+                <col width="*">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>공급가액</th>
+                    <td>3,192,000</td>
+                    <th>세&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;액</th>
+                    <td>319,200</td>
+                    <th>도&nbsp;선&nbsp;료</th>
+                    <td></td>
+                    <th>합계금액</th>
+                    <td>3,511,200</td>
+                    <th>인수자</th>
+                    <td>김동철</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="btn_center martop_40">
+            <button type="button" class="black_btn big w_270">메일발송</button>
+            <button type="button" class="green_btn big w_270">인쇄하기</button>
+        </div>
+    </div>
+
+    <script src="../assets/js/common.js"></script>
+</body>
+</html>

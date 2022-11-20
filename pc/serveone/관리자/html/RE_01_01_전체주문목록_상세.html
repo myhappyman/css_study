@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[serveone] 관리자</title>
+    
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="#" class="main_logo">
+                    <img src="../assets/images/main_logo.png" alt="PACKER ONE" />
+                </a>
+            </h1>
+
+            <!-- gnb -->
+            <nav class="gnb">
+                <button class="product">상품관리</button>
+                <ul>
+                    <li><a href="#">상품 조회/관리</a></li>
+                    <li><a href="#">상품 등록</a></li>
+                </ul>
+                <button class="order active">주문 관리</button>
+                <ul>
+                    <li><a href="#">전체주문목록</a></li>
+                    <li><a href="#">배송 관리</a></li>
+                    <li><a class="active" href="#">취소/교환/반품/환불관리</a></li>
+                </ul>
+                <button class="member">회원 관리</button>
+                <ul>
+                    <li><a href="#">회원관리</a></li>
+                    <li><a href="#">적립포인트 관리</a></li>
+                </ul>
+                <button class="board">게시판 관리</button>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">포장재솔루션 문의</a></li>
+                    <li><a href="#">주문제작 문의</a></li>
+                </ul>
+                <button class="stats">통계 관리</button>
+                <ul>
+                    <li><a href="#">매출분석</a></li>
+                    <li><a href="#">상품분석</a></li>
+                    <li><a href="#">주문제작 분석</a></li>
+                </ul>
+                <!-- 220622 수정 -->
+                <button class="banner">배너 관리</button>
+                <ul>
+                    <li><a href="#">배너 조회/관리</a></li>
+                    <li><a href="#">배너 등록</a></li>
+                </ul>
+                <button class="portfolio">포트폴리오 관리</button>
+                <ul>
+                    <li><a href="#">포트폴리오 조회/관리</a></li>
+                    <li><a href="#">포트폴리오 등록</a></li>
+                </ul>
+                <!-- // 220622 수정 -->
+            </nav>
+            <!-- // gnb -->
+
+        </header>
+        <!-- // header -->
+    
+        <!-- main -->
+        <main>
+            <nav>
+                <ul class="clear">
+                    <li><a href="#" class="rank">최고관리자(serveone)</a></li>
+                    <li><a href="#" class="white_btn w_100 marleft_20">로그아웃</a></li>
+                    <li><a href="#" class="red_btn w_120 marleft_10">쇼핑몰 관리</a></li>
+                </ul>
+            </nav>
+
+            <div class="title_box clear">
+                <h2 class="left">주문목록 상세<em>(주문일 2021-12-11 19:16:18)</em></h2>
+                <ul class="right">
+                    <li>주문 관리</li>
+                    <li>취소/교환/반품/환불 관리</li>
+                    <li>상세</li>
+                </ul>
+            </div>
+
+            <div class="con_wrap">
+                <strong class="main_title">주문 상품정보</strong>
+
+                <hr class="type1"/>
+
+                <ul class="order_list martop_18 clear">
+                    <li>
+                        <em>주문번호</em>
+                        <span>2208250134</span>
+                    </li>
+                    <li>
+                        <em>주문일</em>
+                        <span>2021-12-11 19:16:18 </span>
+                    </li>
+                </ul>
+
+                <table class="type1 martop_20 order first">
+                    <colgroup>
+                        <col width="171px">
+                        <col width="200px">
+                        <col width="160px">
+                        <col width="160px">
+                        <col width="160px">
+                        <col width="130px">
+                        <col width="160px">
+                        <col width="130px">
+                        <col width="130px">
+                        <col width="160px">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2">
+                                <img src="../assets/images/img__order_thumb.png" alt="thumbmail">
+                            </th>
+                            <th>품목번호</th>
+                            <th>분류명</th>
+                            <th>제품번호</th>
+                            <th>사이즈(mm/cm)</th>
+                            <th>타입</th>
+                            <th>상품ID</th>
+                            <th>구매수량</th>
+                            <th>색상</th>
+                            <th>주문/배송 상태</th>
+                        </tr>
+                        <tr>
+                            <td>2208250134001</td>
+                            <td>골판지 박스</td>
+                            <td>A001</td>
+                            <td>70x70x60</td>
+                            <td>0201 톰슨</td>
+                            <td>A0000001A</td>
+                            <td>1000</td>
+                            <td>금색</td>
+                            <td class="col_red">결제완료</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- 취소 case 아닐경우 삭제 하시고 사용하시면 됩니다. -->
+                <div class="btn_right martop_16 marbtm_16">
+                    <button class="grey_btn w_140">주문취소</button>
+                </div>
+                <!-- // 취소 case 아닐경우 삭제 하시고 사용하시면 됩니다. -->
+
+                <table class="type1 order">
+                    <colgroup>
+                        <col width="171px">
+                        <col width="200px">
+                        <col width="160px">
+                        <col width="160px">
+                        <col width="160px">
+                        <col width="130px">
+                        <col width="160px">
+                        <col width="130px">
+                        <col width="130px">
+                        <col width="160px">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2">
+                                <img src="../assets/images/img__order_thumb.png" alt="thumbmail">
+                            </th>
+                            <th>품목번호</th>
+                            <th>분류명</th>
+                            <th>제품번호</th>
+                            <th>사이즈(mm/cm)</th>
+                            <th>타입</th>
+                            <th>상품ID</th>
+                            <th>구매수량</th>
+                            <th>색상</th>
+                            <th>주문/배송 상태</th>
+                        </tr>
+                        <tr>
+                            <td>2208250134001</td>
+                            <td>골판지 박스</td>
+                            <td>A001</td>
+                            <td>70x70x60</td>
+                            <td>0201 톰슨</td>
+                            <td>A0000001A</td>
+                            <td>1000</td>
+                            <td>금색</td>
+                            <td class="col_red">결제완료</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- 취소 case 아닐경우 삭제 하시고 사용하시면 됩니다. -->
+                <div class="btn_right martop_16 marbtm_16">
+                    <button class="grey_btn w_140">주문취소</button>
+                </div>
+
+                <div class="btn_right martop_16 marbtm_16 border">
+                    <button class="black_btn w_140">전체취소</button>
+                </div>
+                <!-- // 취소 case 아닐경우 삭제 하시고 사용하시면 됩니다. -->
+                
+                <hr class="type1 martop_16"/>
+
+                <strong class="main_title martop_30">결제 정보</strong>
+
+                <table class="type1">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="160px">
+                        <col width="160px">
+                        <col width="160px">
+                        <col width="524px">
+                        <col width="160px">
+                        <col width="200px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>주문금액</th>
+                            <th>배송비</th>
+                            <th>사용 포인트</th>
+                            <th>적립 포인트</th>
+                            <th>결제수단</th>
+                            <th>총 결제금액</th>
+                            <th>결제일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>104720</td>
+                            <td>5000</td>
+                            <td>15000</td>
+                            <td>473.6</td>
+                            <td>
+                                현대카드 (949019******1514)<br/>
+                                7개월 무이자할부
+                            </td>
+                            <td>94720</td>
+                            <td>2021-12-11 20:12:25</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <strong class="main_title martop_30">배송지 정보</strong>
+
+                <table class="type1 txt_left2">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="846px">
+                        <col width="261px">
+                        <col width="261px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>수령인</th>
+                            <th>수령지 주소</th>
+                            <th>휴대전화 번호</th>
+                            <th>배송요청 사항(메모)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col_red">서부원</td>
+                            <td>
+                                서울 특별시 종로구 새문안로76 콘코디언빌딩 6-10층 
+                            </td>
+                            <td>010-1234-5678</td>
+                            <td>부재시 문앞에 두고가세요</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn_center martop_30">
+                    <button class="red_btn big w_270 confirm_btn">확인</button>
+                </div>
+            </div>
+
+            <!-- confirm -->
+            <div class="modal_wrap confirm">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="black_btn w_120 delete_modal">아니오</button>
+                        <button class="red_btn w_120 btn_ok">네</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // confirm -->
+
+            <!-- alert -->
+            <div class="modal_wrap alert">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="red_btn w_120 delete_modal close_modal">확인</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // alert -->
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+
+    <script src="../assets/js/common.js"></script>
+    <script>
+        $(function () {
+            // 저장 확인 confirm
+            $(".confirm_btn").on("click", function () {
+                action_popup.confirm("입력하신 정보를 저장 하시겠습니까?", function(){}, "저장 확인");
+            });
+
+            // 저장 오류 alert
+            $(".alert_btn").on("click", function () {
+                action_popup.alert("입력하신 정보를 다시 확인해 주세요.", "저장 오류");
+            });
+
+            // 관리자 탈퇴 확인 confirm
+            $(".secession_btn").on("click", function () {
+                action_popup.confirm("관리자 탈퇴 시, 접근 권한 및 입력하신 정보가 삭제 됩니다.<br/>탈퇴 하시겠습니까?", function(){}, "관리자 탈퇴 확인");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[serveone] 관리자</title>
+
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap" class="login">
+        <!-- main -->
+        <main class="login">
+            <div class="loginWrap">
+                <h1 class="main_logo">
+                    <a href="#">
+                        <img src="../assets/images/main_logo_type2.png" alt="로고" />
+                    </a>
+                </h1>
+            </div>
+
+            <div class="login_txt">
+                <strong>포장재 몰 Back office</strong>
+            </div>
+
+            <div class="loginWrap type3">
+                <div class="tab_con_type2">
+                    <strong class="login_title"> 비밀번호 찾기</strong>
+                    <div class="form">
+                        <div>
+                            <label class="tag">아이디</label>
+                            <input type="text" class="w_592" placeholder=" 5~20자의 영문 소문자, 숫자 사용 가능" />
+                        </div>
+                        <div class="martop_24">
+                            <label class="tag">이름</label>
+                            <input type="text" class="w_592" />
+                        </div>
+                        <div class="martop_24">
+                            <label class="tag ver_top martop_14">이메일</label>
+                            <div class="dis_inblock w_592">
+                                <div>
+                                    <input type="email" class="w_minus166" placeholder="예) serveone@gmail.com" />
+                                    <button type="button" class="red_btn w_156 big marleft_6 certification_email_btn">인증번호 요청</button>
+                                </div>
+                                <div class="martop_12">
+                                    <input type="number" class="w_minus166" placeholder="인증번호 6자리" />
+                                    <button type="button" class="red_btn w_156 big marleft_6 certification_chk_btn">확인</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="red_btn big w_full martop_24 alert_btn">비밀번호 찾기</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- alert -->
+            <div class="modal_wrap alert">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="red_btn w_120 delete_modal close_modal">확인</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // alert -->
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+
+    <script src="../assets/js/common.js"></script>
+    <script>
+        $(function () {
+            // 인증번호 요청 팝업
+            $(".certification_email_btn").on("click", function(){
+                action_popup.alert("홍길동 님의 이메일로 인증번호를 발송 하였습니다.", "인증번호 요청");
+                // action_popup.alert("입력한 이메일 주소를 다시 확인해 주세요.", "인증번호 요청 오류");
+            });
+
+            // 인증 성공 팝업 alert
+            $(".certification_chk_btn").on("click", function () {
+                action_popup.alert("정상적으로 인증이 완료 되었습니다.<br/>비밀번호 찾기 버튼을 눌러주세요.", "인증 성공");
+                // action_popup.alert("인증에 실패 하였습니다 다시 시도해 주세요.", "인증 실패");
+            });
+
+            // 비밀번호 찾기 실패 alert
+            $(".alert_btn").on("click", function () {
+                action_popup.alert("입력한 관리자 정보를 다시 확인해 주세요.", "비밀번호 찾기 실패");
+                // action_popup.alert("홍길동님의 이메일로 임시 비밀번호를 발송 하였습니다.", "비밀번호 찾기");
+            });
+        });
+    </script>
+</body>
+</html>

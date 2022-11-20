@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[serveone] 관리자</title>
+
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap" class="login">
+        <!-- main -->
+        <main class="login">
+            <div class="loginWrap">
+                <h1 class="main_logo">
+                    <a href="#">
+                        <img src="../assets/images/main_logo_type2.png" alt="로고" />
+                    </a>
+                </h1>
+            </div>
+
+            <div class="login_txt">
+                <strong>포장재 몰 Back office</strong>
+            </div>
+
+            <div class="loginWrap type2">
+                <strong class="login_title">관리자 로그인</strong>
+
+                <div class="form">
+                    <div>
+                        <i class="user_id"></i>
+                        <input id="userId" type="text" class="w_full" placeholder="5~20자의 영문 소문자, 숫자 사용 가능" />
+                    </div>
+                    <div class="martop_18">
+                        <i class="user_pw"></i>
+                        <input id="userPw" type="password" class="w_full" placeholder="8~16자의 영문 소문자, 숫자 및 특수문자 모두 사용" />
+                    </div>
+                    <button class="red_btn big w_full martop_24 alert_btn">로그인</button>
+                </div>
+
+                <ul class="login_chk martop_16 clear">
+                    <li>
+                        <input type="checkbox" class="ch_check hide" id="ipChk1" />
+                        <label for="ipChk1" class="label">아이디 저장</label>
+                    </li>
+                </ul>
+
+                <ul class="login_btn_wrap martop_32">
+                    <li>
+                        <a href="#">관리자 가입</a>
+                    </li>
+                    <li>
+                        <a href="#">아이디 찾기</a>
+                    </li>
+                    <li>
+                        <a href="#">비밀번호 찾기</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- alert -->
+            <div class="modal_wrap alert">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="red_btn w_120 delete_modal close_modal">확인</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // alert -->
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+
+    <script src="../assets/js/common.js"></script>
+    <script>
+        $(function () {
+            // 로그인 실패 alert
+            $(".alert_btn").on("click", function () {
+                action_popup.alert("아이디와 비밀번호를 다시 확인해 주세요.", "로그인 실패");
+            });
+        });
+    </script>
+</body>
+</html>

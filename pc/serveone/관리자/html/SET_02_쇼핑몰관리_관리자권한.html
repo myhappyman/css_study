@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[serveone] 관리자</title>
+    
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="#" class="main_logo">
+                    <img src="../assets/images/main_logo.png" alt="PACKER ONE" />
+                </a>
+            </h1>
+
+            <!-- gnb -->
+            <nav class="gnb">
+                <button class="product">상품관리</button>
+                <ul>
+                    <li><a href="#">상품 조회/관리</a></li>
+                    <li><a href="#">상품 등록</a></li>
+                </ul>
+                <button class="order">주문 관리</button>
+                <ul>
+                    <li><a href="#">전체주문목록</a></li>
+                    <li><a href="#">배송 관리</a></li>
+                    <li><a href="#">취소/교환/반품/환불관리</a></li>
+                </ul>
+                <button class="member">회원 관리</button>
+                <ul>
+                    <li><a href="#">회원관리</a></li>
+                    <li><a href="#">적립포인트 관리</a></li>
+                </ul>
+                <button class="board">게시판 관리</button>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">포장재솔루션 문의</a></li>
+                    <li><a href="#">주문제작 문의</a></li>
+                </ul>
+                <button class="stats">통계 관리</button>
+                <ul>
+                    <li><a href="#">매출분석</a></li>
+                    <li><a href="#">상품분석</a></li>
+                    <li><a href="#">주문제작 분석</a></li>
+                </ul>
+                <!-- 220622 수정 -->
+                <button class="banner">배너 관리</button>
+                <ul>
+                    <li><a href="#">배너 조회/관리</a></li>
+                    <li><a href="#">배너 등록</a></li>
+                </ul>
+                <button class="portfolio">포트폴리오 관리</button>
+                <ul>
+                    <li><a href="#">포트폴리오 조회/관리</a></li>
+                    <li><a href="#">포트폴리오 등록</a></li>
+                </ul>
+                <!-- // 220622 수정 -->
+            </nav>
+            <!-- // gnb -->
+
+        </header>
+        <!-- // header -->
+    
+        <!-- main -->
+        <main class="tab">
+            <nav>
+                <ul class="clear">
+                    <li><a href="#" class="rank">최고관리자(serveone)</a></li>
+                    <li><a href="#" class="white_btn w_100 marleft_20">로그아웃</a></li>
+                    <li><a href="#" class="red_btn w_120 marleft_10">쇼핑몰 관리</a></li>
+                </ul>
+            </nav>
+
+            <div class="title_box clear">
+                <h2 class="left">쇼핑몰 관리</h2>
+                <ul class="right">
+                    <li>쇼핑몰 관리</li>
+                    <li>관리자 권한 설정</li>
+                </ul>
+            </div>
+
+            <div class="con_wrap">
+                <ul class="tab_menu_type1 third clear">
+                    <li><a href="#" data-target="type1_01">기본설정 - 이용약관 및 방침 설정</a></li>
+                    <li class="active"><a href="#" data-target="type1_02">관리자 권한 설정</a></li>
+                    <li><a href="#" data-target="type1_03">알림톡/이메일 발송 설정</a></li> <!-- 220816 텍스트 수정 -->
+                </ul>
+
+                <div class="clear martop_30">
+                    <strong class="main_title left">관리자 목록</strong>
+                    <div class="right">
+                        <select class="select w_140">
+                            <option value="0">10개씩 보기</option>
+                            <option value="1">20개씩 보기</option>
+                            <option value="2">30개씩 보기</option>
+                            <option value="3">50개씩 보기</option>
+                        </select>
+
+                        <select class="select w_140 marleft_8">
+                            <option value="0">권한명</option>
+                            <option value="1">최고 관리자</option>
+                            <option value="2">일반 관리자</option>
+                            <option value="3">미지정자</option>
+                        </select>
+
+                        <select class="select w_140 marleft_8">
+                            <option value="0">가입일 순</option>
+                            <option value="1">가입일 역순</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table class="type1 martop_16">
+                    <colgroup>
+                        <col width="150px">
+                        <col width="180px">
+                        <col width="180px">
+                        <col width="150px">
+                        <col width="150px">
+                        <col width="150px">
+                        <col width="262px">
+                        <col width="150px">
+                        <col width="190px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>가입일</th>
+                            <th>관리자명</th>
+                            <th>관리자ID</th>
+                            <th>부서명</th>
+                            <th>사원번호</th>
+                            <th>연락처</th>
+                            <th>이메일</th>
+                            <th>권한명</th>
+                            <th>최근 접속일시</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>22-03-12</td>
+                            <td>서부원</td>
+                            <td>serveone123</td>
+                            <td>기획</td>
+                            <td>12345678</td>
+                            <td>01012345678</td>
+                            <td>serveone@svo.co.kr</td>
+                            <td>최고 관리자</td>
+                            <td>2022-08-25 14:52</td>
+                        </tr>
+                        <tr class="disabled"> <!-- 220613 .disabled 추가 -->
+                            <td>22-03-12</td>
+                            <td>서부원</td>
+                            <td>serveone123</td>
+                            <td>기획</td>
+                            <td>12345678</td>
+                            <td>01012345678</td>
+                            <td>serveone@svo.co.kr</td>
+                            <td>최고 관리자</td>
+                            <td>2022-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>22-03-12</td>
+                            <td>서부원</td>
+                            <td>serveone123</td>
+                            <td>기획</td>
+                            <td>12345678</td>
+                            <td>01012345678</td>
+                            <td>serveone@svo.co.kr</td>
+                            <td>미지정자</td>
+                            <td>2022-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>22-03-12</td>
+                            <td>서부원</td>
+                            <td>serveone123</td>
+                            <td>기획</td>
+                            <td>12345678</td>
+                            <td>01012345678</td>
+                            <td>serveone@svo.co.kr</td>
+                            <td>일반 관리자</td>
+                            <td>2022-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>22-03-12</td>
+                            <td>서부원</td>
+                            <td>serveone123</td>
+                            <td>기획</td>
+                            <td>12345678</td>
+                            <td>01012345678</td>
+                            <td>serveone@svo.co.kr</td>
+                            <td>일반 관리자</td>
+                            <td>2022-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>22-03-12</td>
+                            <td>서부원</td>
+                            <td>serveone123</td>
+                            <td>기획</td>
+                            <td>12345678</td>
+                            <td>01012345678</td>
+                            <td>serveone@svo.co.kr</td>
+                            <td>일반 관리자</td>
+                            <td>2022-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>22-03-12</td>
+                            <td>서부원</td>
+                            <td>serveone123</td>
+                            <td>기획</td>
+                            <td>12345678</td>
+                            <td>01012345678</td>
+                            <td>serveone@svo.co.kr</td>
+                            <td>일반 관리자</td>
+                            <td>2022-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>22-03-12</td>
+                            <td>서부원</td>
+                            <td>serveone123</td>
+                            <td>기획</td>
+                            <td>12345678</td>
+                            <td>01012345678</td>
+                            <td>serveone@svo.co.kr</td>
+                            <td>일반 관리자</td>
+                            <td>2022-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>22-03-12</td>
+                            <td>서부원</td>
+                            <td>serveone123</td>
+                            <td>기획</td>
+                            <td>12345678</td>
+                            <td>01012345678</td>
+                            <td>serveone@svo.co.kr</td>
+                            <td>일반 관리자</td>
+                            <td>2022-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>22-03-12</td>
+                            <td>서부원</td>
+                            <td>serveone123</td>
+                            <td>기획</td>
+                            <td>12345678</td>
+                            <td>01012345678</td>
+                            <td>serveone@svo.co.kr</td>
+                            <td>일반 관리자</td>
+                            <td>2022-08-25 14:52</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="paging txt_center clear martop_20">
+                    <ul>
+                        <li><a href="" class="paging_first"></a></li>
+                        <li><a href="" class="paging_prev"></a></li>
+                        <li class="on"><a href="" class="paging_num">1</a></li>
+                        <li><a href="" class="paging_num">2</a></li>
+                        <li><a href="" class="paging_num">3</a></li>
+                        <li><a href="" class="paging_num">4</a></li>
+                        <li><a href="" class="paging_num">5</a></li>
+                        <li><a href="" class="paging_num">6</a></li>
+                        <li><a href="" class="paging_num">7</a></li>
+                        <li><a href="" class="paging_num">8</a></li>
+                        <li><a href="" class="paging_num">9</a></li>
+                        <li><a href="" class="paging_num">10</a></li>
+                        <li><a href="" class="paging_next"></a></li>
+                        <li><a href="" class="paging_last"></a></li>
+                    </ul>
+                </div>
+
+                <div class="btn_center border martop_30">
+                    <a href="#" class="red_btn big w_270 confirm_btn">확인</a>
+                </div>
+            </div>
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+
+    <script src="../assets/js/common.js"></script>
+</body>
+</html>

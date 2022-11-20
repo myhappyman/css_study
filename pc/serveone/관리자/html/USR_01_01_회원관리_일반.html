@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[serveone] 관리자</title>
+
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="#" class="main_logo">
+                    <img src="../assets/images/main_logo.png" alt="PACKER ONE" />
+                </a>
+            </h1>
+
+            <!-- gnb -->
+            <nav class="gnb">
+                <button class="product">상품관리</button>
+                <ul>
+                    <li><a href="#">상품 조회/관리</a></li>
+                    <li><a href="#">상품 등록</a></li>
+                </ul>
+                <button class="order">주문 관리</button>
+                <ul>
+                    <li><a href="#">전체주문목록</a></li>
+                    <li><a href="#">배송 관리</a></li>
+                    <li><a href="#">취소/교환/반품/환불관리</a></li>
+                </ul>
+                <button class="member active">회원 관리</button>
+                <ul>
+                    <li><a class="active" href="#">회원관리</a></li>
+                    <li><a href="#">적립포인트 관리</a></li>
+                </ul>
+                <button class="board">게시판 관리</button>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">포장재솔루션 문의</a></li>
+                    <li><a href="#">주문제작 문의</a></li>
+                </ul>
+                <button class="stats">통계 관리</button>
+                <ul>
+                    <li><a href="#">매출분석</a></li>
+                    <li><a href="#">상품분석</a></li>
+                    <li><a href="#">주문제작 분석</a></li>
+                </ul>
+                <!-- 220622 수정 -->
+                <button class="banner">배너 관리</button>
+                <ul>
+                    <li><a href="#">배너 조회/관리</a></li>
+                    <li><a href="#">배너 등록</a></li>
+                </ul>
+                <button class="portfolio">포트폴리오 관리</button>
+                <ul>
+                    <li><a href="#">포트폴리오 조회/관리</a></li>
+                    <li><a href="#">포트폴리오 등록</a></li>
+                </ul>
+                <!-- // 220622 수정 -->
+            </nav>
+            <!-- // gnb -->
+
+        </header>
+        <!-- // header -->
+
+        <!-- main -->
+        <main class="tab">
+            <nav>
+                <ul class="clear">
+                    <li><a href="#" class="rank">최고관리자(serveone)</a></li>
+                    <li><a href="#" class="white_btn w_100 marleft_20">로그아웃</a></li>
+                    <li><a href="#" class="red_btn w_120 marleft_10">쇼핑몰 관리</a></li>
+                </ul>
+            </nav>
+
+            <div class="title_box clear">
+                <h2 class="left">회원관리</h2>
+                <ul class="right">
+                    <li>회원관리</li>
+                    <li>회원관리</li>
+                    <li>상세</li>
+                </ul>
+            </div>
+
+            <div class="con_wrap">
+                <strong class="main_title martop_30">일반회원 정보</strong>
+                <table class="type2 txt_left layout_fixed">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="*">
+                        <col width="200px">
+                        <col width="*">
+                        <col width="200px">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <!-- 221101 NO UI+정의 추가, 나이 삭제 -->
+                        <tr>
+                            <th>NO</th>
+                            <td>120</td>
+                            <th>가입일</th>
+                            <td colspan="3">2022-03-12</td>
+                        </tr>
+                        <!-- // 221101 NO UI+정의 추가, 나이 삭제 -->
+                        <tr>
+                            <th>등급</th>
+                            <td>일반</td>
+                            <th>회원구분</th>
+                            <td>일반회원</td>
+                            <th>아이디</th>
+                            <td>asdlkj142</td>
+                        </tr>
+                        <!-- 221101 생년월일 삭제 -->
+                        <tr>
+                            <th>회원명</th>
+                            <td>서부원</td>
+                            <th>이메일</th>
+                            <td colspan="3">serveone@naver.com</td>
+                        </tr>
+                        <!-- // 221101 생년월일 삭제 -->
+                        <tr>
+                            <th>휴대전화 번호</th>
+                            <td>01012345678</td>
+                            <th>주소(기본)</th>
+                            <td colspan="3">서울특별시 종로구 새문안로76 콘코디언빌딩 6-10층</td>
+                        </tr>
+                        <tr>
+                            <th>배송지관리</th>
+                            <td colspan="5">
+                                <ul class="line_24">
+                                    <li>1. 서울특별시 종로구 새문안로76 콘코디언빌딩 6-10층</li>
+                                    <li>2. 서울특별시 종로구 새문안로76 콘코디언빌딩 6-10층</li>
+                                    <li>3. 서울특별시 종로구 새문안로76 콘코디언빌딩 6-10층</li>
+                                    <li>4. 서울특별시 종로구 새문안로76 콘코디언빌딩 6-10층</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>포인트</th>
+                            <td>3,000</td>
+                            <th>최종 접속일</th>
+                            <td>2022-04-12  14:30:25</td>
+                            <th>접속 횟수</th>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <th>주문</th>
+                            <td>4</td>
+                            <th>총 주문금액</th>
+                            <td>4,000,000</td>
+                            <th>총 실결제금액</th>
+                            <td>3,400,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <strong class="main_title martop_30">현금영수증 정보(선택)</strong>
+                <table class="type2 txt_left layout_fixed">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="*">
+                        <col width="200px">
+                        <col width="*">
+                        <col width="200px">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>거래자 구분</th>
+                            <td>소득 공제용</td>
+                            <th>휴대전화 번호(사업자 번호)</th>
+                            <td colspan="3">01012345678</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <strong class="main_title martop_30">약관동의 정보</strong>
+                <table class="type2 txt_left layout_fixed">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="*">
+                        <col width="200px">
+                        <col width="*">
+                        <col width="200px">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>
+                                이용약관,<br/>
+                                개인정보 처리 방침
+                            </th>
+                            <td>동의</td>
+                            <th>마케팅 활용동의</th>
+                            <td colspan="3">미 동의</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn_center martop_30">
+                    <button class="red_btn big w_270">확인</button>
+                </div>
+            </div>
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+
+    <script src="../assets/js/common.js"></script>
+</body>
+</html>

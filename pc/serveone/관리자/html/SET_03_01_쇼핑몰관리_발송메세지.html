@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[serveone] 관리자</title>
+    
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="#" class="main_logo">
+                    <img src="../assets/images/main_logo.png" alt="PACKER ONE" />
+                </a>
+            </h1>
+
+            <!-- gnb -->
+            <nav class="gnb">
+                <button class="product">상품관리</button>
+                <ul>
+                    <li><a href="#">상품 조회/관리</a></li>
+                    <li><a href="#">상품 등록</a></li>
+                </ul>
+                <button class="order">주문 관리</button>
+                <ul>
+                    <li><a href="#">전체주문목록</a></li>
+                    <li><a href="#">배송 관리</a></li>
+                    <li><a href="#">취소/교환/반품/환불관리</a></li>
+                </ul>
+                <button class="member">회원 관리</button>
+                <ul>
+                    <li><a href="#">회원관리</a></li>
+                    <li><a href="#">적립포인트 관리</a></li>
+                </ul>
+                <button class="board">게시판 관리</button>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">포장재솔루션 문의</a></li>
+                    <li><a href="#">주문제작 문의</a></li>
+                </ul>
+                <button class="stats">통계 관리</button>
+                <ul>
+                    <li><a href="#">매출분석</a></li>
+                    <li><a href="#">상품분석</a></li>
+                    <li><a href="#">주문제작 분석</a></li>
+                </ul>
+                <!-- 220622 수정 -->
+                <button class="banner">배너 관리</button>
+                <ul>
+                    <li><a href="#">배너 조회/관리</a></li>
+                    <li><a href="#">배너 등록</a></li>
+                </ul>
+                <button class="portfolio">포트폴리오 관리</button>
+                <ul>
+                    <li><a href="#">포트폴리오 조회/관리</a></li>
+                    <li><a href="#">포트폴리오 등록</a></li>
+                </ul>
+                <!-- // 220622 수정 -->
+            </nav>
+            <!-- // gnb -->
+
+        </header>
+        <!-- // header -->
+    
+        <!-- main -->
+        <main class="tab">
+            <nav>
+                <ul class="clear">
+                    <li><a href="#" class="rank">최고관리자(serveone)</a></li>
+                    <li><a href="#" class="white_btn w_100 marleft_20">로그아웃</a></li>
+                    <li><a href="#" class="red_btn w_120 marleft_10">쇼핑몰 관리</a></li>
+                </ul>
+            </nav>
+
+            <div class="title_box clear">
+                <h2 class="left">쇼핑몰 관리</h2>
+                <ul class="right">
+                    <li>쇼핑몰 관리</li>
+                    <li>알림톡/이메일 발송설정</li> <!-- 220816 텍스트 수정 -->
+                    <li>발송 메시지 설정</li>
+                </ul>
+            </div>
+
+            <div class="con_wrap">
+                <ul class="tab_menu_type1 third clear">
+                    <li><a href="#" data-target="type1_01">기본설정 - 이용약관 및 방침 설정</a></li>
+                    <li><a href="#" data-target="type1_02">관리자 권한 설정</a></li>
+                    <li class="active"><a href="#" data-target="type1_03">알림톡/이메일 발송 설정</a></li> <!-- 220816 텍스트 수정 -->
+                </ul>
+
+                <!-- 220613 변경 -->
+                <div class="clear type2 martop_30">
+                    <strong class="main_title left">알림톡/이메일 발송 메시지 설정</strong> <!-- 220816 텍스트 수정 -->
+                    <span class="right required_tag">필수입력</span>
+                </div>
+                <!-- // 220613 변경 -->
+
+                <table class="type2 txt_left layout_fixed">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th class="required">알림톡/이메일 발송상황</th> <!-- 220816 텍스트 수정 -->
+                            <td>
+                                <input type="radio" name="statusRadio" class="ch_radio hide" id="statusRadio1" data-val="sms" checked />
+                                <label for="statusRadio1" class="label">알림톡</label> <!-- 220816 텍스트 수정 -->
+
+                                <select class="select w_243 marleft_20">
+                                    <option value="0">알림톡 발송상황</option> <!-- 220816 텍스트 수정 -->
+                                </select>
+
+                                <input type="radio" name="statusRadio" class="ch_radio hide" id="statusRadio2" data-val="email" />
+                                <label for="statusRadio2" class="label marleft_30">이메일</label>
+
+                                <select class="select w_243 marleft_20">
+                                    <option value="0">회원가입 완료</option> <!-- 220816 텍스트 수정 -->
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="required">내용</th>
+                            <td>
+                                <div class="status_box sms">
+                                    <!-- 220608 .scroll 추가 -->
+                                    <textarea class="status w_full h_150 re_none scroll">
+[(쇼핑몰 이름)] 
+[NAME]님 주문번호 : [ORDERID] 
+상품 포장완료, 배송 대기중
+                                    </textarea>
+                                    <div class="clear martop_10">
+                                        <button class="black_btn small w_80 left preview_btn">미리보기</button>
+                                        <p class="right fs_12">69<span class="col_lightgrey">/90byte</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="status_box email dis_none">
+                                    <div style="font-family:Noto Sans KR; width:800px; background-color:#ffffff; border: 1px solid #e0e0e0;">
+                                        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+                                        
+                                        <div class="textarea_box ">
+                                            <div>
+                                                <input type="text" class="w_348" value="회원가입축하이미지.png" readonly />
+
+                                                <input type="file" id="find" class="hide" />
+                                                <label for="find" class="black_btn w_100 marleft_8">파일업로드</label>
+                                                <span class="marleft_8">※ 등록이미지 5M이하</span>
+                                            </div>
+                                            <textarea class="w_full h_210 re_none martop_10">
+안녕하세요 [쇼핑몰이름]  입니다.
+{MEMBER_NAME}({MEMBER_ID})고객님의 회원가입을 축하드립니다.
+최상의 품질 빠른 배송 [쇼핑몰이름]  많은 이용 부탁드립니다.
+                                            </textarea>
+                                        </div>
+                                        
+                                        <!-- 220816 푸터 수정 -->
+                                        <div style="padding: 9px 31px; background-color: #d9d9d9; text-align: right;">
+                                            <span style="display: inline-block; color: #333333; font-size: 14px;">패밀리 사이트</span>
+                                            <ul style="margin: 0; padding: 0 0 0 11px; list-style:none; display: inline-block;">
+                                                <li style="display: inline-block;">
+                                                    <a style="display: block; height: 22px; text-decoration:none;" href="#">
+                                                        <img src="../assets/images/footer_serveone.png" style="vertical-align: sub; height: 100%;" alt="serveone store">
+                                                    </a>
+                                                </li>
+                                                <li style="display: inline-block; margin-left: 8px;">
+                                                    <a style="display: block; height: 20px; text-decoration:none;" href="#">
+                                                        <img src="../assets/images/footer_vmembers.png" style="vertical-align: sub; height: 100%;" alt="vmembers">
+                                                    </a>
+                                                </li>
+                                                <li style="display: inline-block; margin-left: 8px;">
+                                                    <a style="display: block; height: 20px; text-decoration:none;" href="#">
+                                                        <img src="../assets/images/footer_sevemate.png" style="vertical-align: sub; height: 100%;" alt="sevemate">
+                                                    </a>
+                                                </li>
+                                                <li style="display: inline-block; margin-left: 8px;">
+                                                    <a style="display: block; height: 20px; text-decoration:none;" href="#">
+                                                        <img src="../assets/images/footer_owner.png" style="vertical-align: sub; height: 100%;" alt="오너하이">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div style="background-color: #4d4d4d;">
+                                            <table style="margin:0; padding:0; width: 100%; border-spacing:0;">
+                                                <colgroup>
+                                                    <col style="width: 640px">
+                                                    <col style="width: 160px;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <td colspan="2" style="padding:14px 30px 13px; border-bottom: 1px solid #5f5f5f;">
+                                                            <a href="#" style="color: #ffffff; text-decoration:none; font-size: 14px;">회사소개</a>
+                                                            <a href="#" style="margin-left: 24px; color: #ffffff; text-decoration:none; font-size: 14px;">이용약관</a>
+                                                            <a href="#" style="margin-left: 24px; color: #ffffff; text-decoration:none; font-size: 14px;">개인정보 처리 방침</a>
+                                                            <a href="#" style="margin-left: 24px; color: #ffffff; text-decoration:none; font-size: 14px;">제휴 문의</a>
+                                                            <a href="#" style="margin-left: 24px; color: #ffffff; text-decoration:none; font-size: 14px;">운영방침</a>
+                                                            <a href="#" style="margin-left: 24px; color: #ffffff; text-decoration:none; font-size: 14px;">제보</a>
+                                                        </td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="padding: 27px 30px 29px; font-size: 12px; color: #ffffff; line-height: 20px;">
+                                                            상호명 : (주)서브원&nbsp;&nbsp;&nbsp;&nbsp;대표이사 : 김동철&nbsp;&nbsp;&nbsp;&nbsp;사업자등록번호 : 852-86-01272<br/>
+                                                            통신판매업신고 : 제 2020-서울종로-0182    주소 : 서울특별시 종로구 새문안로 76 콘코디언빌딩 6-10층<br/>
+                                                            개인정보보호책임자 : 강환방(hbkang@serveone.co.kr)<br/>
+                                                            <span style="display: inline-block; padding-top:13px;">ⓒ SERVEONE. All Rights Reserved</span>
+                                                        </td>
+                                                        <td style="padding: 27px 30px 0 0; vertical-align: top; color: #ffffff; font-size: 12px; font-weight: 100; text-align: right;">고객센터 및 제휴 문의<strong style="display: block; padding-top: 3px; font-size: 16px;">080-850-0463</strong></td>  <!-- 220907 번호 변경 -->
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- // 220816 푸터 수정 -->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn_right martop_16 dis_none">
+                    <button class="grey_btn w_140 preview_modal_btn">미리보기</button>
+                </div>
+
+                <div class="btn_center border martop_16">
+                    <button class="black_btn big w_270 cancel_btn">취소</button>
+                    <button class="red_btn big w_270 save_btn">저장</button>
+                </div>
+            </div>
+
+            <!-- preview_modal -->
+            <div class="modal_wrap preview_modal">
+                <div class="modal_section w_860">
+                    <div style="font-family:Noto Sans KR; margin:0 auto; width:800px; background-color:#ffffff; border: 1px solid #e0e0e0;">
+                        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+                        <div style="height:70px; background-color: #f8f8f8; border-bottom: 1px solid #e0e0e0;">
+                            <a href="#none" style="display: block;">
+                                <img src="../assets/images/logo.png" alt="PACKER ONE" style="height:70px;">
+                            </a>
+                        </div>
+                
+                        <div style="padding: 22px 30px 39px;">
+                            <div style="padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;">
+                                <strong style="font-size: 24px;">임시 비밀번호 발송 - 패커원</strong>
+                                <span style="display: inline-block; margin-left: 10px; padding: 0 12px; height: 28px; line-height: 28px; border-radius: 14px; font-size: 14px; background-color: #ffd9d9;">외부</span>
+                                <span style="display: inline-block; margin-left: 5px; padding: 0 12px; height: 28px; line-height: 28px; border-radius: 14px; font-size: 14px; background-color: #ededed;">받은편지함</span>
+                            </div>
+                
+                            <div style="padding-top: 20px; padding-bottom: 22px;">
+                                <img src="../assets/images/profile.png" alt="profile" style="display:inline-block; width: 54px; vertical-align: middle;">
+                                <div style="display:inline-block; padding-left: 10px; vertical-align: middle;">
+                                    <p style="font-size: 16px; margin:0;">패커원 (고객관리팀)</p>
+                                    <p style="font-size: 14px; margin:0; color: #333333; opacity: 0.4;">받는사람 : 홍길동</p>
+                                </div>
+                            </div>
+                
+                            <img src="../assets/images/blank.png" alt="images" style="display:block; width: 740px;">
+                
+                            <div style="padding-top: 28px; line-height: 24px; font-size: 14px;">
+                                안녕하세요 <b>패커원</b> 입니다.<br/>
+                                <b>홍길동(serveone123)</b>고객님의 회원가입을 축하드립니다.<br/>
+                                최상의 품질 빠른 배송 <b>패커원</b> 많은 이용 부탁드립니다.
+                            </div>
+                        </div>
+                        
+                        <!-- 220816 푸터 수정 -->
+                        <div style="padding: 9px 31px; background-color: #d9d9d9; text-align: right;">
+                            <span style="display: inline-block; color: #333333; font-size: 14px;">패밀리 사이트</span>
+                            <ul style="margin: 0; padding: 0 0 0 11px; list-style:none; display: inline-block;">
+                                <li style="display: inline-block;">
+                                    <a style="display: block; height: 22px; text-decoration:none;" href="#">
+                                        <img src="../assets/images/footer_serveone.png" style="vertical-align: sub; height: 100%;" alt="serveone store">
+                                    </a>
+                                </li>
+                                <li style="display: inline-block; margin-left: 8px;">
+                                    <a style="display: block; height: 20px; text-decoration:none;" href="#">
+                                        <img src="../assets/images/footer_vmembers.png" style="vertical-align: sub; height: 100%;" alt="vmembers">
+                                    </a>
+                                </li>
+                                <li style="display: inline-block; margin-left: 8px;">
+                                    <a style="display: block; height: 20px; text-decoration:none;" href="#">
+                                        <img src="../assets/images/footer_sevemate.png" style="vertical-align: sub; height: 100%;" alt="sevemate">
+                                    </a>
+                                </li>
+                                <li style="display: inline-block; margin-left: 8px;">
+                                    <a style="display: block; height: 20px; text-decoration:none;" href="#">
+                                        <img src="../assets/images/footer_owner.png" style="vertical-align: sub; height: 100%;" alt="오너하이">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div style="background-color: #4d4d4d;">
+                            <table style="margin:0; padding:0; width: 100%; border-spacing:0;">
+                                <colgroup>
+                                    <col style="width: 640px">
+                                    <col style="width: 160px;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <td colspan="2" style="padding:14px 30px 13px; border-bottom: 1px solid #5f5f5f;">
+                                            <a href="#" style="color: #ffffff; text-decoration:none; font-size: 14px;">회사소개</a>
+                                            <a href="#" style="margin-left: 24px; color: #ffffff; text-decoration:none; font-size: 14px;">이용약관</a>
+                                            <a href="#" style="margin-left: 24px; color: #ffffff; text-decoration:none; font-size: 14px;">개인정보 처리 방침</a>
+                                            <a href="#" style="margin-left: 24px; color: #ffffff; text-decoration:none; font-size: 14px;">제휴 문의</a>
+                                            <a href="#" style="margin-left: 24px; color: #ffffff; text-decoration:none; font-size: 14px;">운영방침</a>
+                                            <a href="#" style="margin-left: 24px; color: #ffffff; text-decoration:none; font-size: 14px;">제보</a>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 27px 30px 29px; font-size: 12px; color: #ffffff; line-height: 20px;">
+                                            상호명 : (주)서브원&nbsp;&nbsp;&nbsp;&nbsp;대표이사 : 김동철&nbsp;&nbsp;&nbsp;&nbsp;사업자등록번호 : 852-86-01272<br/>
+                                            통신판매업신고 : 제 2020-서울종로-0182    주소 : 서울특별시 종로구 새문안로 76 콘코디언빌딩 6-10층<br/>
+                                            개인정보보호책임자 : 강환방(hbkang@serveone.co.kr)<br/>
+                                            <span style="display: inline-block; padding-top:13px;">ⓒ SERVEONE. All Rights Reserved</span>
+                                        </td>
+                                        <td style="padding: 27px 30px 0 0; vertical-align: top; color: #ffffff; font-size: 12px; font-weight: 100; text-align: right;">고객센터 및 제휴 문의<strong style="display: block; padding-top: 3px; font-size: 16px;">080-850-0463</strong></td>  <!-- 220907 번호 변경 -->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- // 220816 푸터 수정 -->
+                    </div>
+                    <div class="btn_center">
+                        <button type="button" class="red_btn w_120 close_modal">확인</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // preview_modal -->
+
+            <!-- confirm -->
+            <div class="modal_wrap confirm">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="black_btn w_120 delete_modal">아니오</button>
+                        <button class="red_btn w_120 btn_ok">네</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // confirm -->
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+    
+    <script src="../assets/js/common.js"></script>
+    <script>
+        $(function () {
+            // SMS/이메일 발송상황 radio change event
+            $("[type=radio][name=statusRadio]").on("change", function(){
+                var data = $(this).attr("data-val");
+                if(data == "sms"){ // sms
+                    $(".status_box.sms").removeClass("dis_none");
+                    $(".status_box.email").addClass("dis_none");
+
+                    $(".btn_right").addClass("dis_none");
+                } else if(data =="email") { // 이메일
+                    $(".status_box.email").removeClass("dis_none");
+                    $(".status_box.sms").addClass("dis_none");
+
+                    $(".btn_right").removeClass("dis_none");
+                }
+            });
+
+            // preview_modal 오픈
+            $(document).on("click", ".preview_modal_btn", function(){
+                $(".preview_modal").addClass("active");
+                addnDimLayer();
+            });
+
+            // 미리보기 버튼
+            $(document).on("click", ".preview_btn", function () {
+                $(this).parents().siblings("textarea.status").prop('readonly', true);
+                $(this).addClass("edit").text("편집하기");
+            });
+
+            // 편집하기 버튼
+            $(document).on("click", ".preview_btn.edit", function () {
+                $(this).parents().siblings("textarea.status").prop('readonly', false);
+                $(this).removeClass("edit").text("미리보기");
+            });
+
+            // 취소 확인 confirm
+            $(".cancel_btn").on("click", function () {
+                action_popup.confirm("입력하신 정보가 저장되지 않고 목록으로<br/>이동합니다. 이동 하시겠습니까?", function(){}, "취소 확인");
+            });
+
+            // 저장 확인 confirm
+            $(".save_btn").on("click", function () {
+                action_popup.confirm("입력하신 정보를 저장 하시겠습니까?", function(){}, "저장 확인");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[serveone] 관리자</title>
+    
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="#" class="main_logo">
+                    <img src="../assets/images/main_logo.png" alt="PACKER ONE" />
+                </a>
+            </h1>
+
+            <!-- gnb -->
+            <nav class="gnb">
+                <button class="product">상품관리</button>
+                <ul>
+                    <li><a href="#">상품 조회/관리</a></li>
+                    <li><a href="#">상품 등록</a></li>
+                </ul>
+                <button class="order active">주문 관리</button>
+                <ul>
+                    <li><a href="#">전체주문목록</a></li>
+                    <li><a href="#">배송 관리</a></li>
+                    <li><a class="active" href="#">취소/교환/반품/환불관리</a></li>
+                </ul>
+                <button class="member">회원 관리</button>
+                <ul>
+                    <li><a href="#">회원관리</a></li>
+                    <li><a href="#">적립포인트 관리</a></li>
+                </ul>
+                <button class="board">게시판 관리</button>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">포장재솔루션 문의</a></li>
+                    <li><a href="#">주문제작 문의</a></li>
+                </ul>
+                <button class="stats">통계 관리</button>
+                <ul>
+                    <li><a href="#">매출분석</a></li>
+                    <li><a href="#">상품분석</a></li>
+                    <li><a href="#">주문제작 분석</a></li>
+                </ul>
+                <!-- 220622 수정 -->
+                <button class="banner">배너 관리</button>
+                <ul>
+                    <li><a href="#">배너 조회/관리</a></li>
+                    <li><a href="#">배너 등록</a></li>
+                </ul>
+                <button class="portfolio">포트폴리오 관리</button>
+                <ul>
+                    <li><a href="#">포트폴리오 조회/관리</a></li>
+                    <li><a href="#">포트폴리오 등록</a></li>
+                </ul>
+                <!-- // 220622 수정 -->
+            </nav>
+            <!-- // gnb -->
+
+        </header>
+        <!-- // header -->
+    
+        <!-- main -->
+        <main class="tab">
+            <nav>
+                <ul class="clear">
+                    <li><a href="#" class="rank">최고관리자(serveone)</a></li>
+                    <li><a href="#" class="white_btn w_100 marleft_20">로그아웃</a></li>
+                    <li><a href="#" class="red_btn w_120 marleft_10">쇼핑몰 관리</a></li>
+                </ul>
+            </nav>
+
+            <div class="title_box clear">
+                <h2 class="left">취소/교환/반품/환불 관리</h2>
+                <ul class="right">
+                    <li>주문 관리</li>
+                    <li>취소/교환/반품/환불 관리</li>
+                </ul>
+            </div>
+
+            <div class="con_wrap">
+                <ul class="tab_menu_type1 fourth clear">
+                    <li><a href="#" data-target="type1_01">취소  <em>0</em></a></li>
+                    <li><a href="#" data-target="type1_02">교환  <em>0</em></a></li>
+                    <li><a href="#" data-target="type1_03">반품 <em>0</em></a></li>
+                    <li class="active"><a href="#" data-target="type1_04">환불 <em>0</em></a></li>
+                </ul>
+
+                <strong class="main_title martop_30">조회 설정</strong>
+                <table class="type2 txt_left">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>상품분류</th>
+                            <td>
+                                <select class="select w_156">
+                                    <option value="0">대분류</option>
+                                </select>
+                                <select class="select w_156 marleft_8">
+                                    <option value="0">중분류</option>
+                                </select>
+                                <select class="select w_156 marleft_8">
+                                    <option value="0">소분류</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>검색분류</th>
+                            <td>
+                                <select class="select w_156">
+                                    <option value="0">주문번호</option>
+                                </select>
+                                <input type="text" class="w_minus168 marleft_8" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>기간검색</th>
+                            <td>
+                                <select class="select w_156">
+                                    <option value="0">주문일</option>
+                                </select>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio1" checked />
+                                <label for="inpRadio1" class="label marleft_6">전체</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio2" />
+                                <label for="inpRadio2" class="label marleft_20">당일</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio3" />
+                                <label for="inpRadio3" class="label marleft_20">전일</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio4" />
+                                <label for="inpRadio4" class="label marleft_20">3일</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio5" />
+                                <label for="inpRadio5" class="label marleft_20">7일</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio6" />
+                                <label for="inpRadio6" class="label marleft_20">1개월</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio7" />
+                                <label for="inpRadio7" class="label marleft_20">3개월</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio8" />
+                                <label for="inpRadio8" class="label marleft_20">12개월</label>
+
+                                <div class="custom_date w_156 marleft_20">
+                                    <input type="text" class="date w_full" id="datepickerToggle" placeholder="2021-09-01" readonly />
+                                </div>
+                                <span class="tilde">~</span>
+                                <div class="custom_date w_156">
+                                    <input type="text" class="date w_full" id="datepickerToggle2" placeholder="2021-09-01" readonly />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>주문상태</th>
+                            <td>
+                                <input type="checkbox" class="ch_check hide" id="ipChk1" checked />
+                                <label for="ipChk1" class="label">전체</label>
+                
+                                <input type="checkbox" class="ch_check hide" id="ipChk2" />
+                                <label for="ipChk2" class="label marleft_20">환불요청</label>
+
+                                <input type="checkbox" class="ch_check hide" id="ipChk3" />
+                                <label for="ipChk3" class="label marleft_20">환불완료</label>
+
+                                <input type="checkbox" class="ch_check hide" id="ipChk4" />
+                                <label for="ipChk4" class="label marleft_20">환불보류</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>회원구분</th>
+                            <td>
+                                <input type="radio" name="member" class="ch_radio hide" id="member1" checked />
+                                <label for="member1" class="label">전체</label>
+
+                                <input type="radio" name="member" class="ch_radio hide" id="member2" />
+                                <label for="member2" class="label marleft_20">일반회원</label>
+
+                                <input type="radio" name="member" class="ch_radio hide" id="member3" />
+                                <label for="member3" class="label marleft_20">개인 사업자 회원</label>
+
+                                <input type="radio" name="member" class="ch_radio hide" id="member4" />
+                                <label for="member4" class="label marleft_20">법인 사업자 회원</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn_center martop_30">
+                    <button class="red_btn big w_150">조회</button>
+                    <button class="grey_btn big w_150 initialization_btn">초기화</button>
+                </div>
+
+                <div class="inp_box martop_20 clear">
+                    <div class="left martop_12">
+                        <p>조회결과<em class="col_red">(10)</em></p>
+                        <!-- 220816 삭제 <div class="btn_left martop_20">
+                            <button class="black_btn w_150">환불완료 처리</button>
+                            <button class="red_btn w_150 sms_btn">SMS발송</button>
+                        </div> -->
+                    </div>
+
+                    <div class="right">
+                        <div class="btn_right martop_51">
+                            <a href="#" class="excel_btn" download>엑셀다운로드</a>
+                            <select class="select w_140">
+                                <option value="0">10개씩 보기</option>
+                                <option value="1">20개씩 보기</option>
+                                <option value="2">30개씩 보기</option>
+                                <option value="3">50개씩 보기</option>
+                            </select>
+                            <select class="select w_140">
+                                <option value="0">주문일 순</option>
+                                <option value="1">주문일 역순</option>
+                                <option value="2">결제금액 순</option>
+                                <option value="3">결제금액 역순</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 220816 수정 -->
+                <table class="type1 martop_16">
+                    <colgroup>
+                        <!-- <col width="80px"> -->
+                        <col width="120px">
+                        <col width="150px">
+                        <col width="150px">
+                        <col width="*">
+                        <col width="120px">
+                        <col width="120px">
+                        <col width="120px">
+                        <col width="120px">
+                        <col width="120px">
+                        <col width="120px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <!-- <th>
+                                <input type="checkbox" name="inpChk" class="ch_check hide allcheck" id="inpChk1" />
+                                <label for="inpChk1" class="label single"></label>
+                            </th> -->
+                            <th>주문일</th>
+                            <th>주문번호</th>
+                            <th>품목번호</th>
+                            <th>상품명</th>
+                            <th>구매수량</th>
+                            <th>
+                                실 환불액<br/>
+                                (포인트 환불액)
+                            </th>
+                            <th>주문상태</th>
+                            <th>환불처리</th>
+                            <th>회원구분</th>
+                            <th>환불요청일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!-- <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk2" />
+                                <label for="inpChk2" class="label single"></label>
+                            </td> -->
+                            <td>22-03-12</td>
+                            <td>2208120000134</td>
+                            <td>2208120000131</td>
+                            <td class="col_red">
+                                <a>골판지 박스 / A001 / 70x70x600 0201 톰슨</a>
+                            </td>
+                            <td>1000</td>
+                            <td>
+                                2,500,000<br/>
+                                (15,000)
+                            </td>
+                            <td>환불요청</td>
+                            <td>
+                                <button class="black_btn w_64 small cancellation_btn">처리</button>
+                            </td>
+                            <td>일반</td>
+                            <td>22-03-15</td>
+                        </tr>
+                        <tr>
+                            <!-- <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk3" />
+                                <label for="inpChk3" class="label single"></label>
+                            </td> -->
+                            <td>22-03-12</td>
+                            <td>2208120000134</td>
+                            <td>2208120000131</td>
+                            <td class="col_red">
+                                <a>골판지 박스 / A001 / 70x70x600 0201 톰슨</a>
+                            </td>
+                            <td>1000</td>
+                            <td>
+                                2,500,000<br/>
+                                (15,000)
+                            </td>
+                            <td>환불요청</td>
+                            <td>
+                                <button class="black_btn w_64 small cancellation_btn">처리</button>
+                            </td>
+                            <td>개인사업자</td>
+                            <td>22-03-15</td>
+                        </tr>
+                        <tr>
+                            <!-- <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk4" checked disabled />
+                                <label for="inpChk4" class="label single"></label>
+                            </td> -->
+                            <td>22-03-12</td>
+                            <td>2208120000134</td>
+                            <td>2208120000131</td>
+                            <td class="col_red">
+                                <a>골판지 박스 / A001 / 70x70x600 0201 톰슨</a>
+                            </td>
+                            <td>1000</td>
+                            <td>
+                                2,500,000<br/>
+                                (15,000)
+                            </td>
+                            <td>환불요청</td>
+                            <td></td>
+                            <td>일반</td>
+                            <td>22-03-15</td>
+                        </tr>
+                        <tr class="equal_start"> <!-- 220816 추가 -->
+                            <!-- <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk5" />
+                                <label for="inpChk5" class="label single"></label>
+                            </td> -->
+                            <td>22-03-12</td>
+                            <td>2208120000134</td>
+                            <td>2208120000131</td>
+                            <td class="col_red">
+                                <a>골판지 박스 / A001 / 70x70x600 0201 톰슨</a>
+                            </td>
+                            <td>1000</td>
+                            <td>
+                                2,500,000<br/>
+                                (15,000)
+                            </td>
+                            <td>환불보류</td>
+                            <td>
+                                <button class="black_btn w_64 small cancellation_btn">처리</button>
+                            </td>
+                            <td>일반</td>
+                            <td>22-03-15</td>
+                        </tr>
+                        <tr>
+                            <!-- <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk6" />
+                                <label for="inpChk6" class="label single"></label>
+                            </td> -->
+                            <td>22-03-12</td>
+                            <td>2208120000134</td>
+                            <td>2208120000131</td>
+                            <td class="col_red">
+                                <a>골판지 박스 / A001 / 70x70x600 0201 톰슨</a>
+                            </td>
+                            <td>1000</td>
+                            <td>
+                                2,500,000<br/>
+                                (15,000)
+                            </td>
+                            <td>환불보류</td>
+                            <td></td>
+                            <td>일반</td>
+                            <td>22-03-15</td>
+                        </tr>
+                        <tr class="equal_end"> <!-- 220816 추가 -->
+                            <!-- <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk7" />
+                                <label for="inpChk7" class="label single"></label>
+                            </td> -->
+                            <td>22-03-12</td>
+                            <td>2208120000134</td>
+                            <td>2208120000131</td>
+                            <td class="col_red">
+                                <a>골판지 박스 / A001 / 70x70x600 0201 톰슨</a>
+                            </td>
+                            <td>1000</td>
+                            <td>
+                                2,500,000<br/>
+                                (15,000)
+                            </td>
+                            <td>환불보류</td>
+                            <td></td>
+                            <td>일반</td>
+                            <td>22-03-15</td>
+                        </tr>
+                        <tr>
+                            <!-- <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk8" />
+                                <label for="inpChk8" class="label single"></label>
+                            </td> -->
+                            <td>22-03-12</td>
+                            <td>2208120000134</td>
+                            <td>2208120000131</td>
+                            <td class="col_red">
+                                <a>골판지 박스 / A001 / 70x70x600 0201 톰슨</a>
+                            </td>
+                            <td>1000</td>
+                            <td>
+                                2,500,000<br/>
+                                (15,000)
+                            </td>
+                            <td>환불요청</td>
+                            <td></td>
+                            <td>일반</td>
+                            <td>22-03-15</td>
+                        </tr>
+                        <tr>
+                            <!-- <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk9" checked disabled />
+                                <label for="inpChk9" class="label single"></label>
+                            </td> -->
+                            <td>-</td>
+                            <td>-</td>
+                            <td>2208120000131</td>
+                            <td class="col_red">
+                                <a>골판지 박스 / A001 / 70x70x600 0201 톰슨</a>
+                            </td>
+                            <td>1000</td>
+                            <td>
+                                2,500,000<br/>
+                                (15,000)
+                            </td>
+                            <td>환불보류</td>
+                            <td></td>
+                            <td>일반</td>
+                            <td>22-03-15</td>
+                        </tr>
+                        <tr>
+                            <!-- <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk10" checked disabled />
+                                <label for="inpChk10" class="label single"></label>
+                            </td> -->
+                            <td>-</td>
+                            <td>-</td>
+                            <td>2208120000131</td>
+                            <td class="col_red">
+                                <a>골판지 박스 / A001 / 70x70x600 0201 톰슨</a>
+                            </td>
+                            <td>1000</td>
+                            <td>
+                                2,500,000<br/>
+                                (15,000)
+                            </td>
+                            <td>환불보류</td>
+                            <td></td>
+                            <td>일반</td>
+                            <td>22-03-15</td>
+                        </tr>
+                        <tr>
+                            <!-- <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk11" />
+                                <label for="inpChk11" class="label single"></label>
+                            </td> -->
+                            <td>22-03-12</td>
+                            <td>2208120000134</td>
+                            <td>2208120000131</td>
+                            <td class="col_red">
+                                <a>골판지 박스 / A001 / 70x70x600 0201 톰슨</a>
+                            </td>
+                            <td>1000</td>
+                            <td>
+                                2,500,000<br/>
+                                (15,000)
+                            </td>
+                            <td>환불요청</td>
+                            <td></td>
+                            <td>일반</td>
+                            <td>22-03-15</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- // 220816 수정 -->
+
+                <div class="paging txt_center clear martop_20">
+                    <ul>
+                        <li><a href="" class="paging_first"></a></li>
+                        <li><a href="" class="paging_prev"></a></li>
+                        <li class="on"><a href="" class="paging_num">1</a></li>
+                        <li><a href="" class="paging_num">2</a></li>
+                        <li><a href="" class="paging_num">3</a></li>
+                        <li><a href="" class="paging_num">4</a></li>
+                        <li><a href="" class="paging_num">5</a></li>
+                        <li><a href="" class="paging_num">6</a></li>
+                        <li><a href="" class="paging_num">7</a></li>
+                        <li><a href="" class="paging_num">8</a></li>
+                        <li><a href="" class="paging_num">9</a></li>
+                        <li><a href="" class="paging_num">10</a></li>
+                        <li><a href="" class="paging_next"></a></li>
+                        <li><a href="" class="paging_last"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 환불 처리 확인 cancellation_modal -->
+            <div class="modal_wrap cancellation_modal">
+                <div class="modal_section w_400">
+                    <div class="modal_header">
+                        <strong class="modal_title">환불 처리 확인</strong>
+                    </div>
+                    <div class="modal_contents">
+                        <ul class="cancellation_list">
+                            <li>
+                                <input type="radio" name="cancellation" class="ch_radio hide" id="cancellation1" checked />
+                                <label for="cancellation1" class="label">환불보류</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="cancellation" class="ch_radio hide" id="cancellation2" />
+                                <label for="cancellation2" class="label">환불완료</label>
+                            </li>
+                            <!-- 220816 추가 -->
+                            <li>
+                                <input type="radio" name="cancellation" class="ch_radio hide" id="cancellation3" />
+                                <label for="cancellation3" class="label">배송준비중</label>
+                            </li>
+                            <!-- // 220816 추가 -->
+                        </ul>
+                        <p class="martop_20 txt_center">선택하신 항목으로 처리 하시겠습니까?</p>
+                    </div>
+                    <div class="btn_center">
+                        <button type="button" class="black_btn w_120 close_modal">아니오</button>
+                        <button type="button" class="red_btn w_120">네</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // cancellation_modal -->
+
+            <!-- confirm -->
+            <div class="modal_wrap confirm">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="black_btn w_120 delete_modal">아니오</button>
+                        <button class="red_btn w_120 btn_ok">네</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // confirm -->
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+    
+    <script src="../assets/js/common.js"></script>
+    <script>
+        $(function () {
+            // SMS 발송 확인 confirm
+            $(".sms_btn").on("click", function () {
+                action_popup.confirm("선택하신 주문자에게 배송대기 메시지를 발송 하시겠습니까?", function(){}, "SMS 발송 확인");
+            });
+
+            // 환불 처리 확인 모달 오픈
+            $(".cancellation_btn").on("click", function(){
+                $(".cancellation_modal").addClass("active");
+                addnDimLayer();
+            });
+
+            // 전체 체크, 단일 체크
+            var checkedNameList = ["inpChk"];
+            for(var i=0; i<checkedNameList.length; i++){
+                $("[type=checkbox][name="+checkedNameList[i]+"]").on("change", function(){
+                    var check = $(this).prop("checked");
+                    var name = $(this).attr("name");
+                    //전체 체크
+                    if($(this).hasClass("allcheck")){
+                        $("[type=checkbox][name="+name+"]").prop("checked", check);
+                    //단일 체크
+                    }else{
+                        var all = $("[type=checkbox][name="+name+"].allcheck");
+                        var allcheck = all.prop("checked")
+                        if(check != allcheck){
+                            var len = $("[type=checkbox][name="+name+"]").not(".allcheck").length;
+                            var ckLen = $("[type=checkbox][name="+name+"]:checked").not(".allcheck").length;
+                            if(len === ckLen){
+                                all.prop("checked", true);
+                            }else{
+                                all.prop("checked", false);
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[serveone] 사용자</title>
+
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <script src="../assets/js/swiper.min.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body class="login type2">
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- main -->
+        <main>
+            <!-- 220518 변경 -->
+            <div class="loginWrap">
+                <h1 class="main_logo">
+                    <a href="#">
+                        <img src="../assets/images/main_logo.png" alt="로고" />
+                    </a>
+                </h1>
+            </div>
+
+            <!-- 220824 수정 -->
+            <div class="login_txt">
+                <strong>원스탑 포장 전문 솔루션</strong>
+            </div>
+            <!-- // 220824 수정 -->
+
+            <div class="loginWrap type2">
+                <strong class="login_title">비밀번호 찾기</strong>
+
+                <ul class="tab_menu_type2 half clear">
+                    <li class="active"><button data-target="type2_01" class="general">일반 회원</button></li>
+                    <li><button data-target="type2_02" class="business">개인·법인 사업자 회원</button></li>
+                </ul>
+                <div class="tab_con_type2">
+                    <div class="type2_01">
+                        <div class="form">
+                            <div>
+                                <label class="tag">아이디</label>
+                                <input type="text" class="w_592" />
+                            </div>
+                            <div class="martop_24">
+                                <label class="tag">회원명</label>
+                                <input type="text" class="w_592"/>
+                            </div>
+                            <div class="martop_37">
+                                <!-- 220518 띄어쓰기 수정 -->
+                                <label class="tag ver_top">인증 방법</label>
+                                <div class="dis_inblock w_592">
+                                    <input type="radio" name="inpCertification" class="ch_radio hide" data-val="phone" id="inpCertification1" checked />
+                                    <label for="inpCertification1" class="label">휴대전화 번호</label> <!-- 220518 텍스트 수정 -->
+                                    
+                                    <input type="radio" name="inpCertification" class="ch_radio hide" data-val="email" id="inpCertification2" />
+                                    <label for="inpCertification2" class="label marleft_40">이메일</label>
+
+                                    <div class="certification_con phone active">
+                                        <div class="martop_12">
+                                            <input type="number" class="w_minus166" placeholder="- 없이 입력" />
+                                            <button type="button" class="green_btn w_156 big marleft_6 certification_phone_btn">인증번호 요청</button>
+                                        </div>
+                                        <div class="martop_12">
+                                            <input type="number" class="w_minus166" placeholder="인증번호 6자리" />
+                                            <button type="button" class="green_btn w_156 big marleft_6 certification_chk_btn">확인</button>
+                                        </div>
+                                        <p class="grey_tag martop_12">* 휴대전화 번호 인증 시, 문자로 임시 비밀번호 발송</p> <!-- 220518 텍스트 수정 -->
+                                    </div>
+
+                                    <div class="certification_con email">
+                                        <div class="martop_12">
+                                            <input type="email" class="w_minus166" placeholder="예) serveone@gmail.com" />
+                                            <button type="button" class="green_btn w_156 big marleft_6 certification_email_btn">인증번호 요청</button>
+                                        </div>
+                                        <div class="martop_12">
+                                            <input type="number" class="w_minus166" placeholder="인증번호 6자리" />
+                                            <button type="button" class="green_btn w_156 big marleft_6 certification_chk_btn">확인</button>
+                                        </div>
+                                        <p class="grey_tag martop_12">* 이메일로 인증 시, 이메일로 임시 비밀번호 발송</p> <!-- 220518 띄어쓰기 수정 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="green_btn big w_full martop_24 alert_btn">비밀번호 찾기</button>
+                        </div>
+                    </div>
+                    <div class="type2_02 dis_none">
+                        <div class="form">
+                            <div>
+                                <label class="tag">아이디</label>
+                                <input type="text" class="w_592" />
+                            </div>
+                            <div class="martop_24">
+                                <label class="tag">사업자등록번호</label>
+                                <input type="text" class="w_592"/>
+                            </div>
+                            <div class="martop_37">
+                                <!-- 220518 띄어쓰기 수정 -->
+                                <label class="tag ver_top">인증 방법 (관리자)</label>
+                                <div class="dis_inblock w_592">
+                                    <input type="radio" name="inpAdmin" class="ch_radio hide" data-val="phone" id="inpAdmin1" checked />
+                                    <label for="inpAdmin1" class="label">휴대전화 번호</label> <!-- 220518 텍스트 수정 -->
+                                    
+                                    <input type="radio" name="inpAdmin" class="ch_radio hide" data-val="email" id="inpAdmin2" />
+                                    <label for="inpAdmin2" class="label marleft_40">이메일</label>
+
+                                    <div class="certification_con phone active">
+                                        <div class="martop_12">
+                                            <input type="number" class="w_minus166" placeholder="- 없이 입력" />
+                                            <button type="button" class="green_btn w_156 big marleft_6 certification_phone_btn">인증번호 요청</button>
+                                        </div>
+                                        <div class="martop_12">
+                                            <input type="number" class="w_minus166" placeholder="인증번호 6자리" />
+                                            <button type="button" class="green_btn w_156 big marleft_6 certification_chk_btn">확인</button>
+                                        </div>
+                                        <p class="grey_tag martop_12">* 휴대전화 번호 인증 시, 문자로 임시 비밀번호 발송</p> <!-- 220518 띄어쓰기 수정 -->
+                                    </div>
+
+                                    <div class="certification_con email">
+                                        <div class="martop_12">
+                                            <input type="email" class="w_minus166" placeholder="예) serveone@gmail.com" />
+                                            <button type="button" class="green_btn w_156 big marleft_6 certification_email_btn">인증번호 요청</button>
+                                        </div>
+                                        <div class="martop_12">
+                                            <input type="number" class="w_minus166" placeholder="인증번호 6자리" />
+                                            <button type="button" class="green_btn w_156 big marleft_6 certification_chk_btn">확인</button>
+                                        </div>
+                                        <p class="grey_tag martop_12">* 이메일로 인증 시, 이메일로 임시 비밀번호 발송</p> <!-- 220518 띄어쓰기 수정 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="green_btn big w_full martop_24 alert_btn">비밀번호 찾기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // 220518 변경 -->
+
+            <!-- alert -->
+            <div class="modal_wrap alert">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="green_btn w_120 delete_modal close_modal">확인</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // alert -->
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+
+    <script src="../assets/js/common.js"></script>
+    <script>
+        $(function () {
+            // 인증번호 요청 팝업 - 휴대폰
+            $(".certification_phone_btn").on("click", function(){
+                // 220518 띄어쓰기 수정
+                action_popup.alert("홍길동 님의 휴대전화로 인증번호를 발송하였습니다.", "인증번호 요청");
+                // action_popup.alert("입력한 휴대전화 번호를 다시 확인해 주세요.", "인증번호 요청 오류");
+            });
+
+            // 인증번호 요청 팝업 - 이메일
+            $(".certification_email_btn").on("click", function(){
+                // 220518 띄어쓰기 수정
+                action_popup.alert("홍길동 님의 이메일로 인증번호를 발송하였습니다.", "인증번호 요청");
+                // action_popup.alert("입력한 이메일 주소를 다시 확인해 주세요.", "인증번호 요청 오류");
+            });
+
+            // 인증 성공 팝업 alert
+            $(".certification_chk_btn").on("click", function () {
+                // 220518 띄어쓰기 수정
+                action_popup.alert("정상적으로 인증이 완료되었습니다.<br/>비밀번호 찾기 버튼을 눌러주세요.", "인증 성공");
+                // action_popup.alert("인증에 실패하였습니다 다시 시도해 주세요.", "인증 실패");
+            });
+
+            // 비밀번호 찾기 실패 alert
+            $(".alert_btn").on("click", function () {
+                // 220518 띄어쓰기 수정
+                action_popup.alert("입력한 회원 정보를 다시 확인해 주세요.", "비밀번호 찾기 실패");
+                // action_popup.alert("홍길동님의 이메일로 임시 비밀번호를 발송하였습니다.", "비밀번호 찾기");
+                // action_popup.alert("홍길동 님의 휴대전화으로 임시 비밀번호를 발송하였습니다.", "비밀번호 찾기");
+            });
+
+            // tab type2
+            $(".tab_menu_type2 button").on("click", function () {
+                $(this).parents().addClass("active").siblings().removeClass("active");
+
+                var _target = $(this).data("target");
+                $("." + _target).removeClass("dis_none").siblings().addClass("dis_none");
+            });
+
+            // 인증방법 radio change event
+            $("[type=radio][name=inpCertification], [type=radio][name=inpAdmin]").on("change", function(){
+                var data = $(this).attr("data-val");
+                if(data == "phone"){ // 휴대폰 번호
+                    $(".certification_con.phone").addClass("active");
+                    $(".certification_con.email").removeClass("active");
+                } else if(data =="email") { // 이메일
+                    $(".certification_con.email").addClass("active");
+                    $(".certification_con.phone").removeClass("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

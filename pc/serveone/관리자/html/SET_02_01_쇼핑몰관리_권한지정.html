@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[serveone] 관리자</title>
+    
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="#" class="main_logo">
+                    <img src="../assets/images/main_logo.png" alt="PACKER ONE" />
+                </a>
+            </h1>
+
+            <!-- gnb -->
+            <nav class="gnb">
+                <button class="product">상품관리</button>
+                <ul>
+                    <li><a href="#">상품 조회/관리</a></li>
+                    <li><a href="#">상품 등록</a></li>
+                </ul>
+                <button class="order">주문 관리</button>
+                <ul>
+                    <li><a href="#">전체주문목록</a></li>
+                    <li><a href="#">배송 관리</a></li>
+                    <li><a href="#">취소/교환/반품/환불관리</a></li>
+                </ul>
+                <button class="member">회원 관리</button>
+                <ul>
+                    <li><a href="#">회원관리</a></li>
+                    <li><a href="#">적립포인트 관리</a></li>
+                </ul>
+                <button class="board">게시판 관리</button>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">포장재솔루션 문의</a></li>
+                    <li><a href="#">주문제작 문의</a></li>
+                </ul>
+                <button class="stats">통계 관리</button>
+                <ul>
+                    <li><a href="#">매출분석</a></li>
+                    <li><a href="#">상품분석</a></li>
+                    <li><a href="#">주문제작 분석</a></li>
+                </ul>
+                <!-- 220622 수정 -->
+                <button class="banner">배너 관리</button>
+                <ul>
+                    <li><a href="#">배너 조회/관리</a></li>
+                    <li><a href="#">배너 등록</a></li>
+                </ul>
+                <button class="portfolio">포트폴리오 관리</button>
+                <ul>
+                    <li><a href="#">포트폴리오 조회/관리</a></li>
+                    <li><a href="#">포트폴리오 등록</a></li>
+                </ul>
+                <!-- // 220622 수정 -->
+            </nav>
+            <!-- // gnb -->
+
+        </header>
+        <!-- // header -->
+    
+        <!-- main -->
+        <main>
+            <nav>
+                <ul class="clear">
+                    <li><a href="#" class="rank">최고관리자(serveone)</a></li>
+                    <li><a href="#" class="white_btn w_100 marleft_20">로그아웃</a></li>
+                    <li><a href="#" class="red_btn w_120 marleft_10">쇼핑몰 관리</a></li>
+                </ul>
+            </nav>
+
+            <div class="title_box clear">
+                <h2 class="left">쇼핑몰 관리</h2>
+                <ul class="right">
+                    <li>쇼핑몰 관리</li>
+                    <li>관리자 권한 설정</li>
+                    <li>권한지정</li>
+                </ul>
+            </div>
+
+            <div class="con_wrap">
+                <strong class="main_title">관리자 정보</strong>
+
+                <table class="type2 txt_left layout_fixed">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="*">
+                        <col width="200px">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>관리자명</th>
+                            <td>서부원</td>
+                            <th>관리자ID</th>
+                            <td>serveone123</td>
+                        </tr>
+                        <tr>
+                            <th>연락처</th>
+                            <td>01012345678</td>
+                            <th>사원번호</th>
+                            <td>123456789</td>
+                        </tr>
+                        <tr>
+                            <th>이메일</th>
+                            <td colspan="3">serveone@svo.co.kr</td>
+                        </tr>
+                        <tr>
+                            <th>권한명</th>
+                            <td colspan="3">미지정자</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="clear type2 martop_30">
+                    <strong class="main_title left">권한지정</strong>
+                    <span class="right required_tag">필수입력</span>
+                </div>
+                <table class="type2 txt_left layout_fixed">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>권한명</th>
+                            <td colspan="3" class="authority_box">
+                                <ul class="authority_list clear">
+                                    <li>
+                                        <input type="checkbox" name="inpChk" class="ch_check hide allcheck" id="inpChk1" />
+                                        <label for="inpChk1" class="label">전체</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk2" />
+                                        <label for="inpChk2" class="label">쇼핑몰 관리</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk3" />
+                                        <label for="inpChk3" class="label">상품관리</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk4" />
+                                        <label for="inpChk4" class="label">주문관리</label>
+                                    </li>
+                                    <!-- 220613 삭제 <li>
+                                        <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk5" />
+                                        <label for="inpChk5" class="label">결제관리</label>
+                                    </li> -->
+                                    <li>
+                                        <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk6" />
+                                        <label for="inpChk6" class="label">회원관리</label>
+                                    </li>
+                                </ul>
+
+                                <ul class="authority_list martop_10 clear">
+                                    <li>
+                                        <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk7" />
+                                        <label for="inpChk7" class="label">게시판 관리</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk8" />
+                                        <label for="inpChk8" class="label">통계관리</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk9" />
+                                        <label for="inpChk9" class="label">배너관리</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk10" />
+                                        <label for="inpChk10" class="label">포트폴리오 관리</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk11" />
+                                        <label for="inpChk11" class="label">게시판 관리 - 주문제작 문의</label> <!-- 220613 텍스트 변경 -->
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn_right martop_16">
+                    <button class="grey_btn w_140 appoint_btn">최고 관리자 지정</button>
+                    <button class="grey_btn w_140 remove_btn">관리자 삭제</button>
+                </div>
+                <div class="btn_center border martop_16">
+                    <button class="black_btn big w_270 cancel_btn">취소</button>
+                    <button class="red_btn big w_270 confirm_btn">저장</button>
+                </div>
+            </div>
+
+            <!-- confirm -->
+            <div class="modal_wrap confirm">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="black_btn w_120 delete_modal">아니오</button>
+                        <button class="red_btn w_120 btn_ok">네</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // confirm -->
+
+            <!-- alert -->
+            <div class="modal_wrap alert">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="red_btn w_120 delete_modal close_modal">확인</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // alert -->
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+
+    <script src="../assets/js/common.js"></script>
+    <script>
+        $(function () {
+            // 저장 확인 confirm
+            $(".confirm_btn").on("click", function () {
+                action_popup.confirm("선택하신 정보를 저장 하시겠습니까? ", function(){}, "저장 확인");
+            });
+
+            // 취소 확인 confirm
+            $(".cancel_btn").on("click", function () {
+                action_popup.confirm("입력하신 정보가 저장되지 않고 목록으로 이동 합니다.<br/>이동 하시겠습니까?", function(){}, "취소 확인");
+            });
+
+            // 관리자 삭제 확인 confirm
+            $(".remove_btn").on("click", function () {
+                action_popup.confirm("해당 관리자를 정말 삭제 하시겠습니까?", function(){}, "관리자 삭제 확인");
+            });
+
+            // 최고관리자 지정 확인 confirm
+            $(".appoint_btn").on("click", function () {
+                action_popup.confirm("해당 관리자를 최고관리자로 지정 하시겠습니까?", function(){}, "최고관리자 지정 확인");
+            });
+
+            // 전체 체크, 단일 체크
+            var checkedNameList = ["inpChk"];
+            for(var i=0; i<checkedNameList.length; i++){
+                $("[type=checkbox][name="+checkedNameList[i]+"]").on("change", function(){
+                    var check = $(this).prop("checked");
+                    var name = $(this).attr("name");
+                    //전체 체크
+                    if($(this).hasClass("allcheck")){
+                        $("[type=checkbox][name="+name+"]").prop("checked", check);
+                    //단일 체크
+                    }else{
+                        var all = $("[type=checkbox][name="+name+"].allcheck");
+                        var allcheck = all.prop("checked")
+                        if(check != allcheck){
+                            var len = $("[type=checkbox][name="+name+"]").not(".allcheck").length;
+                            var ckLen = $("[type=checkbox][name="+name+"]:checked").not(".allcheck").length;
+                            if(len === ckLen){
+                                all.prop("checked", true);
+                            }else{
+                                all.prop("checked", false);
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

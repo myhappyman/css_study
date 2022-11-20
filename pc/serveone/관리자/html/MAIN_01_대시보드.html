@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[serveone] 관리자</title>
+    
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="#" class="main_logo">
+                    <img src="../assets/images/main_logo.png" alt="PACKER ONE" />
+                </a>
+            </h1>
+
+            <!-- gnb -->
+            <nav class="gnb">
+                <button class="product">상품관리</button>
+                <ul>
+                    <li><a href="#">상품 조회/관리</a></li>
+                    <li><a href="#">상품 등록</a></li>
+                </ul>
+                <button class="order">주문 관리</button>
+                <ul>
+                    <li><a href="#">전체주문목록</a></li>
+                    <li><a href="#">배송 관리</a></li>
+                    <li><a href="#">취소/교환/반품/환불관리</a></li>
+                </ul>
+                <button class="member">회원 관리</button>
+                <ul>
+                    <li><a href="#">회원관리</a></li>
+                    <li><a href="#">적립포인트 관리</a></li>
+                </ul>
+                <button class="board">게시판 관리</button>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">포장재솔루션 문의</a></li>
+                    <li><a href="#">주문제작 문의</a></li>
+                </ul>
+                <button class="stats">통계 관리</button>
+                <ul>
+                    <li><a href="#">매출분석</a></li>
+                    <li><a href="#">상품분석</a></li>
+                    <li><a href="#">주문제작 분석</a></li>
+                </ul>
+                <!-- 220622 수정 -->
+                <button class="banner">배너 관리</button>
+                <ul>
+                    <li><a href="#">배너 조회/관리</a></li>
+                    <li><a href="#">배너 등록</a></li>
+                </ul>
+                <button class="portfolio">포트폴리오 관리</button>
+                <ul>
+                    <li><a href="#">포트폴리오 조회/관리</a></li>
+                    <li><a href="#">포트폴리오 등록</a></li>
+                </ul>
+                <!-- // 220622 수정 -->
+            </nav>
+            <!-- // gnb -->
+
+        </header>
+        <!-- // header -->
+    
+        <!-- main -->
+        <main class="index">
+            <nav>
+                <ul class="clear">
+                    <li><a href="#" class="rank">최고관리자(serveone)</a></li>
+                    <li><a href="#" class="white_btn w_100 marleft_20">로그아웃</a></li>
+                    <li><a href="#" class="red_btn w_120 marleft_10">쇼핑몰 관리</a></li>
+                </ul>
+            </nav>
+
+            <div class="con_wrap">
+                <!-- 221102 버튼 추가 -->
+                <div class="clear">
+                    <strong class="main_title left">고객현황<span>(오늘)</span></strong>
+                    <button class="refresh_btn right"></button>
+                </div>
+                <!-- // 221102 버튼 추가 -->
+                
+                <div class="clear">
+                    <div class="main_box">
+                        <label class="visitor">방문자 수</label>
+                        <span><em>172</em><i>명</i></span>
+                    </div>
+                    <div class="main_box">
+                        <label class="join">회원가입자 수</label>
+                        <span><em>999,999,999,999</em><i>명</i></span>
+                    </div>
+                    <div class="main_box">
+                        <label class="withdraw">탈퇴 회원 수</label>
+                        <span><em>0</em><i>명</i></span>
+                    </div>
+                </div>
+
+                <strong class="main_title martop_40">오늘의 매출 현황<span>(2022.07.25 10:00)</span></strong>
+                <div class="clear">
+                    <div class="main_box">
+                        <label class="order">주문</label>
+                        <span>
+                            <em>150,000,000</em><i>원</i>
+                            <div>
+                                <em>150000000000000000000000</em><i>건</i>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="main_box">
+                        <label class="pay">결제</label>
+                        <span>
+                            <em>200,000,000</em><i>원</i>
+                            <div>
+                                <em>150</em><i>건</i>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="main_box">
+                        <label class="refund">환불</label>
+                        <span>
+                            <em>0</em><i>원</i>
+                            <div>
+                                <em>0</em><i>건</i>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="main_half martop_40 clear">
+                    <div class="left">
+                        <strong class="main_title">취소·교환·반품·환불 현황<span>(최근 1개월)</span></strong>
+                        <ul class="clear">
+                            <li>
+                                <strong>999,999,999,999</strong>
+                                <p>취소</p>
+                            </li>
+                            <li>
+                                <strong>0</strong>
+                                <p>교환</p>
+                            </li>
+                            <li>
+                                <strong>0</strong>
+                                <p>반품</p>
+                            </li>
+                            <li>
+                                <strong>0</strong>
+                                <p>환불</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="left">
+                        <strong class="main_title">주문현황<span>(최근 1개월)</span></strong>
+                        <ul class="clear">
+                            <li>
+                                <strong>0</strong>
+                                <p>입금전</p>
+                            </li>
+                            <li>
+                                <strong>0</strong>
+                                <p>배송준비중</p>
+                            </li>
+                            <li>
+                                <strong>0</strong>
+                                <p>배송대기</p>
+                            </li>
+                            <li>
+                                <strong>0</strong>
+                                <p>배송중</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <strong class="main_title martop_40">미답변 문의<span>(최근 17:51)</span></strong>
+                <div class="clear">
+                    <div class="main_box type2">
+                        <label class="order">고객문의</label>
+                        <span><em>152</em><i>건</i></span>
+                    </div>
+                    <div class="main_box type2">
+                        <label class="pay">주문제작 문의</label>
+                        <span><em>123</em><i>건</i></span>
+                    </div>
+                    <div class="main_box type2">
+                        <label class="refund">제휴문의</label>
+                        <span><em>51</em><i>건</i></span>
+                    </div>
+                    <div class="main_box type2">
+                        <label class="refund">포장재 솔루션<br/>문의</label>
+                        <span><em>20</em><i>건</i></span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+
+    <script src="../assets/js/common.js"></script>
+</body>
+</html>

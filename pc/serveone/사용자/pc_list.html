@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>[serveone] 사용자 PC list</title>
+    <script src="./assets/js/jquery-3.4.1.min.js"></script>
+
+    <style type="text/css">
+        html,body{margin:0;padding:0}
+        body,td{font:.9em "맑은 고딕",Sans-Serif;color:#6b6b6b}
+        td{font-size:11px; vertical-align: middle;}
+        table{border-collapse:collapse;border-spacing:0}
+        ul{list-style:none}
+        #g_header h1{font-weight: 600; min-width:1024px;height:60px;line-height:60px;padding-left:28px;margin-top:0;color:#fff;background:#ffa2a2;text-align:center}
+        #g_body{min-width:1024px;padding:0 30px 50px}
+        #g_footer{padding:30px;text-align:right}
+        .guide_table{width:100%;border-collapse:collapse; margin-bottom:40px;}
+        .guide_table thead th{background:#f8f8fa;padding:3px;border:solid 1px #e0e0e0; color: #212329; font-size: 12px;}
+        .guide_table tbody td{padding:4px 10px;border:solid 1px #e0e0e0; color: #212329;}
+        .guide_table tbody td:nth-child(6),.guide_table tbody td:nth-child(7),.guide_table tbody td:nth-child(8),.guide_table tbody td:nth-child(10){text-align:center}
+        .guide_table tbody td.filelink .link{text-decoration:none;color:#6588e6}
+        .guide_table tbody td.filelink .link:hover{text-decoration:underline}
+        .guide_table tbody td.filelink .link:focus{font-weight:600;color:#f45f5f;text-decoration:underline}
+        .guide_table tbody tr td:first-child{text-align:center}
+        .guide_table tbody tr:hover{background:#f8f8fa}
+        .end{color:#212329}
+        .ing{color:#6496dc}
+        .center{text-align:center}
+        .v2{background-color:#ffa2a22c;}
+        .v2 *{font-weight: 600; font-size: 11.5px;}
+
+        .delete{background-color:#ededed;}
+        .delete *{text-decoration: line-through;}
+        .modbtn_box2{margin-top:20px}
+        .modifybtn{padding:15px 40px;border:1px solid #f45f5f;color:#f45f5f;font-size:16px;text-decoration:none;border-radius:4px}
+        .modifybtn2{padding:10px 20px;border:1px solid #f45f5f;color:#f45f5f;font-size:13px;text-decoration:none;border-radius:4px}
+        .board .tit{font-size:17px;font-weight:600}
+        .board .data{padding:30px;margin-bottom:10px;border:1px solid #e0e0e0;background:#f7f7f7}
+        .board .data li ~ li {padding-top: 16px; border-top: 1px solid #e4e6ef;}
+        .box{border: 1px solid #dedede; display: inline-block; padding: 12px; margin-top: 4px; background-color: #fff; border-radius: 4px;}
+        table tbody tr td:last-child{text-align: left; font-weight: 600;}
+        .get_date{font-size: 17px;display: block;margin-bottom: 4px;}
+        .get_date.new{color: #f45f5f;}
+        td.txtLeft{text-align: left !important;}
+        td.notLast{text-align: center !important; font-weight: normal !important;}
+        tr.section td{background-color: #eaeeffa9; font-size: 12px; font-weight: 900;}
+        h2{position: relative; display: inline-block; padding-right: 20px; margin-top: 20px; color: #333;}
+    </style>
+</head>
+
+<body>
+    <div id="g_header">
+        <h1>[serveone] 사용자</h1>
+    </div>
+    <div id="g_body">
+        <div class="contents">
+            <h2 style="font-size:36px; font-weight:bold;">
+                PC File List
+            </h2>
+            <table class="guide_table" id="guide_table">
+                <colgroup>
+                    <col width="2%" />
+                    <col width="10%" />
+                    <col width="17%" />
+                    <col width="12%" />
+                    <col width="18%" />
+                    <col width="5%" />
+                    <col width="7%" />
+                    <col width="7%" />
+                    <col width="*" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">NO</th>
+                        <th scope="col">1depth</th>
+                        <th scope="col">2depth</th>
+                        <th scope="col">3depth</th>
+                        <th scope="col">link</th>
+                        <th scope="col">상태</th>
+                        <th scope="col">최근 작업일시</th>
+                        <th scope="col">완료날짜</th>
+                        <th scope="col">비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>style guide</td>
+                        <td></td>
+                        <td></td>
+                        <td class="filelink"><a href="html/style.html" target="_blank" title="새창" class="link">style.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.09.26</td>
+                        <td>22.04.07</td>
+                        <td>로그인 확인 alert 팝업 추가</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>
+                            - 부정 클릭 팝업<br>
+                            - 파일 업로드 팝업<br>
+                            - 거래명세서 팝업(윈도우팝업 연결)<br>
+                            - 구매영수증 팝업(윈도우팝업 연결)<br>
+                            - 신용카드 매출전표 팝업(윈도우팝업 연결)
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td class="filelink"><a href="html/팝업.html" target="_blank" title="새창" class="link">팝업.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.12</td>
+                        <td>22.05.19</td>
+                        <td>거래명세서, 구매영수증, 팝업 내 텍스트 변경</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>홈</td>
+                        <td></td>
+                        <td></td>
+                        <td class="filelink"><a href="html/홈.html" target="_blank" title="새창" class="link">홈.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.09.07</td>
+                        <td>22.04.08</td>
+                        <td>전달사항 참고</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>주문 제작/견청 요청 상세</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/주문제작견적요청.html" target="_blank" title="새창" class="link">주문제작견적요청.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.05.23</td>
+                        <td>전달사항 참고</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>검색(layout guide)</td>
+                        <td>header / footer 변경시 현 페이지 업데이트</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/layout.html" target="_blank" title="새창" class="link">layout.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.31</td>
+                        <td>22.04.07</td>
+                        <td>GNB 카테고리 순서 변경</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>검색 상세(유/무)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/검색상세.html" target="_blank" title="새창" class="link">검색상세.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.04.20</td>
+                        <td>텍스트수정</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>포장재 솔루션</td>
+                        <td></td>
+                        <td></td>
+                        <td class="filelink"><a href="html/포장재솔루션.html" target="_blank" title="새창" class="link">포장재솔루션.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.07.29</td>
+                        <td>22.05.19</td>
+                        <td>동영상 플레이어 영역 추가</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>포장재 솔루션 문의하기</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/포장재솔루션_문의하기.html" target="_blank" title="새창" class="link">포장재솔루션_문의하기.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.06.03</td>
+                        <td>22.05.19</td>
+                        <td>모든 항목 필수입력 - > 필수입력 수정<br/>.required 추가</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>주문 제작 문의</td>
+                        <td></td>
+                        <td></td>
+                        <td class="filelink"><a href="html/주문제작문의.html" target="_blank" title="새창" class="link">주문제작문의.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.05.23</td>
+                        <td>새 페이지 제작</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>상세 (답변작성중, 진행정, 진행중)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/주문제작문의_상세1.html" target="_blank" title="새창" class="link">주문제작문의_상세1.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.05.23</td>
+                        <td>새 페이지 제작</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>상세 (답변작성완료, 제작완료, 관리자 답변완료)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/주문제작문의_상세2.html" target="_blank" title="새창" class="link">주문제작문의_상세2.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.05.23</td>
+                        <td>새 페이지 제작</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>상세 (종이쇼핑백)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/MA_OR_01_02_주문제작문의_상세.html" target="_blank" title="새창" class="link">MA_OR_01_02_주문제작문의_상세.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.06.08</td>
+                        <td>새 페이지 제작</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>상세 (포장봉투)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/MA_OR_01_03_주문제작문의_상세.html" target="_blank" title="새창" class="link">MA_OR_01_03_주문제작문의_상세.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.06.08</td>
+                        <td>새 페이지 제작</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>개인 결제</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/주문제작문의_개인결제.html" target="_blank" title="새창" class="link">주문제작문의_개인결제.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.09.29</td>
+                        <td>22.05.23</td>
+                        <td>배송지 선택 팝업</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>주문 제작 문의하기 (박스 / 별도 Size제작+인쇄추가)</td>
+                        <td>박스 사이즈 입력 기준 팝업<br/>제품 번호 찾기 도움말 팝업<br/>150MB이상 업로드 웹하드 이용 방법 팝업</td>
+                        <td class="filelink"><a href="html/주문제작문의_문의하기_박스1.html" target="_blank" title="새창" class="link">주문제작문의_문의하기_박스1.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.05.23</td>
+                        <td>전달사항 참고</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>주문 제작 문의하기 (박스 / 상품 맞춤 제작)</td>
+                        <td>박스 사이즈 입력 기준 팝업<br/>제품 번호 찾기 도움말 팝업</td>
+                        <td class="filelink"><a href="html/주문제작문의_문의하기_박스2.html" target="_blank" title="새창" class="link">주문제작문의_문의하기_박스2.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.05.23</td>
+                        <td>새 페이지 제작</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>주문 제작 문의하기 (박스 / 대량구매)</td>
+                        <td>제품 번호 찾기 도움말 팝업</td>
+                        <td class="filelink"><a href="html/주문제작문의_문의하기_박스3.html" target="_blank" title="새창" class="link">주문제작문의_문의하기_박스3.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.07.215</td>
+                        <td>22.05.23</td>
+                        <td>제품 번호 확인 alert 추가</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>주문 제작 문의하기 (종이 쇼핑백 / 별도 Size제작+인쇄추가)</td>
+                        <td>제품 번호 찾기 도움말 팝업</td>
+                        <td class="filelink"><a href="html/주문제작문의_문의하기_종이1.html" target="_blank" title="새창" class="link">주문제작문의_문의하기_종이1.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.05.24</td>
+                        <td>새 페이지 제작</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>주문 제작 문의하기 (종이 쇼핑백 / 상품 맞춤 제작)</td>
+                        <td>제품 번호 찾기 도움말 팝업</td>
+                        <td class="filelink"><a href="html/주문제작문의_문의하기_종이2.html" target="_blank" title="새창" class="link">주문제작문의_문의하기_종이2.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.05.24</td>
+                        <td>새 페이지 제작</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>주문 제작 문의하기 (종이 쇼핑백 / 대량구매)</td>
+                        <td>제품 번호 찾기 도움말 팝업</td>
+                        <td class="filelink"><a href="html/주문제작문의_문의하기_종이3.html" target="_blank" title="새창" class="link">주문제작문의_문의하기_종이3.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.05.24</td>
+                        <td>새 페이지 제작</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>주문 제작 문의하기 (포장 봉투 / 별도 Size제작+인쇄추가)</td>
+                        <td>제품 번호 찾기 도움말 팝업</td>
+                        <td class="filelink"><a href="html/주문제작문의_문의하기_포장1.html" target="_blank" title="새창" class="link">주문제작문의_문의하기_포장1.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.20</td>
+                        <td>22.05.24</td>
+                        <td>텍스트 수정</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>주문 제작 문의하기 (포장 봉투 / 대량구매)</td>
+                        <td>제품 번호 찾기 도움말 팝업</td>
+                        <td class="filelink"><a href="html/주문제작문의_문의하기_포장2.html" target="_blank" title="새창" class="link">주문제작문의_문의하기_포장2.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.20</td>
+                        <td>22.05.24</td>
+                        <td>텍스트 수정</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>주문 제작 문의하기 수정</td>
+                        <td>제품 번호 찾기 도움말 팝업</td>
+                        <td class="filelink"><a href="html/주문제작문의_문의하기_수정.html" target="_blank" title="새창" class="link">주문제작문의_문의하기_수정.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.06.08</td>
+                        <td>22.05.24</td>
+                        <td>disabled 추가</td>
+                    </tr>
+                    
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>포트폴리오</td>
+                        <td>상품 상세 팝업</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/포트폴리오.html" target="_blank" title="새창" class="link">포트폴리오.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.06.16</td>
+                        <td>22.05.23</td>
+                        <td>전달사항 참고</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>로그인</td>
+                        <td></td>
+                        <td></td>
+                        <td class="filelink"><a href="html/로그인.html" target="_blank" title="새창" class="link">로그인.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.04.14</td>
+                        <td>슬로건 수정</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>아이디 찾기</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/로그인_아이디찾기.html" target="_blank" title="새창" class="link">로그인_아이디찾기.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.04.14</td>
+                        <td>슬로건 수정</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>비밀번호 찾기</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/로그인_비밀번호찾기.html" target="_blank" title="새창" class="link">로그인_비밀번호찾기.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.04.14</td>
+                        <td>슬로건 수정</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>회원가입</td>
+                        <td></td>
+                        <td></td>
+                        <td class="filelink"><a href="html/회원가입.html" target="_blank" title="새창" class="link">회원가입.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.04.14</td>
+                        <td>슬로건 수정</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>일반 회원가입</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/회원가입_일반회원.html" target="_blank" title="새창" class="link">회원가입_일반회원.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.12</td>
+                        <td>22.04.15</td>
+                        <td>전달사항 참고</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>개인 사업자 회원가입</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/회원가입_개인사업자.html" target="_blank" title="새창" class="link">회원가입_개인사업자.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.12</td>
+                        <td>22.04.15</td>
+                        <td>전달사항 참고</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>법인 사업자 회원가입</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/회원가입_법인사업자.html" target="_blank" title="새창" class="link">회원가입_법인사업자.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.12</td>
+                        <td>22.04.15</td>
+                        <td>전달사항 참고</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>마이페이지</td>
+                        <td>회원정보</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/마이페이지_회원정보.html" target="_blank" title="새창" class="link">마이페이지_회원정보.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.12</td>
+                        <td>22.04.12</td>
+                        <td>마케팅활용동의 UI 수정</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>주문/배송 조회</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/마이페이지_주문배송조회.html" target="_blank" title="새창" class="link">마이페이지_주문배송조회.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.04.12</td>
+                        <td>전달사항 참고</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>주문/배송 상세(배송조회 및 교환/반품/환불 요청 case)</td>
+                        <td>
+                            거래명세서 인쇄 팝업<br/>
+                            카드매출전표 인쇄 팝업<br/>
+                            구매영수증 인쇄 팝업
+                        </td>
+                        <td class="filelink"><a href="html/마이페이지_주문배송조회_상세1.html" target="_blank" title="새창" class="link">마이페이지_주문배송조회_상세1.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.05.17</td>
+                        <td>사용 포인트, 적립포인트 TBU 삭제</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>주문/배송 상세(주문취소 요청 case, 두건이상 case)</td>
+                        <td>
+                            거래명세서 인쇄 팝업<br/>
+                            카드매출전표 인쇄 팝업<br/>
+                            구매영수증 인쇄 팝업
+                        </td>
+                        <td class="filelink"><a href="html/마이페이지_주문배송조회_상세2.html" target="_blank" title="새창" class="link">마이페이지_주문배송조회_상세2.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.05.17</td>
+                        <td>사용 포인트, 적립포인트 TBU 삭제</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td></td>
+                        <td>주문결제 인쇄 팝업(거래명세서)</td>
+                        <td class="filelink"><a href="html/마이페이지_주문배송조회_상세_거래명세서.html" target="_blank" title="새창" class="link">마이페이지_주문배송조회_상세_거래명세서.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.05.25</td>
+                        <td>텍스트 변경</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td></td>
+                        <td>주문결제 인쇄 팝업(구매영수증)</td>
+                        <td class="filelink"><a href="html/마이페이지_주문배송조회_상세_구매영수증.html" target="_blank" title="새창" class="link">마이페이지_주문배송조회_상세_구매영수증.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.05.25</td>
+                        <td>텍스트 변경</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td></td>
+                        <td>주문결제 인쇄 팝업(신용카드 매출전표)</td>
+                        <td class="filelink"><a href="html/마이페이지_주문배송조회_상세_신용카드.html" target="_blank" title="새창" class="link">마이페이지_주문배송조회_상세_신용카드.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.08.11</td>
+                        <td>전달사항 참고</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>내 문의 조회</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/마이페이지_내문의조회.html" target="_blank" title="새창" class="link">마이페이지_내문의조회.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.04.12</td>
+                        <td>전달사항 참고</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>내 문의 조회 상세</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/마이페이지_내문의조회상세.html" target="_blank" title="새창" class="link">마이페이지_내문의조회상세.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.05.16</td>
+                        <td>22.04.12</td>
+                        <td>텍스트 수정</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>포인트 조회</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/마이페이지_포인트조회.html" target="_blank" title="새창" class="link">마이페이지_포인트조회.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.05.17</td>
+                        <td>22.04.13</td>
+                        <td>테이블 목록 없을시 추가, 클래스 추가</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>배송지 관리</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/마이페이지_배송지관리.html" target="_blank" title="새창" class="link">마이페이지_배송지관리.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.04.13</td>
+                        <td>전달사항 참고</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>배송지 등록 / 수정</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/마이페이지_배송지등록수정.html" target="_blank" title="새창" class="link">마이페이지_배송지등록수정.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.05.18</td>
+                        <td>22.04.13</td>
+                        <td>주소 -> 수령지 주소 텍스트 변경</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>장바구니</td>
+                        <td></td>
+                        <td></td>
+                        <td class="filelink"><a href="html/장바구니.html" target="_blank" title="새창" class="link">장바구니.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.05.17</td>
+                        <td>전달사항 참고</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>주문결제</td>
+                        <td></td>
+                        <td></td>
+                        <td class="filelink"><a href="html/주문결제.html" target="_blank" title="새창" class="link">주문결제.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.09.29</td>
+                        <td>22.04.29</td>
+                        <td>배송지 선택 팝업</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>관심상품</td>
+                        <td></td>
+                        <td></td>
+                        <td class="filelink"><a href="html/관심상품.html" target="_blank" title="새창" class="link">관심상품.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.04.29</td>
+                        <td>텍스트 변경, 제품 번호 위치 변경</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>고객전용 상품</td>
+                        <td></td>
+                        <td></td>
+                        <td class="filelink"><a href="html/고객전용상품.html" target="_blank" title="새창" class="link">고객전용상품.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.08.24</td>
+                        <td>22.04.11</td>
+                        <td>텍스트 변경</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td>고객센터</td>
+                        <td>고객문의</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/고객센터_고객문의.html" target="_blank" title="새창" class="link">고객센터_고객문의.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.05.16</td>
+                        <td>22.04.07</td>
+                        <td>테이블 목록 없을시 추가</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>내 문의 조회 상세 (답변전 / 답글완료1차, 답글쓰기2차)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/고객센터_내문의조회상세_답변전.html" target="_blank" title="새창" class="link">고객센터_내문의조회상세_답변전.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.05.16</td>
+                        <td>22.04.07</td>
+                        <td>전달사항 참고 (페이지명 변경)</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>내 문의 조회 상세 (답글완료1차, 답글완료2차)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/고객센터_내문의조회상세_답변후.html" target="_blank" title="새창" class="link">고객센터_내문의조회상세_답변후.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.05.16</td>
+                        <td>페이지 추가</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>내 문의 조회 상세 (댓글)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/고객센터_내문의조회상세_댓글.html" target="_blank" title="새창" class="link">고객센터_내문의조회상세_댓글.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.05.31</td>
+                        <td>페이지 추가</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>문의하기</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/고객센터_문의하기.html" target="_blank" title="새창" class="link">고객센터_문의하기.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.05.18</td>
+                        <td>22.04.08</td>
+                        <td>텍스트 변경</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>공지사항</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/고객센터_공지사항.html" target="_blank" title="새창" class="link">고객센터_공지사항.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.05.16</td>
+                        <td>22.04.07</td>
+                        <td>테이블 목록 없을시 추가</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>공지사항 상세</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/고객센터_공지사항상세.html" target="_blank" title="새창" class="link">고객센터_공지사항상세.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.05.18</td>
+                        <td>22.04.08</td>
+                        <td>텍스트 수정</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>FAQ</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/고객센터_FAQ.html" target="_blank" title="새창" class="link">고객센터_FAQ.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.05.16</td>
+                        <td>22.04.07</td>
+                        <td>테이블 목록 없을시 추가</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>FAQ 상세</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/고객센터_FAQ상세.html" target="_blank" title="새창" class="link">고객센터_FAQ상세.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.04.08</td>
+                        <td></td>
+                    </tr>
+
+                    <tr class="dep01">
+                        <td class="no"></td>
+                        <td>GNB</td>
+                        <td>상품선택 (박스 - 골판지 박스)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/상품선택_박스.html" target="_blank" title="새창" class="link">상품선택_박스.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.20</td>
+                        <td>22.05.23</td>
+                        <td>텍스트 변경</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>상품선택 (종이 쇼핑백)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/상품선택_종이쇼핑백.html" target="_blank" title="새창" class="link">상품선택_종이쇼핑백.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.05.23</td>
+                        <td>새 페이지 제작</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>상품선택 (포장 봉투 - 안전 봉투/택배 봉투)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/상품선택_포장봉투.html" target="_blank" title="새창" class="link">상품선택_포장봉투.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.20</td>
+                        <td>22.05.23</td>
+                        <td>텍스트 변경</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>상품선택 (에어캡 - 봉투/롤/시트)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/상품선택_안전봉투.html" target="_blank" title="새창" class="link">상품선택_안전봉투.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.20</td>
+                        <td>22.05.23</td>
+                        <td>텍스트 변경</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>상품선택 (테이프 공업용 랩)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/상품선택_테이프.html" target="_blank" title="새창" class="link">상품선택_테이프.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.20</td>
+                        <td>22.05.23</td>
+                        <td>텍스트 변경</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>상품선택 (소모품)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/GN_OF_01_상품선택_소모품.html" target="_blank" title="새창" class="link">GN_OF_01_상품선택_소모품.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.20</td>
+                        <td>22.08.24</td>
+                        <td>전달사항 참고</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>상품선택 (친환경 제품)</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/GN_NA_01_상품선택_친환경제품.html" target="_blank" title="새창" class="link">GN_NA_01_상품선택_친환경제품.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.10.20</td>
+                        <td>새 페이지 제작</td>
+                    </tr>
+
+                    <tr class="dep01 delete">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>상품상세</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/상품상세.html" target="_blank" title="새창" class="link">상품상세.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.04.14</td>
+                        <td>22.04.11</td>
+                        <td>상품상세_v2.html 파일로 확인</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>상품상세 v2</td>
+                        <td>배송비 안내 팝업</td>
+                        <td class="filelink"><a href="html/상품상세_v2.html" target="_blank" title="새창" class="link">상품상세_v2.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.20</td>
+                        <td>22.04.21</td>
+                        <td>옵션 내용 항목명 수정</td>
+                    </tr>
+
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>상품상세 v3</td>
+                        <td>배송비 안내 팝업</td>
+                        <td class="filelink"><a href="html/상품상세_v3.html" target="_blank" title="새창" class="link">상품상세_v3.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.20</td>
+                        <td>22.07.06</td>
+                        <td>옵션 내용 항목명 수정</td>
+                    </tr>
+
+                    <tr class="dep01 v2">
+                        <td class="no"></td>
+                        <td>Footer</td>
+                        <td>회사소개</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/푸터_회사소개.html" target="_blank" title="새창" class="link">푸터_회사소개.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.05.19</td>
+                        <td>전달사항 참고(페이지 변경 X)</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>이용약관</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/푸터_이용약관.html" target="_blank" title="새창" class="link">푸터_이용약관.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.12</td>
+                        <td>22.05.24</td>
+                        <td>pre 내용 변경</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>개인정보 처리 방침</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/푸터_개인정보처리방침.html" target="_blank" title="새창" class="link">푸터_개인정보처리방침.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td>22.10.12</td>
+                        <td>22.05.24</td>
+                        <td>pre 내용 변경</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>운영방침</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/푸터_운영방침.html" target="_blank" title="새창" class="link">푸터_운영방침.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.05.24</td>
+                        <td>새 페이지 제작</td>
+                    </tr>
+                    <tr class="dep01 ">
+                        <td class="no"></td>
+                        <td></td>
+                        <td>제휴문의</td>
+                        <td></td>
+                        <td class="filelink"><a href="html/푸터_제휴문의.html" target="_blank" title="새창" class="link">푸터_제휴문의.html</a></td>
+                        <td class="center"><strong class="end">완료</strong></td>
+                        <td></td>
+                        <td>22.05.24</td>
+                        <td>새 페이지 제작</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="board">
+            <div class="tit">전달사항</div>
+            <ul class="data">
+                <li>
+                    <strong class="get_date new">[22.10.26]</strong>
+                    <strong>1. 푸터 > 회사소개 페이지 하단 홈페이지 이동 버튼 이미지 변경(푸터_회사소개.html)</strong><br/>
+                    - /assets/images/logo_footer_servwone.png 추가<br/>
+                    - common.css 변경<br/><br/>
+
+                </li>
+                <li>
+                    <strong class="get_date">[22.10.20]</strong>
+                    <strong>1. GNB 소모품 '코팅장갑' 메뉴 추가 (221020 전체검색)</strong><br/><br/>
+
+                    <strong>2. 주문제작문의_문의하기_포장1.html / 주문제작문의_문의하기_포장2.html / 상품선택_박스.html  / 상품선택_테이프.html (221020 검색)</strong><br/>
+                    - 텍스트 변경<br/><br/>
+
+                    <strong>3. 상품선택_포장봉투.html (221020 검색)</strong><br/>
+                    - 텍스트 변경, 추가<br/>
+                    - 택배 봉투 추가<br/><br/>
+
+                    <strong>4. 상품선택_안전봉투.html (221020 검색)</strong><br/>
+                    - 텍스트 변경, 추가<br/>
+                    - 롤, 시트 추가<br/><br/>
+
+                    <strong>5. GN_OF_01_상품선택_소모품.html (221020 검색)</strong><br/>
+                    - 텍스트 변경, 추가<br/>
+                    - 코팅 장갑 추가<br/><br/>
+
+                    <strong>6. GN_NA_01_상품선택_친환경제품.html</strong><br/>
+                    - 새 페이지 제작<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.10.12]</strong>
+                    <strong>1. 푸터 변경 (221012 전체검색)</strong><br/>
+                    - 개인정보보호책임자 이름(메일)변경<br/><br/>
+
+                    <strong>2. 회원가입_일반회원.html / 회원가입_개인사업자.html / 회원가입_법인사업자.html (221012 검색)</strong><br/>
+                    - 생년월일 > 성별 select 삭제 및 년/월/일 input class 변경<br/>
+                    - 클래스 추가/변경 : .terms_btn , .personal_btn<br/>
+                    - 개인정보 처리 방침 동의 텍스트 삭제<br/>
+                    - 선택 -> 필수 텍스트 변경<br/>
+                    - 마케팅 활용 동의 영역 추가<br/>
+                    - 이용약관 팝업 추가<br/>
+                    - 개인정보 수집 이용 동의 팝업 추가<br/><br/>
+
+                    <strong>3. 마이페이지_회원정보.html (221012 검색)</strong><br/>
+                    - 마케팅활용동의 UI 수정<br/><br/>
+
+                    <strong>4. 팝업.html (221012 검색)</strong><br/>
+                    - 거래명세서, 구매영수증, 팝업 내 텍스트 변경<br/><br/>
+
+                    <strong>5. 푸터_이용약관.html / 푸터_개인정보처리방침.html (221012 검색)</strong><br/>
+                    - pre 내용 변경<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.09.29]</strong>
+                    <strong>1. 주문결제.html / 주문제작문의_개인결제.html (220929 검색)</strong><br/>
+                    - 배송지 목록 버튼, 배송지 선택 팝업 추가<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date ">[22.09.26]</strong>
+                    <strong>1. style.html</strong><br/>
+                    - 로그인 확인 alert 팝업 추가<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.09.16]</strong>
+                    <strong>1. 폰트 CDN -> file 변경</strong><br/><br/>
+                    <strong>2. 이미지 추가</strong><br/>
+                    - - /assets/images/icons/icon_search2.png<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.09.07]</strong>
+                    <strong>1. 이미지 추가 / 변경</strong><br/>
+                    - /assets/images/main_logo.png<br/>
+                    - /assets/images/video_thumb.png<br/>
+                    - /assets/images/footer_sevemate.png<br/>
+                    - /assets/images/img_box_shape01.png<br/>
+                    - /assets/images/img_box_shape02.png<br/>
+                    - /assets/images/img_box_shape03.png<br/>
+                    - /assets/images/img_box_shape04.png<br/>
+                    - /assets/images/img_box_shape05.png<br/>
+                    - /assets/images/img_box_shape06.png<br/>
+                    - /assets/images/img_webhard.png<br/>
+                    - /assets/images/banner/banner_main_top_01.png<br/>
+                    - /assets/images/banner/banner_main_top_02.png<br/>
+                    - /assets/images/banner/banner_main_top_03.png<br/>
+                    - /assets/images/banner/banner_main_top_04.png<br/><br/>
+
+                    <strong>2. 홈.html (220907 검색)</strong><br/>
+                    - 메인배너 이미지 변경<br/>
+                    - 배너 5개 -> 4개 변경<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.08.31]</strong>
+                    <strong>1. layout.html (220831 검색)</strong><br/>
+                    - GNB 카테고리 순서 변경 : 종이 쇼핑백, 기타 포장재 맨 우측으로 이동<br/><br/>
+
+                    <strong>2. 팝업.html (220831 검색)</strong><br/>
+                    - 거래명세서, 구매영수증, 신용카드 매출전표 모달 팝업 변경<br/><br/>
+
+                    <strong>3. 회원가입_개인사업자.html / 회원가입_법인사업자.html (220831 검색)</strong><br/>
+                    - 업태, 종목 항목 추가<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.08.25]</strong>
+                    <strong>1. header 전체 변경 (220825 검색)</strong><br/>
+                    - .move_list 전체수정<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.08.24]</strong>
+                    <strong>1. header 전체 변경 (220824 검색)</strong><br/>
+                    - 포트폴리오 삭제<br/><br/>
+                    <strong>2. footer 전체 변경 (220824 검색)</strong><br/>
+                    - 고객센터 및 제휴 문의 번호 변경<br/><br/>
+
+                    <strong>3. GNB 변경 (220824 검색)</strong><br/>
+                    - .sub_nav 변경 : 종이 쇼핑백, 소모품, 기타 포장재<br/><br/>
+
+                    <strong>4. 홈.html (220824 검색)</strong><br/>
+                    - .video_desc 추가<br/>
+                    - 자주 찾는 카테고리 무지 쇼핑백, 폴리백, 기타 포장재, 친환경 제품 삭제<br/><br/>
+
+                    <strong>5. 주문제작견적요청.html (220824 검색)</strong><br/>
+                    - 텍스트 변경<br/>
+                    - .guide_process 마크업 추가<br/><br/>
+
+                    <strong>6. 검색상세.html / 주문제작문의_문의하기_포장1.html / 주문제작문의_문의하기_포장2.html / 고객전용상품.html (220824 검색)</strong><br/>
+                    - 텍스트 변경<br/><br/>
+
+                    <strong>7. 주문제작문의_개인결제.html (220824 검색)</strong><br/>
+                    - 텍스트 변경<br/>
+                    - 포인트 관련 마크업 삭제<br/>
+                    - 수령 방법 td 변경<br/><br/>
+                    
+                    <strong>8. 로그인.html / 로그인_아이디찾기.html / 로그인_비밀번호찾기.html / 회원가입.html (220824 검색)</strong><br/>
+                    - 슬로건 변경<br/><br/>
+                    <strong>9. 마이페이지_주문배송조회.html (220824 검색)</strong><br/>
+                    - 적립 포인트 서비스 준비중 변경<br/>
+                    - 포인트 조회 탭 비활성화<br/>
+                    - 테이블 품목 번호 항목 추가<br/><br/>
+                    <strong>10. 마이페이지_주문배송조회_상세1.html / 마이페이지_주문배송조회_상세2.html (220824 검색)</strong><br/>
+                    - 사용 포인트, 적립포인트 TBU 삭제<br/><br/>
+                    <strong>11. 마이페이지_주문배송조회_상세_거래명세서.html / 마이페이지_주문배송조회_상세_구매영수증.html (220824 검색)</strong><br/>
+                    - 텍스트 변경<br/><br/>
+                    <strong>12. 마이페이지_주문배송조회_상세_신용카드.html (220824 검색)</strong><br/>
+                    - 사용포인트 항목 삭제<br/>
+                    - 텍스트 변경<br/><br/>
+
+                    <strong>13. 마이페이지_배송지관리.html (220824 검색)</strong><br/>
+                    - 적립 포인트 서비스 준비중 변경<br/>
+                    - 포인트 조회 탭 비활성화<br/>
+                    - 도움말 추가<br/>
+                    - 클래스 변경 : .martop_24 -> .martop_10<br/><br/>
+                    <strong>14. 장바구니.html (220824 검색)</strong><br/>
+                    - 텍스트 수정<br/>
+                    - 배송비 안내 테이블 추가<br/><br/>
+
+                    <strong>15. 주문결제.html (220824 검색)</strong><br/>
+                    - 텍스트 수정<br/>
+                    - 포인트 관련 마크업 삭제<br/>
+                    - 수령 방법 td 변경<br/><br/>
+
+                    <strong>16. 상품상세_v2.html / 상품상세_v3.html (220824 검색)</strong><br/>
+                    - 포인트 적립 삭제<br/>
+                    - 텍스트 수정<br/>
+                    - 배송비 안내 팝업 이미지 -> 테이블 변경<br/><br/>
+                    <strong>17. 주문제작문의_문의하기_박스1.html (220824 검색)</strong><br/>
+                    - 클래스 추가 : .web_btn<br/>
+                    - 팝업 추가 : .web_way_modal<br/><br/>
+
+                    <strong>18. 상품선택_박스.html (220824 검색)</strong><br/>
+                    - 테이블 항목 텍스트 수정 : 사이즈 -> 외측사이즈, 타입에 / 추가, 합계(부가세 포함)<br/><br/>
+
+                    <strong>19. 마이페이지_회원정보.html / 마이페이지_내문의조회.html (220824 검색)</strong><br/>
+                    - 적립 포인트 서비스 준비중 변경<br/>
+                    - 포인트 조회 탭 비활성화<br/><br/>
+                    <strong>29. 관심상품.html  (220824 검색)</strong><br/>
+                    - 텍스트 변경<br/>
+                    - 제품 번호 항목 위치 변경<br/><br/>
+
+                    <strong>21. 이미지 변경</strong><br/>
+                    - /images/banner/banner_service_center.png<br/>
+                    - /images/banner/img_box_shape02.png<br/>
+                    - /images/banner/img_box_shape03.png<br/>
+                    - /images/banner/img_box_shape04.png<br/>
+                    - /images/banner/img_box_shape05.png<br/>
+                    - /images/banner/img_detail_delivery.png<br/><br/>
+
+                </li>
+                <li>
+                    <strong class="get_date ">[22.08.10]</strong>
+                    <strong>1. 주문제작문의_개인결제.html (220810 검색)</strong><br/>
+                    - 결제하기 확인 컨펌 추가<br/><br/>
+                    <strong>2. 마이페이지_주문배송조회_상세1.html / 마이페이지_주문배송조회_상세2.html (220810 검색)</strong><br/>
+                    - 거래명세서 인쇄, 구매영수증 인쇄 버튼 결제정보 옆으로 위치 변경<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date ">[22.08.08]</strong>
+                    <strong>1. layout.html (220808 검색)</strong><br/>
+                    - footer 고객센터 번호 변경<br/><br/>
+
+                    <strong>2. 이미지 교체</strong><br/>
+                    - assets/images/img_solution.png<br/>
+                    - assets/images/banner_service_center.png<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date ">[22.08.05]</strong>
+                    <strong>1. 주문결제.html (220805 검색)</strong><br/>
+                    - 컨펌 추가<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date ">[22.07.29]</strong>
+                    <strong>1. 전체 header, footer 변경 (220729 검색)</strong><br/><br/>
+                    <strong>2. 홈.html (220729 검색)</strong><br/>
+                    - 동영상 플레이어 영역 추가 : 현재 썸네일 제공 추후 유튜브 링크 제공<br/>
+                    - 주문제작 포트폴리오 영역 삭제<br/>
+                    - 포장재 솔루션 영역 위치 수정, 이미지 수정<br/><br/>
+
+                    <strong>3. 포장재솔루션.html (220729 검색)</strong><br/>
+                    - 동영상 플레이어 영역 추가 : 현재 썸네일 제공 추후 유튜브 링크 제공<br/><br/>
+
+                    <strong>4. 마이페이지_주문배송조회_상세1.html (220729 검색)</strong><br/>
+                    - 로젠택배 배송 조회 confirm 복구<br/><br/>
+
+                    <strong>5. 상품상세_v2.html / 상품상세_v3.html</strong><br/>
+                    -  배송/취소/교환/반품/환불 정보 이미지 변경<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.07.25]</strong>
+                    <strong>1. gnb 변경</strong><br/>
+                    - layout.html (220725 검색)<br/><br/>
+
+                    <strong>2. 주문제작문의_개인결제.html (220725 검색)</strong><br/>
+                    - 이메일 항목 삭제<br/>
+                    - 배송지 저장 오류, 결제하기 오류 alert 추가<br/><br/>
+
+                    <strong>3. 주문제작문의_문의하기_박스3.html (220725 검색)</strong><br/>
+                    - 클래스 추가 : .lookup_btn<br/>
+                    - 제품 번호 확인 alert 추가<br/><br/>
+
+                    <strong>4. 마이페이지_주문배송조회_상세1.html (220725 검색)</strong><br/>
+                    - 로젠택배 배송 조회 컨펌 삭제<br/><br/>
+
+                    <strong>5. 주문결제.html (220725 검색)</strong><br/>
+                    - 이메일 항목 삭제<br/>
+                    - 결제하기 오류 alert 문구 수정<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.07.18]</strong>
+                    <strong>1. header fixed 제거</strong><br/>
+                    - common.css 수정<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.07.12]</strong>
+                    <strong>1. 주문결제.html (220712 검색)</strong><br/>
+                    - 배송지 저장 오류 alert 추가 (주석처리)<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.07.06]</strong>
+                    <strong>1. 상품상세_v3.html (220706 검색)</strong><br/>
+                    - 주문금액 할인 없을 경우 추가 <br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date ">[22.07.05]</strong>
+                    <strong>1. header gnb 변경 / 중분류 or 소분류 마우스오버시 썸네일 변경 건 </strong><br/>
+                    - layout.html (220705 검색)<br/>
+                    - common.js (220705 검색)<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.06.28]</strong>
+                    <strong>1. 	상품상세_v2.html (220628 검색)</strong><br/>
+                    - 미리보기 팝업 결제혜택 ul li -> pre 태그 변경<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date ">[22.06.16]</strong>
+                    <strong>1. 포트폴리오.html (220616 검색)</strong><br/>
+                    - /assets/images/p_thumb01.png 이미지 변경<br/>
+                    - 후가공 항목 추가<br/>
+                    - 제작수량 -> 비고 텍스트 수정<br/>
+                    - 골판지 박스 -> 칼라 박스 텍스트 수정<br/>
+                    - 칼라 박스 옵션 변경<br/>
+                    - 칼라 박스 팝업 추가<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.06.08]</strong>
+                    <strong>1. 주문제작문의_문의하기_포장1.html / 주문제작문의_문의하기_포장2.html (220608 검색)</strong><br/>
+                    - 텍스트 수정<br/><br/>
+                    <strong>2. 주문제작문의_문의하기_수정.html (220608 검색)</strong><br/>
+                    - disabled 추가<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.06.03]</strong>
+                    <strong>1. 포장재솔루션_문의하기.html (220603 검색)</strong><br/>
+                    - 모든 항목 필수입력 - > 필수입력 수정<br/>
+                    - .required 추가<br/><br/>
+
+                </li>
+                <li>
+                    <strong class="get_date">[22.05.26]</strong>
+                    <strong>1. 마이페이지_회원정보.html (220526 검색)</strong><br/>
+                    - 상호 (법인명) placeholder value 텍스트 변경<br/>
+                    - 개입일자 항목추가<br/>
+                    - 대표자 휴대전화 번호 항목 삭제<br/>
+                    - 회사 이메일 항목 삭제<br/>
+                    - 회원 정보 수정 오류 alert 텍스트, 띄어쓰기 변경<br/><br/>
+
+                    <strong>2. 포장재솔루션_문의하기.html (220526 검색)</strong><br/>
+                    - 파일 업로드 input readonly 변경<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date ">[22.05.25]</strong>
+                    <strong>1. 팝업.html (220525 검색)</strong><br/>
+                    - 거래명세서, 구매영수증 윈도우 팝업 호출 추가<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date ">[22.05.24]</strong>
+                    <strong>1. 아이콘 변경</strong><br/>
+                    - /images/icons/disabled_check_off.png 교체<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date ">[22.05.23]</strong>
+                    <strong>1. 포장재솔루션_문의하기.html (220523 검색)</strong><br/>
+                    - placeholder 띄어쓰기 변경<br/>
+                    - 파일업로드 버튼 태그 변경<br/><br/>
+
+                    <strong>2. 마이페이지_주문배송조회_상세1.html (220523 검색)</strong><br/>
+                    - 텍스트 변경<br/>
+                    - 로젠택배 배송 조회 confirm 추가<br/><br/>
+
+                    <strong>3. 마이페이지_주문배송조회_상세2.html (220523 검색)</strong><br/>
+                    - 텍스트 변경<br/><br/>
+
+                    <strong>4. 장바구니.html (220523 검색)</strong><br/>
+                    - 재고 col 삭제<br/><br/>
+
+                    <strong>5. 주문결제.html (220523 검색)</strong><br/>
+                    - 배송비 드롭기능 삭제<br/>
+                    - 텍스트 변경<br/><br/>
+
+                    <strong>6. 상품상세_v2.html (220523 검색)</strong><br/>
+                    - 띄어쓰기 수정<br/>
+                    - 배송비 안내 팝업 추가<br/>
+                    - 배송/취소/교환/반품/환불 정보 탭 컨텐츠 이미지로 변경<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.05.20]</strong>
+                    <strong>1. 띄어쓰기 수정</strong><br/>
+                    - 지금까지 전달드리는 <strong>전페이지 띄어쓰기 수정</strong>이 있습니다. 최대한 주석으로 표시 했으니 확인부탁드립니다.<br/><br/>
+                </li>
+                <li>
+                    <strong class="get_date">[22.05.19]</strong>
+                    <strong>1. 관심상품.html / 상품상세_v2.html / 장바구니.html / 주문결제.html (220518 검색)</strong><br>
+                    - 구매상품 input readonly 삭제(키보드 입력 가능) : .increase_box > input readonly 삭제<br><br>
+                </li>
+                <li>
+                    <strong class="get_date">[22.05.18]</strong>
+                    <strong>1. 로그인.html / 로그인_아이디찾기.html / 로그인_비밀번호찾기.html<br/>
+                    / 회원가입.html (220518 검색)</strong><br>
+                    - 텍스트 변경<br>
+                    - 클래스 추가 .type2<br>
+                    - .loginWrap 내의 태그 위치 변경<br><br>
+
+                    <strong>2. 회원가입_일반회원.html / 회원가입_법인사업자.html / 회원가입_개인사업자.html (220518 검색)</strong><br>
+                    - .bg_white, .bg_grey, .type3 태그 / 클래스 추가<br>
+                    - 모든 항목 필수 입력 p태그 추가<br>
+                    - 마케팅활용동의 : 태그 변경, 팝업 추가<br>
+                    - 띄어쓰기 수정<br><br>
+
+                    <strong>3. 마이페이지_배송지등록수정.html (220518 검색)</strong><br>
+                    - 주소 -> 수령지 주소 텍스트 변경<br><br>
+                    
+                    <strong>4. 마이페이지_회원정보.html (220518 검색)</strong><br>
+                    - .chk_box 마케팅 활용동의, 팝업 추가<br><br>
+
+                    <strong>5. 주문결제.html (220518 검색)</strong><br>
+                    - 텍스트 수정<br>
+                    - 배송비 드롭기능 / 영역 추가<br><br>
+
+                    <strong>6. 상품상세_v2.html (220518 검색)</strong><br>
+                    - 텍스트 수정<br>
+                    - 품절 버튼 추가<br>
+                    - .guide_box 삭제<br>
+                    - .guide_info 수정<br><br>
+
+                    <strong>7. 고객센터_문의하기.html / 고객센터_공지사항상세.html (220518 검색)</strong><br>
+                    - 텍스트 수정<br><br>
+                </li>
+                <li>
+                    <strong class="get_date">[22.05.16]</strong>
+                    <strong>1. 로그인, 회원가입 제외 전페이지 header 변경</strong><br><br>
+                    <strong>2. 전페이지 footer 변경 : 띄어쓰기 변경</strong><br><br>
+                    <strong>3. 디자인 변경으로 images 폴더 전체 덮어쓰기 부탁드립니다.</strong><br><br>
+                    <strong>4. 홈.html (220516 검색)</strong><br>
+                    - 클래스 변경 : .martop_48 -> .martop_44 / .marleft_24 -> .marleft_40 변경<br>
+                    - 텍스트 변경, 삭제<br>
+                    - .bg_main_category.png 삭제<br><br>
+
+                    <strong>5. 검색상세.html (220516 검색)</strong><br>
+                    - 텍스트 변경, 띄어쓰기 변경<br><br>
+
+                    <strong>6. 관심상품.html (220516 검색)</strong><br>
+                    - 텍스트, 띄어쓰기 변경<br><br>
+
+                    <strong>7. 고객전용상품.html (220516 검색)</strong><br>
+                    - 글 미등록시 케이스 추가<br>
+                    - 텍스트 변경<br><br>
+
+                    <strong>8. 고객센터_고객문의.html (220516 검색)</strong><br>
+                    - 텍스트 변경<br>
+                    - 목록 없을시 케이스 추가<br><br>
+
+                    <strong>9. 고객센터_내문의조회상세_답변전.html / 고객센터_내문의조회상세_답변후.html 페이지 분리, 클래스 추가</strong><br>
+                    - 답변전 / 답글완료1차, 답글쓰기2차 : 고객센터_내문의조회상세_답변전.html<br>
+                    - 답글완료 1차, 답글완료 2차 : 고객센터_내문의조회상세_답변후.html<br>
+                    - 고객센터_내문의조회상세_답변전.html : .marleft_minus_40 추가<br><br>
+
+                    <strong>10. 고객센터_공지사항.html (220516 검색)</strong><br>
+                    - 글 미등록시 케이스 추가<br><br>
+
+                    <strong>11. 마이페이지_주문배송조회.html (220516 검색)</strong><br>
+                    - 테이블 텍스트 변경<br>
+                    - 글 미등록시 케이스 추가<br><br>
+
+                    <strong>12. 마이페이지_내문의조회.html / 마이페이지_배송지관리.html (220516 검색)</strong><br>
+                    - 글 미등록시 케이스 추가<br>
+                    - 텍스트 변경<br><br>
+
+                    <strong>13. 마이페이지_포인트조회.html (220516 검색)</strong><br>고객센터_FAQ.html (220516 검색)
+                    - 클래스 추가 : .col_green<br>
+                    - 글 미등록시 케이스 추가<br><br>
+
+                    <strong>14. 고객센터_FAQ.html (220516 검색)</strong><br>
+                    - 글 미등록시 케이스 추가<br>
+                    - 텍스트 변경<br><br>
+
+                    <strong>15. common.js (220516 검색)</strong><br>
+                    - 스크롤 이벤트 추가<br><br>
+                    
+                    <strong>16. 마이페이지_내문의조회상세.html (220516 검색)</strong><br>
+                    - 텍스트 변경, 띄어쓰기 수정<br><br>
+                </li>
+                <li>
+                    <strong class="get_date">[22.05.03]</strong>
+                    <strong>1. 테이블 번호 column 오름차순 -> 내림차순 재변경 (검색상세.html 오름차순 유지)</strong><br>
+                    - 고객센터_고객문의.html<br>
+                    - 고객센터_공지사항.html<br>
+                    - 고객센터_FAQ.html<br>
+                    - 마이페이지_내문의조회.html<br>
+                    - 마이페이지_배송지관리.html<br>
+                    - 마이페이지_주문배송조회.html<br>
+                    - 마이페이지_포인트조회.html<br><br>
+
+                    <strong>2. 대표 이메일 > 회사 이메일로 일괄변경 (220503 검색)</strong><br>
+                    - 회원가입_개인사업자.html<br>
+                    - 회원가입_법인사업자.html<br>
+                    - 마이페이지_회원정보.html<br><br>
+                </li>
+                <li>
+                    <strong class="get_date">[22.04.28]</strong>
+                    <strong>1. 검색상세.html (220428 검색)</strong><br>
+                    - 검색 상세(무) 주석처리 : 문구수정<br><br>
+                </li>
+                <li>
+                    <strong class="get_date ">[22.04.26]</strong>
+                    <strong>1. 테이블 번호 column 내림차순 -> 오름차순 변경</strong><br>
+                    - 고객센터_고객문의.html<br>
+                    - 고객센터_공지사항.html<br>
+                    - 고객센터_FAQ.html<br>
+                    - 마이페이지_내문의조회.html<br>
+                    - 마이페이지_배송지관리.html<br>
+                    - 마이페이지_주문배송조회.html<br>
+                    - 마이페이지_포인트조회.html<br><br>
+                </li>
+                <li>
+                    <strong class="get_date ">[22.04.21]</strong>
+                    <strong>1. 로그인.html / 회원가입_개인사업자.html / 회원가입_법인사업자.html (220421 검색)</strong><br>
+                    - placeholder 변경<br><br>
+
+                    <strong>2. 회원가입_일반회원.html (220421 검색)</strong><br>
+                    - placeholder 변경<br>
+                    - 개인 -> 일반 텍스트 수정<br><br>
+
+                    <strong>3. 상품상세_v2.html</strong><br>
+                    - 기존 상품상세 페이지에 변경된 사항이 많아 v2 제작하였습니다.<br><br>
+
+                    <strong>4. 이미지(아이콘) 변경</strong><br>
+                    - /images/icons/icon_wish.png 교체<br>
+                    - /images/icons/icon_wish_active.png 교체<br><br>
+                </li>
+                <li>
+                    <strong class="get_date ">[22.04.20]</strong>
+                    <strong>1. layout.html (220420 검색)</strong><br>
+                    - 검색어 표출 추가<br>
+                    - 검색어 표출 스크립트 추가<br>
+                    - gnb 서브메뉴 텍스트 수정 : .sub_nav<br><br>
+                </li>
+                <li>
+                    <strong class="get_date">[22.04.15]</strong>
+                    <strong>1. 이미지(아이콘) 변경</strong><br>
+                    - /images/icons/icon_answer.png 교체<br><br>
+                    <strong>2. 고객전용상품.html (220415 검색)</strong><br>
+                    - '총 결제 금액' -> '총 주문 금액' 변경<br><br>
+                </li>
+                <li>
+                    <strong class="get_date">[22.04.14]</strong>
+                    <strong>1. 상품상세.html (220414 검색)</strong><br>
+                    - 슬라이드 화살표 버튼 관련 태그, 스와이퍼 옵션 삭제<br><br>
+                </li>
+                <li>
+                    <strong class="get_date">[22.04.13]</strong>
+                    <strong>1. layout.html (220413 검색)</strong><br>
+                    - 서브메뉴의 기획 수정으로 header / footer 변경 시<br>
+                    &nbsp;&nbsp;기존에 말씀드렸던 전체 페이지 변경이 아닌 layout.html 페이지를 업데이트 할 예정입니다.<br>
+                    &nbsp;&nbsp;개발 시 반영 부탁드립니다.<br><br>
+                    - 박스, 포장 봉투, 안전봉투 에어캡 .sub_nav 수정<br>
+                    - 클래스 추가 : .clear<br><br>
+                    <strong>2. 상품상세.html (220413 검색)</strong><br>
+                    - 상품상세 추가<br><br>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // 테이블 번호 삽입
+        (function () {
+            let num = 1,
+                tr = document.querySelectorAll('table tr');
+            for (let i = 1; i < tr.length; i++) {
+                if($(tr).eq(i).hasClass("section")){
+                    continue;
+                }
+                tr[i].children[0].innerText = num;
+                num++;
+            }
+        })();
+    </script>
+</body>
+</html>

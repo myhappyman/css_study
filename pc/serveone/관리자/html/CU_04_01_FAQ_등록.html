@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[serveone] 관리자</title>
+    
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- Toast UI -->
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="#" class="main_logo">
+                    <img src="../assets/images/main_logo.png" alt="PACKER ONE" />
+                </a>
+            </h1>
+
+            <!-- gnb -->
+            <nav class="gnb">
+                <button class="product">상품관리</button>
+                <ul>
+                    <li><a href="#">상품 조회/관리</a></li>
+                    <li><a href="#">상품 등록</a></li>
+                </ul>
+                <button class="order">주문 관리</button>
+                <ul>
+                    <li><a href="#">전체주문목록</a></li>
+                    <li><a href="#">배송 관리</a></li>
+                    <li><a href="#">취소/교환/반품/환불관리</a></li>
+                </ul>
+                <button class="member">회원 관리</button>
+                <ul>
+                    <li><a href="#">회원관리</a></li>
+                    <li><a href="#">적립포인트 관리</a></li>
+                </ul>
+                <button class="board active">게시판 관리</button>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a class="active" href="#">FAQ</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">포장재솔루션 문의</a></li>
+                    <li><a href="#">주문제작 문의</a></li>
+                </ul>
+                <button class="stats">통계 관리</button>
+                <ul>
+                    <li><a href="#">매출분석</a></li>
+                    <li><a href="#">상품분석</a></li>
+                    <li><a href="#">주문제작 분석</a></li>
+                </ul>
+                <!-- 220622 수정 -->
+                <button class="banner">배너 관리</button>
+                <ul>
+                    <li><a href="#">배너 조회/관리</a></li>
+                    <li><a href="#">배너 등록</a></li>
+                </ul>
+                <button class="portfolio">포트폴리오 관리</button>
+                <ul>
+                    <li><a href="#">포트폴리오 조회/관리</a></li>
+                    <li><a href="#">포트폴리오 등록</a></li>
+                </ul>
+                <!-- // 220622 수정 -->
+            </nav>
+            <!-- // gnb -->
+
+        </header>
+        <!-- // header -->
+    
+        <!-- main -->
+        <main>
+            <nav>
+                <ul class="clear">
+                    <li><a href="#" class="rank">최고관리자(serveone)</a></li>
+                    <li><a href="#" class="white_btn w_100 marleft_20">로그아웃</a></li>
+                    <li><a href="#" class="red_btn w_120 marleft_10">쇼핑몰 관리</a></li>
+                </ul>
+            </nav>
+
+            <div class="title_box clear">
+                <h2 class="left">FAQ</h2>
+                <ul class="right">
+                    <li>게시판 관리</li>
+                    <li>FAQ</li>
+                    <li>등록</li>
+                </ul>
+            </div>
+
+            <div class="con_wrap">
+                <div class="clear type2">
+                    <strong class="main_title left">FAQ 등록</strong>
+                    <span class="right required_tag">필수입력</span>
+                </div>
+
+                <table class="type2 txt_left layout_fixed">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th class="required">문의유형</th>
+                            <td>
+                                <input type="radio" name="inquiry" class="ch_radio hide" id="inquiry1" checked />
+                                <label for="inquiry1" class="label">주문/결제</label>
+
+                                <input type="radio" name="inquiry" class="ch_radio hide" id="inquiry2" />
+                                <label for="inquiry2" class="label marleft_20">배송문의</label>
+
+                                <!-- 220621 상품문의 추가, id 변경 -->
+                                <input type="radio" name="inquiry" class="ch_radio hide" id="inquiry4" />
+                                <label for="inquiry4" class="label marleft_20">상품문의</label>
+
+                                <input type="radio" name="inquiry" class="ch_radio hide" id="inquiry5" />
+                                <label for="inquiry5" class="label marleft_20">취소/교환/반품/환불</label>
+
+                                <input type="radio" name="inquiry" class="ch_radio hide" id="inquiry6" />
+                                <label for="inquiry6" class="label marleft_20">회원/기타</label>
+                                <!-- // 220621 상품문의 추가, id 변경 -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="required">게시글 제목</th>
+                            <td>
+                                <input type="text" class="w_full" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="required">게시글 내용</th>
+                            <td>
+                                <div id="editor"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn_center martop_30">
+                    <button class="black_btn big w_270 cancel_btn">취소</button>
+                    <button class="red_btn big w_270 save_btn">저장</button>
+                </div>
+            </div>
+
+            <!-- confirm -->
+            <div class="modal_wrap confirm">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="black_btn w_120 delete_modal">아니오</button>
+                        <button class="red_btn w_120 btn_ok">네</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // confirm -->
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+
+    <script src="../assets/js/common.js"></script>
+    <script>
+        $(function () {
+            //Toast UI
+            var content = ``;
+            var editor = new toastui.Editor({
+                el: document.querySelector('#editor'),
+                previewStyle: 'vertical',
+                height: '607px',
+                initialEditType: 'wysiwyg',
+                initialValue: content
+            });
+
+            // 취소 확인 confirm
+            $(".cancel_btn").on("click", function () {
+                action_popup.confirm("입력하신 정보가 저장되지 않고 목록으로 이동 합니다.<br/>이동 하시겠습니까?", function(){}, "취소 확인");
+            });
+
+            // 저장 확인 confirm
+            $(".save_btn").on("click", function () {
+                action_popup.confirm("입력하신 정보를 저장 하시겠습니까?", function(){}, "저장 확인");
+            });
+        });
+    </script>
+</body>
+</html>

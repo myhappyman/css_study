@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[serveone] 관리자</title>
+    
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="#" class="main_logo">
+                    <img src="../assets/images/main_logo.png" alt="PACKER ONE" />
+                </a>
+            </h1>
+
+            <!-- gnb -->
+            <nav class="gnb">
+                <button class="product">상품관리</button>
+                <ul>
+                    <li><a href="#">상품 조회/관리</a></li>
+                    <li><a href="#">상품 등록</a></li>
+                </ul>
+                <button class="order">주문 관리</button>
+                <ul>
+                    <li><a href="#">전체주문목록</a></li>
+                    <li><a href="#">배송 관리</a></li>
+                    <li><a href="#">취소/교환/반품/환불관리</a></li>
+                </ul>
+                <button class="member">회원 관리</button>
+                <ul>
+                    <li><a href="#">회원관리</a></li>
+                    <li><a href="#">적립포인트 관리</a></li>
+                </ul>
+                <button class="board">게시판 관리</button>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">포장재솔루션 문의</a></li>
+                    <li><a href="#">주문제작 문의</a></li>
+                </ul>
+                <button class="stats">통계 관리</button>
+                <ul>
+                    <li><a href="#">매출분석</a></li>
+                    <li><a href="#">상품분석</a></li>
+                    <li><a href="#">주문제작 분석</a></li>
+                </ul>
+                <!-- 220622 수정 -->
+                <button class="banner">배너 관리</button>
+                <ul>
+                    <li><a href="#">배너 조회/관리</a></li>
+                    <li><a href="#">배너 등록</a></li>
+                </ul>
+                <button class="portfolio">포트폴리오 관리</button>
+                <ul>
+                    <li><a href="#">포트폴리오 조회/관리</a></li>
+                    <li><a href="#">포트폴리오 등록</a></li>
+                </ul>
+                <!-- // 220622 수정 -->
+            </nav>
+            <!-- // gnb -->
+
+        </header>
+        <!-- // header -->
+    
+        <!-- main -->
+        <main class="tab">
+            <nav>
+                <ul class="clear">
+                    <li><a href="#" class="rank">최고관리자(serveone)</a></li>
+                    <li><a href="#" class="white_btn w_100 marleft_20">로그아웃</a></li>
+                    <li><a href="#" class="red_btn w_120 marleft_10">쇼핑몰 관리</a></li>
+                </ul>
+            </nav>
+
+            <div class="title_box clear">
+                <h2 class="left">쇼핑몰 관리</h2>
+                <ul class="right">
+                    <li>쇼핑몰 관리</li>
+                    <li>알림톡/이메일  발송설정</li> <!-- 220816 텍스트 수정 -->
+                </ul>
+            </div>
+
+            <div class="con_wrap">
+                <ul class="tab_menu_type1 third clear">
+                    <li><a href="#" data-target="type1_01">기본설정 - 이용약관 및 방침 설정</a></li>
+                    <li><a href="#" data-target="type1_02">관리자 권한 설정</a></li>
+                    <li class="active"><a href="#" data-target="type1_03">알림톡/이메일 발송 설정</a></li> <!-- 220816 텍스트 수정 -->
+                </ul>
+
+                <strong class="main_title martop_30">발송내역 조회</strong> <!-- 220816 텍스트 수정 -->
+                <table class="type2 txt_left layout_fixed">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="*">
+                        <col width="200px">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>기간검색</th>
+                            <td colspan="3">
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio1" checked />
+                                <label for="inpRadio1" class="label">전체</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio2" />
+                                <label for="inpRadio2" class="label marleft_20">당일</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio3" />
+                                <label for="inpRadio3" class="label marleft_20">3일</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio4" />
+                                <label for="inpRadio4" class="label marleft_20">7일</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio5" />
+                                <label for="inpRadio5" class="label marleft_20">1개월</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio6" />
+                                <label for="inpRadio6" class="label marleft_20">3개월</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio7" />
+                                <label for="inpRadio7" class="label marleft_20">12개월</label>
+
+                                <div class="custom_date w_156 marleft_20">
+                                    <input type="text" class="date w_full" id="datepickerToggle" placeholder="2021-09-01" readonly />
+                                </div>
+                                <span class="tilde">~</span>
+                                <div class="custom_date w_156">
+                                    <input type="text" class="date w_full" id="datepickerToggle2" placeholder="2021-09-01" readonly />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>알림톡 발송상태</th> <!-- 220816 텍스트 수정 -->
+                            <td>
+                                <input type="checkbox" class="ch_check hide" name="smsChk" id="smsChk1" />
+                                <label for="smsChk1" class="label">전체</label>
+
+                                <input type="checkbox" class="ch_check hide" name="smsChk" id="smsChk2" />
+                                <label for="smsChk2" class="label marleft_20">대기</label>
+
+                                <input type="checkbox" class="ch_check hide" name="smsChk" id="smsChk3" />
+                                <label for="smsChk2" class="label marleft_20">성공</label>
+
+                                <input type="checkbox" class="ch_check hide" name="smsChk" id="smsChk4" />
+                                <label for="smsChk3" class="label marleft_20">실패</label>
+                            </td>
+                            <th>이메일 발송상태</th>
+                            <td>
+                                <input type="checkbox" class="ch_check hide" name="emailChk1" id="emailChk1" />
+                                <label for="smsChk1" class="label">전체</label>
+
+                                <input type="checkbox" class="ch_check hide" name="emailChk1" id="emailChk2" />
+                                <label for="emailChk2" class="label marleft_20">성공</label>
+
+                                <input type="checkbox" class="ch_check hide" name="emailChk1" id="emailChk3" />
+                                <label for="emailChk3" class="label marleft_20">실패</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>수신번호</th>
+                            <td>
+                                <input type="number" class="w_full" placeholder="-없이 입력" />
+                            </td>
+                            <th>이메일 주소</th>
+                            <td>
+                                <input type="email" class="w_full" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn_center martop_30">
+                    <button class="red_btn big w_150">조회</button>
+                    <button class="grey_btn big w_150 initialization_btn">초기화</button>
+                </div>
+
+                <div class="inp_box martop_20 clear">
+                    <div class="left martop_12">
+                        <p>조회결과<em class="col_red">(10)</em></p>
+                        <div class="btn_left martop_20">
+                            <button class="black_btn w_80 confirm_btn">삭제</button>
+                            <select class="select w_115">
+                                <option value="0">발송상태</option>
+                                <option value="1">대기</option>
+                                <option value="2">성공</option>
+                                <option value="3">실패</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <div class="clear">
+                            <a href="#" class="red_btn w_140 right">발송 메시지 설정</a>
+                        </div>
+                        <div class="btn_right martop_10">
+                            <a href="#" class="excel_btn" download>엑셀다운로드</a>
+                            <select class="select w_140">
+                                <option value="0">10개씩 보기</option>
+                                <option value="1">20개씩 보기</option>
+                                <option value="2">30개씩 보기</option>
+                                <option value="3">50개씩 보기</option>
+                            </select>
+                            <select class="select w_140">
+                                <option value="0">발송시간 순</option>
+                                <option value="1">발송시간 역순</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="type1 martop_16">
+                    <colgroup>
+                        <col width="80px">
+                        <col width="297px">
+                        <col width="297px">
+                        <col width="297px">
+                        <col width="297px">
+                        <col width="297px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" name="inpChk" class="ch_check hide allcheck" id="inpChk1" />
+                                <label for="inpChk1" class="label single"></label>
+                            </th>
+                            <th>회원명</th>
+                            <th>발송상황</th>
+                            <th>발송상태</th>
+                            <th>발송매체</th>
+                            <th>발송시간</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk2" />
+                                <label for="inpChk2" class="label single"></label>
+                            </td>
+                            <td>서부원</td>
+                            <td>배송준비중</td>
+                            <td>대기</td>
+                            <td>알림톡</td> <!-- 220816 텍스트 수정 -->
+                            <td>22-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk3" />
+                                <label for="inpChk3" class="label single"></label>
+                            </td>
+                            <td>서부원</td>
+                            <td>배송대기</td>
+                            <td>성공</td>
+                            <td>이메일</td>
+                            <td>22-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk4" />
+                                <label for="inpChk4" class="label single"></label>
+                            </td>
+                            <td>서부원</td>
+                            <td>배송중</td>
+                            <td>실패</td>
+                            <td>알림톡</td> <!-- 220816 텍스트 수정 -->
+                            <td>22-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk5" />
+                                <label for="inpChk5" class="label single"></label>
+                            </td>
+                            <td>서부원</td>
+                            <td>배송완료</td>
+                            <td>대기</td>
+                            <td>이메일</td>
+                            <td>22-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk6" />
+                                <label for="inpChk6" class="label single"></label>
+                            </td>
+                            <td>서부원</td>
+                            <td>주문 취소</td>
+                            <td>대기</td>
+                            <td>알림톡</td> <!-- 220816 텍스트 수정 -->
+                            <td>22-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk7" />
+                                <label for="inpChk7" class="label single"></label>
+                            </td>
+                            <td>서부원</td>
+                            <td>주문 반품</td>
+                            <td>대기</td>
+                            <td>알림톡</td> <!-- 220816 텍스트 수정 -->
+                            <td>22-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk8" />
+                                <label for="inpChk8" class="label single"></label>
+                            </td>
+                            <td>서부원</td>
+                            <td>주문 환불</td>
+                            <td>대기</td>
+                            <td>알림톡</td> <!-- 220816 텍스트 수정 -->
+                            <td>22-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk9" />
+                                <label for="inpChk9" class="label single"></label>
+                            </td>
+                            <td>서부원</td>
+                            <td>주문제작/견적요청</td>
+                            <td>대기</td>
+                            <td>알림톡</td> <!-- 220816 텍스트 수정 -->
+                            <td>22-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk10" />
+                                <label for="inpChk10" class="label single"></label>
+                            </td>
+                            <td>서부원</td>
+                            <td>주문제작/견적요청</td>
+                            <td>대기</td>
+                            <td>알림톡</td> <!-- 220816 텍스트 수정 -->
+                            <td>22-08-25 14:52</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk11" />
+                                <label for="inpChk11" class="label single"></label>
+                            </td>
+                            <td>서부원</td>
+                            <td>배송중</td>
+                            <td>대기</td>
+                            <td>알림톡</td> <!-- 220816 텍스트 수정 -->
+                            <td>22-08-25 14:52</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="paging txt_center clear martop_20">
+                    <ul>
+                        <li><a href="" class="paging_first"></a></li>
+                        <li><a href="" class="paging_prev"></a></li>
+                        <li class="on"><a href="" class="paging_num">1</a></li>
+                        <li><a href="" class="paging_num">2</a></li>
+                        <li><a href="" class="paging_num">3</a></li>
+                        <li><a href="" class="paging_num">4</a></li>
+                        <li><a href="" class="paging_num">5</a></li>
+                        <li><a href="" class="paging_num">6</a></li>
+                        <li><a href="" class="paging_num">7</a></li>
+                        <li><a href="" class="paging_num">8</a></li>
+                        <li><a href="" class="paging_num">9</a></li>
+                        <li><a href="" class="paging_num">10</a></li>
+                        <li><a href="" class="paging_next"></a></li>
+                        <li><a href="" class="paging_last"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- confirm -->
+            <div class="modal_wrap confirm">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="black_btn w_120 delete_modal">아니오</button>
+                        <button class="red_btn w_120 btn_ok">네</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // confirm -->
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+    
+    <script src="../assets/js/common.js"></script>
+    <script>
+        $(function () {
+            // 초기화 확인 confirm
+            $(".initialization_btn").on("click", function () {
+                action_popup.confirm("모든 조회 설정이 초기화 됩니다.<br/>진행 하시겠습니까?", function(){}, "초기화 확인");
+            });
+
+            // 삭제 확인 confirm
+            $(".confirm_btn").on("click", function () {
+                action_popup.confirm("선택하신 목록을 삭제 하시겠습니까?", function(){}, "삭제 확인");
+            });
+
+            // 전체 체크, 단일 체크
+            var checkedNameList = ["inpChk"];
+            for(var i=0; i<checkedNameList.length; i++){
+                $("[type=checkbox][name="+checkedNameList[i]+"]").on("change", function(){
+                    var check = $(this).prop("checked");
+                    var name = $(this).attr("name");
+                    //전체 체크
+                    if($(this).hasClass("allcheck")){
+                        $("[type=checkbox][name="+name+"]").prop("checked", check);
+                    //단일 체크
+                    }else{
+                        var all = $("[type=checkbox][name="+name+"].allcheck");
+                        var allcheck = all.prop("checked")
+                        if(check != allcheck){
+                            var len = $("[type=checkbox][name="+name+"]").not(".allcheck").length;
+                            var ckLen = $("[type=checkbox][name="+name+"]:checked").not(".allcheck").length;
+                            if(len === ckLen){
+                                all.prop("checked", true);
+                            }else{
+                                all.prop("checked", false);
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[serveone] 관리자</title>
+    
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- Chart.js -->
+    <script src="../assets/js/Chart.min.js"></script>
+    <script src="../assets/js/utils.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="#" class="main_logo">
+                    <img src="../assets/images/main_logo.png" alt="PACKER ONE" />
+                </a>
+            </h1>
+
+            <!-- gnb -->
+            <nav class="gnb">
+                <button class="product">상품관리</button>
+                <ul>
+                    <li><a href="#">상품 조회/관리</a></li>
+                    <li><a href="#">상품 등록</a></li>
+                </ul>
+                <button class="order">주문 관리</button>
+                <ul>
+                    <li><a href="#">전체주문목록</a></li>
+                    <li><a href="#">배송 관리</a></li>
+                    <li><a href="#">취소/교환/반품/환불관리</a></li>
+                </ul>
+                <button class="member">회원 관리</button>
+                <ul>
+                    <li><a href="#">회원관리</a></li>
+                    <li><a href="#">적립포인트 관리</a></li>
+                </ul>
+                <button class="board">게시판 관리</button>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">포장재솔루션 문의</a></li>
+                    <li><a href="#">주문제작 문의</a></li>
+                </ul>
+                <button class="stats active">통계 관리</button>
+                <ul>
+                    <li><a class="active" href="#">매출분석</a></li>
+                    <li><a href="#">상품분석</a></li>
+                    <li><a href="#">주문제작 분석</a></li>
+                </ul>
+                <!-- 220622 수정 -->
+                <button class="banner">배너 관리</button>
+                <ul>
+                    <li><a href="#">배너 조회/관리</a></li>
+                    <li><a href="#">배너 등록</a></li>
+                </ul>
+                <button class="portfolio">포트폴리오 관리</button>
+                <ul>
+                    <li><a href="#">포트폴리오 조회/관리</a></li>
+                    <li><a href="#">포트폴리오 등록</a></li>
+                </ul>
+                <!-- // 220622 수정 -->
+            </nav>
+            <!-- // gnb -->
+
+        </header>
+        <!-- // header -->
+    
+        <!-- main -->
+        <main class="tab">
+            <nav>
+                <ul class="clear">
+                    <li><a href="#" class="rank">최고관리자(serveone)</a></li>
+                    <li><a href="#" class="white_btn w_100 marleft_20">로그아웃</a></li>
+                    <li><a href="#" class="red_btn w_120 marleft_10">쇼핑몰 관리</a></li>
+                </ul>
+            </nav>
+
+            <div class="title_box clear">
+                <h2 class="left">매출분석</h2>
+                <ul class="right">
+                    <li>통계 관리</li>
+                    <li>매출분석</li>
+                </ul>
+            </div>
+
+            <div class="con_wrap">
+                <ul class="tab_menu_type1 fourth clear">
+                    <li><a href="#" data-target="type1_01">일별</a></li>
+                    <li class="active"><a href="#" data-target="type1_02">주별</a></li>
+                    <li><a href="#" data-target="type1_03">월별</a></li>
+                    <li><a href="#" data-target="type1_04">년별</a></li>
+                </ul>
+
+                <strong class="main_title martop_30">매출분석</strong>
+                <table class="type2 txt_left">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>기간검색</th>
+                            <td>
+                                <span class="ver_mid">최근</span>
+                                <select class="select w_80 marleft_8">
+                                    <option value="0">2</option>
+                                </select>
+                                <span class="ver_mid marleft_8">주</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn_center martop_30">
+                    <button class="red_btn big w_150">조회</button>
+                </div>
+
+                <div class="chart_wrap martop_30">
+                    <div class="chart_layer">
+                        <span class="unit">단위 : (만 원)</span>
+                        <div class="chart_con">
+                            <canvas id="canvasBar01" width="3500"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <strong class="main_title martop_30">전주/금주 성장추이</strong>
+                <table class="type1 martop_16 statistics nohover">
+                    <colgroup>
+                        <col width="364px">
+                        <col width="200px">
+                        <col width="200px">
+                        <col width="200px">
+                        <col width="200px">
+                        <col width="200px">
+                        <col width="200px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>기간</th>
+                            <th colspan="2">매출</th>
+                            <th colspan="2">환불</th>
+                            <th colspan="2">수익</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>금주(2022-04-25~2022-04-29)</td>
+                            <td>310,830</td>
+                            <td rowspan="2" class="col_blue">73.68% 감소</td> <!-- 220928 추가 -->
+                            <td>161,958</td>
+                            <td rowspan="2" class="col_red">42.82% 증가</td> <!-- 220928 추가 -->
+                            <td>148,872</td>
+                            <td rowspan="2">0%</td>
+                        </tr>
+                        <tr>
+                            <td>전주(2022-04-18~2022-04-24)</td>
+                            <td>1,181,036</td>
+                            <td>283,219</td>
+                            <td>897,817</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="inp_box martop_58 type2 clear">
+                    <div class="left martop_12">
+                        <p>조회결과<em class="col_red">(10)</em></p>
+                    </div>
+
+                    <div class="right">
+                        <div class="btn_right ">
+                            <a href="#" class="excel_btn" download>엑셀다운로드</a>
+                            <select class="select w_140">
+                                <option value="0">10개씩 보기</option>
+                                <option value="1">20개씩 보기</option>
+                                <option value="2">30개씩 보기</option>
+                                <option value="3">50개씩 보기</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="type1 statistics">
+                    <colgroup>
+                        <col width="280px">
+                        <col width="100px">
+                        <col width="100px">
+                        <col width="100px">
+                        <col width="140px">
+                        <col width="140px">
+                        <col width="140px">
+                        <col width="140px">
+                        <col width="140px">
+                        <col width="140px">
+                        <col width="140px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">일자</th>
+                            <th colspan="7">결제완료 주문</th>
+                            <th rowspan="2">매출</th>
+                            <th rowspan="2">환불</th>
+                            <th rowspan="2">수익</th>
+                        </tr>
+                        <tr>
+                            <th>주문수</th>
+                            <th>주문취소</th>
+                            <th>품목수</th>
+                            <th>상품구매금액</th>
+                            <th>배송비</th>
+                            <th>할인</th>
+                            <th>포인트</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30.690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30.690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30.690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30.690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30.690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30.690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30.690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30.690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30.690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30.690</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="paging txt_center clear martop_20">
+                    <ul>
+                        <li><a href="" class="paging_first"></a></li>
+                        <li><a href="" class="paging_prev"></a></li>
+                        <li class="on"><a href="" class="paging_num">1</a></li>
+                        <li><a href="" class="paging_num">2</a></li>
+                        <li><a href="" class="paging_num">3</a></li>
+                        <li><a href="" class="paging_num">4</a></li>
+                        <li><a href="" class="paging_num">5</a></li>
+                        <li><a href="" class="paging_num">6</a></li>
+                        <li><a href="" class="paging_num">7</a></li>
+                        <li><a href="" class="paging_num">8</a></li>
+                        <li><a href="" class="paging_num">9</a></li>
+                        <li><a href="" class="paging_num">10</a></li>
+                        <li><a href="" class="paging_next"></a></li>
+                        <li><a href="" class="paging_last"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+    
+    <script src="../assets/js/common.js"></script>
+    <script>
+        $(function () {
+            if($('#canvasBar01').length > 0){
+                //SAMPLE DATA *************************************
+                var label_arr =  [
+                                    '이번주', '1주전', '2주전', '3주전', '4주전', '5주전', '6주전', '7주전', '8주전', '9주전',
+                                    '10주전', '11주전', '12주전', '13주전', '14주전', '15주전', '16주전', '17주전', '18주전', '19주전',
+                                    '20주전', '21주전', '22주전', '23주전', '24주전', '25주전', '26주전', '27주전', '28주전', '29주전',
+                                    '30주전', '31주전', '32주전', '33주전', '34주전', '35주전', '36주전', '37주전', '38주전', '39주전',
+                                    '40주전', '41주전', '42주전', '43주전', '44주전', '45주전', '46주전', '47주전', '48주전', '49주전',
+                                    '50주전', '51주전', '52주전'
+                                ];
+
+                //datasets:data
+                var datas = [
+                                2300, 7000, 7000, 7000, 4000, 7000, 7000, 7000, 7000, 7000, 
+                                7000, 3000, 7000, 7000, 5000, 7000, 7000, 7000, 7000, 7000, 
+                                6300, 7000, 4000, 7000, 7000, 7000, 7000, 7000, 7000, 7000,
+                                6300, 7000, 4000, 7000, 7000, 7000, 7000, 7000, 7000, 7000,
+                                6300, 7000, 4000, 7000, 7000, 7000, 7000, 7000, 7000, 7000,
+                                7000, 7000, 7000
+                            ];
+                //SAMPLE DATA *************************************
+
+                var responsive = false;
+                //입력될 데이터의 길이를 체크 후 15개 이하라면 스크롤 생기지 않도록 한다.
+                if(label_arr.length < 16){
+                    responsive = !responsive;
+                    $("#canvasBar01").closest(".chart_layer").addClass("full_layer");
+                }else{
+                    //responsive false이므로 강제로 사이즈 할당 가능
+                    $("#canvasBar01").closest(".chart_layer").removeClass("full_layer"); // 220926 추가
+                    var height = $("#canvasBar01").closest(".chart_con").height();
+                    var width = $("#canvasBar01").closest(".chart_con").width(); // 220927
+                    $("#canvasBar01").attr("width", width + 60*label_arr.length); // 220927
+                    $("#canvasBar01").attr("height", height);                    
+                }
+
+                var barChartData = {
+                    labels: label_arr,
+                    datasets: [
+                        {
+                            label:'수익',
+                            backgroundColor:'#ffa2a2',
+                            data: datas,
+                        }
+                    ]
+                };
+
+                var config = {
+                    type: 'bar',
+                    data: barChartData,
+                    options: {
+                        responsive: responsive,
+                        maintainAspectRatio: false,
+                        responsiveAnimationDuration: 0,
+                        scales: {
+                            yAxes: [{
+                                gridLines: {
+                                    drawBorder: false
+                                }, scaleLabel: {
+                                    display: true,
+                                    position: 'left',
+                                }, ticks: {
+                                    stepSize: 1000,
+                                    padding: 14,
+                                    min: 0,
+                                    // max: 1000000,
+                                    callback: function(value){
+                                        return value ? moneyFormat(value) : '';
+                                    }
+                                }
+                            }],
+                            xAxes: [{
+                                display: true,
+                                offset:true,
+                                maxBarThickness: 32,
+                                barPercentage: 32,
+                                gridLines: {
+                                    display: false,
+                                    zeroLineColor: "#333333"
+                                }, ticks: {
+                                    fontColor: "#333333",
+                                    fontStyle: "bold",
+                                    padding: 15
+                                }
+                            }]
+                        }, layout:{
+                            padding:{top:20, bottom:0, right: 50}
+                        }, legend: false,
+                        tooltips: {
+                            callbacks: {
+                                label: function(tooltipItem, data) {
+                                    var {xLabel, yLabel} = tooltipItem;
+                                    return `수익 : ${moneyFormat(yLabel)}`;
+                                }   
+                            }
+                        }
+                    }
+                };
+
+                var target = document.getElementById('canvasBar01');
+                if (target) {
+                    var ctx = target.getContext('2d');
+                    canvasBar01 = new Chart(ctx, config);
+                }
+            }
+        });
+        
+        function moneyFormat(number){
+            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[serveone] 관리자</title>
+    
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="#" class="main_logo">
+                    <img src="../assets/images/main_logo.png" alt="PACKER ONE" />
+                </a>
+            </h1>
+
+            <!-- gnb -->
+            <nav class="gnb">
+                <button class="product">상품관리</button>
+                <ul>
+                    <li><a href="#">상품 조회/관리</a></li>
+                    <li><a href="#">상품 등록</a></li>
+                </ul>
+                <button class="order">주문 관리</button>
+                <ul>
+                    <li><a href="#">전체주문목록</a></li>
+                    <li><a href="#">배송 관리</a></li>
+                    <li><a href="#">취소/교환/반품/환불관리</a></li>
+                </ul>
+                <button class="member">회원 관리</button>
+                <ul>
+                    <li><a href="#">회원관리</a></li>
+                    <li><a href="#">적립포인트 관리</a></li>
+                </ul>
+                <button class="board">게시판 관리</button>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">포장재솔루션 문의</a></li>
+                    <li><a href="#">주문제작 문의</a></li>
+                </ul>
+                <button class="stats">통계 관리</button>
+                <ul>
+                    <li><a href="#">매출분석</a></li>
+                    <li><a href="#">상품분석</a></li>
+                    <li><a href="#">주문제작 분석</a></li>
+                </ul>
+                <!-- 220622 수정 -->
+                <button class="banner">배너 관리</button>
+                <ul>
+                    <li><a href="#">배너 조회/관리</a></li>
+                    <li><a href="#">배너 등록</a></li>
+                </ul>
+                <button class="portfolio active">포트폴리오 관리</button>
+                <ul>
+                    <li><a class="active" href="#">포트폴리오 조회/관리</a></li>
+                    <li><a href="#">포트폴리오 등록</a></li>
+                </ul>
+                <!-- // 220622 수정 -->
+            </nav>
+            <!-- // gnb -->
+
+        </header>
+        <!-- // header -->
+    
+        <!-- main -->
+        <main>
+            <nav>
+                <ul class="clear">
+                    <li><a href="#" class="rank">최고관리자(serveone)</a></li>
+                    <li><a href="#" class="white_btn w_100 marleft_20">로그아웃</a></li>
+                    <li><a href="#" class="red_btn w_120 marleft_10">쇼핑몰 관리</a></li>
+                </ul>
+            </nav>
+
+            <div class="title_box clear">
+                <h2 class="left">포트폴리오 조회/관리</h2>
+                <ul class="right">
+                    <li>포트폴리오 관리</li>
+                    <li>포트폴리오 조회/관리</li>
+                </ul>
+            </div>
+
+            <div class="con_wrap">
+                <strong class="main_title">포트폴리오 조회</strong>
+                <table class="type2 txt_left">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>상품분류</th>
+                            <td>
+                                <select class="select w_156">
+                                    <option value="0">대분류</option>
+                                </select>
+
+                                <select class="select w_156 marleft_8">
+                                    <option value="0">중분류</option>
+                                </select>
+
+                                <select class="select w_156 marleft_8">
+                                    <option value="0">소분류</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>포트폴리오 명</th>
+                            <td>
+                                <input type="text" class="w_full" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>기간검색</th>
+                            <td>
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio1" checked />
+                                <label for="inpRadio1" class="label">전체</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio2" />
+                                <label for="inpRadio2" class="label marleft_20">당일</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio3" />
+                                <label for="inpRadio3" class="label marleft_20">전일</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio4" />
+                                <label for="inpRadio4" class="label marleft_20">3일</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio5" />
+                                <label for="inpRadio5" class="label marleft_20">7일</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio6" />
+                                <label for="inpRadio6" class="label marleft_20">1개월</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio7" />
+                                <label for="inpRadio7" class="label marleft_20">3개월</label>
+
+                                <input type="radio" name="inpRadio" class="ch_radio hide" id="inpRadio8" />
+                                <label for="inpRadio8" class="label marleft_20">12개월</label>
+
+                                <div class="custom_date w_156 marleft_20">
+                                    <input type="text" class="date w_full" id="datepickerToggle" placeholder="2021-09-01" readonly />
+                                </div>
+                                <span class="tilde">~</span>
+                                <div class="custom_date w_156">
+                                    <input type="text" class="date w_full" id="datepickerToggle2" placeholder="2021-09-01" readonly />
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn_center martop_30">
+                    <button class="red_btn big w_150 lookup_btn">조회</button>
+                    <button class="grey_btn big w_150 initialization_btn">초기화</button>
+                </div>
+
+                <div class="inp_box martop_20 clear">
+                    <div class="left martop_12">
+                        <p>조회결과<em class="col_red">(10)</em></p>
+                        <div class="btn_left martop_20">
+                            <button class="black_btn w_100 confirm_btn">삭제</button>
+                            <button class="red_btn w_100 exhibition_btn">진열</button>
+                            <button class="red_btn w_100 cancel_display_btn">진열취소</button>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <div class="btn_right martop_51">
+                            <a href="#" class="excel_btn" download>엑셀다운로드</a>
+                            <select class="select w_140">
+                                <option value="0">10개씩 보기</option>
+                                <option value="1">20개씩 보기</option>
+                                <option value="2">30개씩 보기</option>
+                                <option value="3">50개씩 보기</option>
+                            </select>
+                            <select class="select w_140">
+                                <option value="0">등록일 순</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="type1 martop_16">
+                    <colgroup>
+                        <col width="80px">
+                        <col width="443px">
+                        <col width="*">
+                        <col width="300px">
+                        <col width="300px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" name="inpChk" class="ch_check hide allcheck" id="inpChk1" />
+                                <label for="inpChk1" class="label single"></label>
+                            </th>
+                            <th>상품분류</th>
+                            <th>포트폴리오 명</th>
+                            <th>진열상태</th>
+                            <th>등록일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk2" />
+                                <label for="inpChk2" class="label single"></label>
+                            </td>
+                            <td>박스</td>
+                            <td class="col_red">
+                                <a class="banner_btn">크리스마스 선물 박스</a>
+                            </td>
+                            <td>진열함</td>
+                            <td>22-03-14</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk3" />
+                                <label for="inpChk3" class="label single"></label>
+                            </td>
+                            <td>박스</td>
+                            <td class="col_red">
+                                <a class="banner_btn">크리스마스 선물 박스</a>
+                            </td>
+                            <td>진열함</td>
+                            <td>22-03-14</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk4" />
+                                <label for="inpChk4" class="label single"></label>
+                            </td>
+                            <td>박스</td>
+                            <td class="col_red">
+                                <a class="banner_btn">크리스마스 선물 박스</a>
+                            </td>
+                            <td>진열함</td>
+                            <td>22-03-14</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk5" />
+                                <label for="inpChk5" class="label single"></label>
+                            </td>
+                            <td>박스</td>
+                            <td class="col_red">
+                                <a class="banner_btn">크리스마스 선물 박스</a>
+                            </td>
+                            <td>진열함</td>
+                            <td>22-03-14</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk6" />
+                                <label for="inpChk6" class="label single"></label>
+                            </td>
+                            <td>박스</td>
+                            <td class="col_red">
+                                <a class="banner_btn">크리스마스 선물 박스</a>
+                            </td>
+                            <td>진열함</td>
+                            <td>22-03-14</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk7" />
+                                <label for="inpChk7" class="label single"></label>
+                            </td>
+                            <td>박스</td>
+                            <td class="col_red">
+                                <a class="banner_btn">크리스마스 선물 박스</a>
+                            </td>
+                            <td>진열함</td>
+                            <td>22-03-14</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk8" />
+                                <label for="inpChk8" class="label single"></label>
+                            </td>
+                            <td>박스</td>
+                            <td class="col_red">
+                                <a class="banner_btn">크리스마스 선물 박스</a>
+                            </td>
+                            <td>진열함</td>
+                            <td>22-03-14</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk9" />
+                                <label for="inpChk9" class="label single"></label>
+                            </td>
+                            <td>박스</td>
+                            <td class="col_red">
+                                <a class="banner_btn">크리스마스 선물 박스</a>
+                            </td>
+                            <td>진열함</td>
+                            <td>22-03-14</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk10" />
+                                <label for="inpChk10" class="label single"></label>
+                            </td>
+                            <td>박스</td>
+                            <td class="col_red">
+                                <a class="banner_btn">크리스마스 선물 박스</a>
+                            </td>
+                            <td>진열함</td>
+                            <td>22-03-14</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="inpChk" class="ch_check hide" id="inpChk11" />
+                                <label for="inpChk11" class="label single"></label>
+                            </td>
+                            <td>박스</td>
+                            <td class="col_red">
+                                <a class="banner_btn">크리스마스 선물 박스</a>
+                            </td>
+                            <td>진열함</td>
+                            <td>22-03-14</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="paging txt_center clear martop_20">
+                    <ul>
+                        <li><a href="" class="paging_first"></a></li>
+                        <li><a href="" class="paging_prev"></a></li>
+                        <li class="on"><a href="" class="paging_num">1</a></li>
+                        <li><a href="" class="paging_num">2</a></li>
+                        <li><a href="" class="paging_num">3</a></li>
+                        <li><a href="" class="paging_num">4</a></li>
+                        <li><a href="" class="paging_num">5</a></li>
+                        <li><a href="" class="paging_num">6</a></li>
+                        <li><a href="" class="paging_num">7</a></li>
+                        <li><a href="" class="paging_num">8</a></li>
+                        <li><a href="" class="paging_num">9</a></li>
+                        <li><a href="" class="paging_num">10</a></li>
+                        <li><a href="" class="paging_next"></a></li>
+                        <li><a href="" class="paging_last"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- modal_wrap -->
+            <div class="modal_wrap banner_modal">
+                <div class="modal_section w_1380">
+                    <div class="modal_header clear">
+                        <strong class="modal_title left">포트폴리오 조회/관리 상세</strong>
+                        <span class="right required_tag martop_8">필수입력</span>
+                    </div>
+                    <div class="modal_contents">
+                        <table class="type2 txt_left layout_fixed">
+                            <colgroup>
+                                <col width="200px">
+                                <col width="*">
+                                <col width="*">
+                                <col width="*">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr class="product_select_box">
+                                    <th class="required">상품분류</th>
+                                    <td colspan="4">
+                                        <select class="product_select select w_156">
+                                            <option value="0">대분류</option>
+                                            <option value="1">박스</option>
+                                            <option value="2">포장 봉투</option>
+                                        </select>
+                                        <select class="pd_select_medium select w_156 marleft_8" disabled>
+                                            <option value="0">중분류</option>
+                                            <option value="1">골판지 박스</option>
+                                        </select>
+                                        <select class="pd_select_small select w_156 marleft_8" disabled>
+                                            <option value="0">소분류</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="required">포트폴리오 명</th>
+                                    <td colspan="4">
+                                        <input type="text" class="w_full" value="크리스마스 선물 박스" />
+                                    </td>
+                                </tr>
+                                <tr class="product_select_con box">
+                                    <th rowspan="2">상품정보</th>
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">사이즈(mm)</label>
+                                        <input type="text" class="w_minus89" value="70x70x60" />
+                                    </td>
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">타입</label>
+                                        <input type="text" class="w_minus89" value="0201 톰슨" />
+                                    </td>
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">지종</label>
+                                        <input type="text" class="w_minus89" value="SK / S / K" />
+                                    </td>
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">골</label>
+                                        <input type="text" class="w_minus89" value="E" />
+                                    </td>
+                                </tr>
+                                <tr class="product_select_con box">
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">후가공</label>
+                                        <input type="text" class="w_minus89" value="A00001" />
+                                    </td>
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">인쇄</label>
+                                        <input type="text" class="w_minus89" value="1도 4면" />
+                                    </td>
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">비고</label>
+                                        <input type="text" class="w_minus89" value="1000" />
+                                    </td>
+                                    <td></td>
+                                </tr>
+
+                                <tr class="product_select_con etc dis_none">
+                                    <th rowspan="2">상품정보</th>
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">사이즈(mm)</label>
+                                        <input type="text" class="w_minus89" value="13x20" />
+                                    </td>
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">타입</label>
+                                        <input type="text" class="w_minus89" value="지퍼" />
+                                    </td>
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">두께</label>
+                                        <input type="text" class="w_minus89" value="0.11" />
+                                    </td>
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">재질</label>
+                                        <input type="text" class="w_minus89" value="AL" />
+                                    </td>
+                                </tr>
+                                <tr class="product_select_con etc dis_none">
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">색상</label>
+                                        <input type="text" class="w_minus89" value="투명 + 은색" />
+                                    </td>
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">인쇄</label>
+                                        <input type="text" class="w_minus89" value="전면 칼라 + 별색 1도" />
+                                    </td>
+                                    <td>
+                                        <label class="dis_inblock w_85 fw_bold">비고</label>
+                                        <input type="text" class="w_minus89" value="1000" />
+                                    </td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <th class="required">이미지 등록</th>
+                                    <td colspan="4">
+                                        <ul class="img_register_list clear">
+                                            <li>
+                                                <p>대표이미지(작은목록이미지1)</p>
+                                                <div class="img_register_box">
+                                                    <input type="file" id="find" class="hide" />
+                                                    <label for="find" class="w_full"></label>
+                                                    <img src="../assets/images/img_empty.png" alt="대표이미지">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p>작은목록이미지2</p>
+                                                <div class="img_register_box">
+                                                    <input type="file" id="find2" class="hide" />
+                                                    <label for="find2" class="w_full"></label>
+                                                    <img src="../assets/images/img_empty.png" alt="이미지">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p>작은목록이미지3</p>
+                                                <div class="img_register_box">
+                                                    <input type="file" id="find3" class="hide" />
+                                                    <label for="find3" class="w_full"></label>
+                                                    <img src="../assets/images/img_empty.png" alt="이미지">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p>작은목록이미지4</p>
+                                                <div class="img_register_box">
+                                                    <input type="file" id="find4" class="hide" />
+                                                    <label for="find4" class="w_full"></label>
+                                                    <img src="../assets/images/img_empty.png" alt="이미지">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p>작은목록이미지5</p>
+                                                <div class="img_register_box">
+                                                    <input type="file" id="find5" class="hide" />
+                                                    <label for="find5" class="w_full"></label>
+                                                    <img src="../assets/images/img_empty.png" alt="이미지">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <p class="martop_16 line_24 marbtm_10">
+                                            ※ 등록이미지 5M이하 / gif, png, jpg, jpeg / 480x480(px)<br/>
+                                            ※ 위 형식에 맞춰 올리시면 작은목록이미지는 지정해 놓은 사이즈(128px X 128px)로 자동 리사이징되어 저장됩니다.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn_center">
+                        <button type="button" class="black_btn w_120 cancel_btn">취소</button>
+                        <button type="button" class="red_btn w_120 save_btn">저장</button>
+                        <!-- 저장 오류용 입니다. <button type="button" class="red_btn w_120 error_btn">저장</button> -->
+                    </div>
+                </div>
+            </div>
+            <!-- // modal_wrap -->
+
+            <!-- confirm -->
+            <div class="modal_wrap confirm">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="black_btn w_120 delete_modal">아니오</button>
+                        <button class="red_btn w_120 btn_ok">네</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // confirm -->
+
+            <!-- alert -->
+            <div class="modal_wrap alert">
+                <div class="modal_header clear">
+                    <strong>텍스트 입력</strong>
+                </div>
+                <div class="modal_section">
+                    <p class="modal_text">텍스트 입력</p>
+                    <div class="btn_center">
+                        <button class="red_btn w_120 delete_modal">확인</button>
+                    </div>
+                </div>
+            </div>
+            <!-- // alert -->
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+
+    <script src="../assets/js/common.js"></script>
+    <script>
+        $(function () {
+            // 조회결과 alert
+            $(".lookup_btn").on("click", function () {
+                action_popup.alert("조회 결과가 없습니다.", "조회결과");
+            });
+
+            // 삭제 확인 confirm
+            $(".confirm_btn").on("click", function () {
+                action_popup.confirm("선택한 리스트를 삭제 하시겠습니까?<br/>삭제된 리스트는 복원하실 수 없습니다.", function(){}, "삭제 확인");
+            });
+
+            // 진열 확인 confirm
+            $(".exhibition_btn").on("click", function () {
+                action_popup.confirm("선택하신 리스트를 포트폴리오 리스트에<br/>진열 하시겠습니까?", function(){}, "진열 확인");
+            });
+
+            // 진열 취소 confirm
+            $(".cancel_display_btn").on("click", function () {
+                action_popup.confirm("선택하신 리스트를 포트폴리오 리스트에서<br/>진열 취소 하시겠습니까?", function(){}, "진열 취소");
+            });
+
+            // 포트폴리오 조회/관리 상세
+            $(".banner_btn").on("click", function(){
+                $(".banner_modal").addClass("active");
+                addnDimLayer();
+            });
+
+            // 취소 확인 confirm
+            $(".cancel_btn").on("click", function () {
+                action_popup.confirm("입력하신 정보가 저장되지 않고 목록으로 이동합니다.<br/>이동 하시겠습니까?", function(){}, "취소 확인");
+            });
+
+            // 저장 확인 confirm
+            $(".save_btn").on("click", function () {
+                action_popup.confirm("입력하신 정보를 저장하시겠습니까?", function(){}, "저장 확인");
+            });
+
+            // 저장 오류 alert
+            $(".error_btn").on("click", function () {
+                action_popup.alert("입력하신 정보를 다시 확인해주세요.", "저장 오류");
+            });
+
+            // 상품 분류 - 대분류 select change event
+            $(document).on("change", ".product_select", function(){
+                $(".pd_select_medium").removeAttr("disabled");
+
+                var val = $(this).val();
+                if(val == "0" || val == "1"){ // 박스
+                    $(this).closest(".product_select_box").siblings(".product_select_con.box").removeClass("dis_none");
+                    $(this).closest(".product_select_box").siblings(".product_select_con.etc").addClass("dis_none");
+                }else { // 나머지
+                    $(this).closest(".product_select_box").siblings(".product_select_con.box").addClass("dis_none");
+                    $(this).closest(".product_select_box").siblings(".product_select_con.etc").removeClass("dis_none");
+                }
+            });
+
+            // 상품 분류 - 중분류 select change event
+            $(document).on("change", ".pd_select_medium", function(){
+                $(".pd_select_small").removeAttr("disabled");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[serveone] 관리자</title>
+    
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+    <!-- AirDatepicker -->
+    <link rel="stylesheet" href="../assets/css/datepicker.css">
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/datepicker.ko.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header>
+            <h1>
+                <a href="#" class="main_logo">
+                    <img src="../assets/images/main_logo.png" alt="PACKER ONE" />
+                </a>
+            </h1>
+
+            <!-- gnb -->
+            <nav class="gnb">
+                <button class="product">상품관리</button>
+                <ul>
+                    <li><a href="#">상품 조회/관리</a></li>
+                    <li><a href="#">상품 등록</a></li>
+                </ul>
+                <button class="order">주문 관리</button>
+                <ul>
+                    <li><a href="#">전체주문목록</a></li>
+                    <li><a href="#">배송 관리</a></li>
+                    <li><a href="#">취소/교환/반품/환불관리</a></li>
+                </ul>
+                <button class="member">회원 관리</button>
+                <ul>
+                    <li><a href="#">회원관리</a></li>
+                    <li><a href="#">적립포인트 관리</a></li>
+                </ul>
+                <button class="board">게시판 관리</button>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">고객문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">포장재솔루션 문의</a></li>
+                    <li><a href="#">주문제작 문의</a></li>
+                </ul>
+                <button class="stats active">통계 관리</button>
+                <ul>
+                    <li><a href="#">매출분석</a></li>
+                    <li><a href="#">상품분석</a></li>
+                    <li><a class="active" href="#">주문제작 분석</a></li>
+                </ul>
+                <!-- 220622 수정 -->
+                <button class="banner">배너 관리</button>
+                <ul>
+                    <li><a href="#">배너 조회/관리</a></li>
+                    <li><a href="#">배너 등록</a></li>
+                </ul>
+                <button class="portfolio">포트폴리오 관리</button>
+                <ul>
+                    <li><a href="#">포트폴리오 조회/관리</a></li>
+                    <li><a href="#">포트폴리오 등록</a></li>
+                </ul>
+                <!-- // 220622 수정 -->
+            </nav>
+            <!-- // gnb -->
+
+        </header>
+        <!-- // header -->
+    
+        <!-- main -->
+        <main class="tab">
+            <nav>
+                <ul class="clear">
+                    <li><a href="#" class="rank">최고관리자(serveone)</a></li>
+                    <li><a href="#" class="white_btn w_100 marleft_20">로그아웃</a></li>
+                    <li><a href="#" class="red_btn w_120 marleft_10">쇼핑몰 관리</a></li>
+                </ul>
+            </nav>
+
+            <div class="title_box clear">
+                <h2 class="left">주문제작 분석</h2>
+                <ul class="right">
+                    <li>통계 관리</li>
+                    <li>주문제작 분석</li>
+                </ul>
+            </div>
+
+            <div class="con_wrap">
+                <ul class="tab_menu_type1 fourth clear">
+                    <li><a href="#" data-target="type1_01">일별</a></li>
+                    <li class="active"><a href="#" data-target="type1_02">주별</a></li>
+                    <li><a href="#" data-target="type1_03">월별</a></li>
+                    <li><a href="#" data-target="type1_04">년별</a></li>
+                </ul>
+
+                <strong class="main_title martop_30">매출분석</strong>
+                <table class="type2 txt_left">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>기간검색</th>
+                            <td>
+                                <span class="ver_mid">최근</span>
+                                <select class="select w_80 marleft_8">
+                                    <option value="0">2</option>
+                                </select>
+                                <span class="ver_mid marleft_8">주</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn_center martop_30">
+                    <button class="red_btn big w_150">조회</button>
+                </div>
+
+                <hr class="type1 martop_20" />
+
+                <strong class="main_title martop_30">전주/금주 성장추이</strong>
+
+                <!-- 220913 변경 -->
+                <table class="type1 statistics nohover"> <!-- 220913 .martop_16 삭제 -->
+                    <colgroup>
+                        <col width="373px">
+                        <col width="170px">
+                        <col width="170px">
+                        <col width="170px">
+                        <col width="170px">
+                        <col width="170px">
+                        <col width="170px">
+                        <col width="170px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>기간</th>
+                            <th>주문제작 요청 수</th>
+                            <th>견적완료 수</th>
+                            <th>결제완료 수</th>
+                            <th colspan="2">주문제작 견적 완료율</th>
+                            <th colspan="2">주문제작 결제 완료율</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>금주(2022-04-25~2022-04-29)</td>
+                            <td>100</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>20%</td>
+                            <td rowspan="2">68.75%감소</td>
+                            <td>100%</td>
+                            <td rowspan="2">0%감소</td>
+                        </tr>
+                        <tr>
+                            <td>전주(2022-04-18~2022-04-24)</td>
+                            <td>200</td>
+                            <td>128</td>
+                            <td>128</td>
+                            <td>64%</td>
+                            <td>100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- // 220913 변경 -->
+
+                <div class="inp_box martop_58 type2 clear">
+                    <div class="left martop_12">
+                        <p>조회결과<em class="col_red">(10)</em></p>
+                    </div>
+
+                    <div class="right">
+                        <div class="btn_right ">
+                            <a href="#" class="excel_btn" download>엑셀다운로드</a>
+                            <select class="select w_140">
+                                <option value="0">10개씩 보기</option>
+                                <option value="1">20개씩 보기</option>
+                                <option value="2">30개씩 보기</option>
+                                <option value="3">50개씩 보기</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="type1 statistics">
+                    <colgroup>
+                        <col width="219px">
+                        <col width="115px">
+                        <col width="115px">
+                        <col width="115px">
+                        <col width="115px">
+                        <col width="115px">
+                        <col width="115px">
+                        <col width="115px">
+                        <col width="115px">
+                        <col width="140px">
+                        <col width="140px">
+                        <col width="140px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">일자</th>
+                            <th colspan="8">결제완료 주문</th>
+                            <th rowspan="2">매출</th>
+                            <th rowspan="2">환불</th>
+                            <th rowspan="2">수익</th>
+                        </tr>
+                        <tr>
+                            <th>주문제작 수</th>
+                            <th>견적완료  수</th>
+                            <th>주문취소</th>
+                            <th>결제완료 수</th> <!-- 220913 텍스트 변경 -->
+                            <th>상품구매금액</th>
+                            <th>배송비</th>
+                            <th>할인</th>
+                            <th>포인트</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30,690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30,690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30,690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30,690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30,690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30,690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30,690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30,690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30,690</td>
+                        </tr>
+                        <tr>
+                            <td>2022-04-25~2022-04-29</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>3000</td>
+                            <td>300</td>
+                            <td>30</td>
+                            <td>192,638</td>
+                            <td>161,958</td>
+                            <td>30,690</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="paging txt_center clear martop_20">
+                    <ul>
+                        <li><a href="" class="paging_first"></a></li>
+                        <li><a href="" class="paging_prev"></a></li>
+                        <li class="on"><a href="" class="paging_num">1</a></li>
+                        <li><a href="" class="paging_num">2</a></li>
+                        <li><a href="" class="paging_num">3</a></li>
+                        <li><a href="" class="paging_num">4</a></li>
+                        <li><a href="" class="paging_num">5</a></li>
+                        <li><a href="" class="paging_num">6</a></li>
+                        <li><a href="" class="paging_num">7</a></li>
+                        <li><a href="" class="paging_num">8</a></li>
+                        <li><a href="" class="paging_num">9</a></li>
+                        <li><a href="" class="paging_num">10</a></li>
+                        <li><a href="" class="paging_next"></a></li>
+                        <li><a href="" class="paging_last"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <!-- // main -->
+    </div>
+    <!-- // wrap -->
+    
+    <script src="../assets/js/common.js"></script>
+    <script>
+        $(function () {});
+    </script>
+</body>
+</html>
